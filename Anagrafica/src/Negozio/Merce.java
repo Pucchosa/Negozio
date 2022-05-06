@@ -7,7 +7,7 @@ public class Merce {
 	int rincaro;
 	Double prezzoA;
 	Double prezzoV;
-	Double  ;
+	Double valore;
 	Scanner sc = new Scanner(System.in);
 	
 	public Merce(int x){
