@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public abstract class Anagrafica extends Ogg{
 	private String cognome;
-	private int prova=0;
 	private String nome;
 	private String iva="";
 	private String telefono;
