@@ -1,8 +1,31 @@
 package Negozio;
 import java.util.Scanner;
 
-public class Program{
+public class Temp  {
 
+	public static int trovaIndex(Fornitore[] e, String s){
+		int index=-1;
+		for (int a=0;a<e.length;a++){
+			if (e[a]!=null){
+				if (e[a].getNome().equalsIgnoreCase(s)){
+					index=a;
+				}
+			}
+		}
+		return index;
+	}
+	public static int trovaIndex(Cliente[] e, String s){
+		int index=-1;
+		for (int a=0;a<e.length;a++){
+			if (e[a]!=null){
+				if (e[a].getNome().equalsIgnoreCase(s)){
+					index=a;
+				}
+			}
+		}
+		return index;
+	}
+	
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		int c=0;
@@ -10,14 +33,8 @@ public class Program{
 		Double saldoAz=0.00;
 		
 		System.out.println("Benvenuto nel database del negozio!");
-		System.out.println("Si desidera eseguire un`operazione o aggiornare un database? (opp/agg)");
-		
-		
-		System.out.println("Si desidera modificare/eliminare/aggiornare un dato?");
-		
-		System.out.println("");
-		
-		
+		Fornitore[] fornitori=new Fornitore[10];
+		Cliente[] clienti=new Cliente[10];
 		while (c<10&&f<10){
 			System.out.println("Si desidera aggiungere un nuovo nominativo?(S/N) ");
 			String ris = sc.nextLine();

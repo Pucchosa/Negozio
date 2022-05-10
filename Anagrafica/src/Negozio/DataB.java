@@ -12,7 +12,12 @@ public class DataB <T extends Ogg> {
 		return tip;
 	}
 	public void agg(T t){
-		elenco.add(t);
+		if (eDuplicato(t)==false){
+			elenco.add(t);
+		}
+		else {
+			System.out.println("Nominativo gia presente.");
+		}
 	}
 	public int trovaNome(String nome){
 		for (int i=0;i<elenco.size();i++){
@@ -31,6 +36,35 @@ public class DataB <T extends Ogg> {
 		}
 		System.out.println("Identificativo non trovato.");
 		return -1;
+	}
+	public boolean eDuplicato(String nominativo){
+		String[] nom=nominativo.split(" ");
+		if (nom.length==2){
+			if (trovaCognome(nom[0])!=-1){
+				if (trovaNome(nom[1])!=-1){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	public boolean eDuplicato(String co, String no){
+		String[] nom={co, no};
+		if (trovaCognome(nom[0])!=-1){
+			if (trovaNome(nom[1])!=-1){
+				return true;
+			}
+		}
+		return false;
+	}
+	public boolean eDuplicato(T ogg){
+		String[] nom={ogg.getNome(), ogg.getCognome()};
+		if (trovaCognome(nom[0])!=-1){
+			if (trovaNome(nom[1])!=-1){
+				return true;
+			}
+		}
+		return false;
 	}
 	public int trovaIva(String iva){
 		for (int i=0;i<elenco.size();i++){
