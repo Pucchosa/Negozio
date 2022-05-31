@@ -2,11 +2,11 @@ package Negozio;
 import java.util.*;
 
 public class DataB <T extends Ogg> {
-	ArrayList<T> elenco=new ArrayList<T>();
+	ArrayList<T> elenco;
 	String tip="";
 	
 	public DataB(String s){
-		tip=s.toLowerCase();
+		tip=s;
 	}
 	public String getTip(){
 		return tip;
@@ -18,6 +18,11 @@ public class DataB <T extends Ogg> {
 		else {
 			System.out.println("Nominativo gia presente.");
 		}
+	}
+	public T get(int x) throws Exception{
+		if (x>=elenco.size())throw new Exception("Indice troppo grande");
+		else return elenco.get(x);
+		
 	}
 	public int trovaNome(String nome){
 		for (int i=0;i<elenco.size();i++){
@@ -74,5 +79,12 @@ public class DataB <T extends Ogg> {
 		}
 		System.out.println("Identificativo non trovato.");
 		return -1;
+	}
+	public String toString(){
+		String ss="";
+		for (T a:elenco){
+			ss=ss+a.getCognome()+" "+a.getNome()+"\n";
+		}
+		return ss;
 	}
 }

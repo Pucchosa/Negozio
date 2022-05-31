@@ -8,7 +8,8 @@ public class Program{
 		int c=0;
 		int f=0;
 		Double saldoAz=0.00;
-		
+		DataB<Fornitore> fornitori=new DataB<Fornitore>("fornitore");
+		DataB<Cliente> clienti=new DataB<Cliente>("cliente");
 		System.out.println("Benvenuto nel database del negozio!");
 		System.out.println("Si desidera eseguire un`operazione o aggiornare un database? (opp/agg)");
 		
@@ -28,13 +29,13 @@ public class Program{
 					ris = sc.nextLine();
 					if (ris.equalsIgnoreCase("f")){
 						Fornitore forn=new Fornitore();
-						fornitori[f]=forn;
+						fornitori.agg(forn);
 						f++;
 						r=1;
 					}
 					else if (ris.equalsIgnoreCase("c")){
 						Cliente clie=new Cliente();
-						clienti[c]=clie;
+						clienti.agg(clie);
 						c++;
 						r=2;
 					}
@@ -76,9 +77,11 @@ public class Program{
 						String ordina=sc.nextLine();
 						System.out.println("Qale e il valore della merce da ordinare?");
 						Double tot=sc.nextDouble();
-						int index=trovaIndex(fornitori, ordina);
-						fornitori[index].consegnaMerci(tot);
-						
+						int index=fornitori.trovaCognome(ordina);
+						try{
+							fornitori.get(index).consegnaMerci(tot);
+						}
+						catch (Exception e){System.out.println(e.getMessage());	}
 						r=1;
 					}
 					else if (ris.equalsIgnoreCase("i")){
@@ -86,9 +89,11 @@ public class Program{
 						String ordina=sc.nextLine();
 						System.out.println("Qale e il valore della merce da spedire?");
 						Double tot=sc.nextDouble();
-						int index=trovaIndex(clienti, ordina);
-						clienti[index].consegnaMerci(tot);
-						
+						int index=clienti.trovaCognome(ordina);
+						try{
+							clienti.get(index).consegnaMerci(tot);
+						}
+						catch (Exception e){System.out.println(e.getMessage());	}
 						r=2;
 					}
 					else if (ris.equalsIgnoreCase("p")){
@@ -101,8 +106,11 @@ public class Program{
 								String ordina=sc.nextLine();
 								System.out.println("Qale e il totale del pagamento?");
 								Double tot=sc.nextDouble();
-								int index=trovaIndex(clienti, ordina);
-								clienti[index].pagamentoEffettuato(tot);
+								int index=clienti.trovaCognome(ordina);
+								try{
+									clienti.get(index).pagamentoEffettuato(tot);
+								}
+								catch (Exception e){System.out.println(e.getMessage());	}
 								saldoAz=saldoAz+tot;
 								z=1;
 								r=2;
@@ -112,8 +120,11 @@ public class Program{
 								String ordina=sc.nextLine();
 								System.out.println("Qale e il totale del pagamento?");
 								Double tot=sc.nextDouble();
-								int index=trovaIndex(fornitori, ordina);
-								fornitori[index].pagamentoEffettuato(tot);
+								int index=fornitori.trovaCognome(ordina);
+								try{
+									fornitori.get(index).pagamentoEffettuato(tot);
+								}
+								catch (Exception e){System.out.println(e.getMessage());	}
 								saldoAz=saldoAz-tot;
 								z=2;
 								r=2;
@@ -134,17 +145,9 @@ public class Program{
 		if (ris.equalsIgnoreCase("s")){
 			System.out.println("+++++-----  Saldo aziendale: "+saldoAz+" euro  -----++++++");
 			System.out.println("+++++  Situazone fornitori: ++++++");
-			for (Fornitore x:fornitori){
-				if (x!=null){
-					System.out.println(x);
-				}
-			}
+			System.out.println(fornitori);
 			System.out.println("/n +++++  Situazone clienti: ++++++");
-			for (Cliente x:clienti){
-				if (x!=null){
-					System.out.println(x);
-				}
-			}
+			System.out.println(clienti);
 		}
 		
 	}
