@@ -1,7 +1,7 @@
 package GUI;
-import java.util.*;
+//import java.util.*;
 import java.awt.*;
-import javax.swing.*;
+//import javax.swing.*;
 import java.awt.event.*;
 public class Al implements ActionListener{
 	Frame tol;
