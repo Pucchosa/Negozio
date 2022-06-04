@@ -1,16 +1,17 @@
 package Negozio;
+import GUI.*;
 
 public class Fornitore extends Anagrafica {
 	
 	public Fornitore(String unCognome, String unNome){
 		super(unCognome, unNome);
-		setTipo(true);
+		setTipo("fornitore");
 	}
 	public Fornitore(){
 		super();
 		System.out.println("Inserire P.Iva: ");
 		setIva(sc.nextLine());
-		setTipo(true);
+		setTipo("fornitore");
 	}
 
 	public void pagamentoEffettuato(Double pagamento){

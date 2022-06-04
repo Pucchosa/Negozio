@@ -1,4 +1,6 @@
 package Negozio;
+import GUI.*;
+import java.util.ArrayList;
 
 public abstract class Ogg {
 	public abstract String getTipo();

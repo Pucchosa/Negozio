@@ -1,4 +1,5 @@
 package GUI;
+import Negozio.*;
 //import java.util.*;
 import java.awt.*;
 //import javax.swing.*;

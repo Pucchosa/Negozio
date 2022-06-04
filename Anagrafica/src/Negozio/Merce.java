@@ -1,26 +1,39 @@
 package Negozio;
+import GUI.*;
 import java.util.Scanner;
 
 public class Merce {
-	final String nome;
-	int quantita;
-	int rincaro;
-	Double prezzoA;
-	Double prezzoV;
-	Double valore;
-	Scanner sc = new Scanner(System.in);
+	private final String nome;
+	private int codice;
+	private int quantita;
+	private int rincaro;
+	private Double prezzoA;
+	private Double prezzoV;
+	private Double valore;
+	private String unita;
+	private Scanner sc = new Scanner(System.in);
 	
-	public Merce(int x){
+	public Merce(){
+		//codice
 		System.out.println("Inserire nome prodotto: ");
 		nome=sc.nextLine();
-		System.out.println("Inserire numero pezzi acquistati: ");
+		System.out.println("Inserire lúnita di misura del prodotto: ");
+		unita=sc.nextLine();
+		System.out.println("Inserire quantita "+getUnit()+" acquistati: ");
 		quantita=sc.nextInt();
 		System.out.println("Inserire prezzo acquisto all unita: ");
 		prezzoA=sc.nextDouble();
 		System.out.println("Inserire percentuale rincaro alla vendita: ");
 		rincaro=sc.nextInt();
 		prezzoV=(prezzoA/100*rincaro)+prezzoA;
-		valore=x*prezzoA;
+		valore=quantita*prezzoA;
+/*		codice=DataM.nextIndice();	*/
+	}
+	public int getCod(){
+		return codice;
+	}
+	public String getUnit(){
+		return unita;
 	}
 	public String getNome(){
 		return nome;

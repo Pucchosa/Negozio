@@ -1,16 +1,17 @@
 package Negozio;
+import GUI.*;
 
 public class Cliente extends Anagrafica {
 	
 	public Cliente(String unCognome, String unNome){
 		super(unCognome, unNome);
-		setTipo(false);
+		setTipo("cliente");
 	}
 	public Cliente(){
 		super();
 		System.out.println("E in possesso di P.Iva?(S/N) ");
 		String risp=sc.nextLine();
-		setTipo(false);
+		setTipo("cliente");
 		if (risp.equalsIgnoreCase("s")){
 			System.out.println("Inserire P.Iva: ");
 			setIva(sc.nextLine());

@@ -1,8 +1,9 @@
 package Negozio;
+import GUI.*;
 import java.util.*;
 
 public class DataB <T extends Ogg> {
-	ArrayList<T> elenco;
+	public ArrayList<T> elenco;
 	String tip="";
 	
 	public DataB(String s){
@@ -86,5 +87,8 @@ public class DataB <T extends Ogg> {
 			ss=ss+a.getCognome()+" "+a.getNome()+"\n";
 		}
 		return ss;
+	}
+	public String elenCogn(int a){
+		return elenco.get(a).getCognome();
 	}
 }

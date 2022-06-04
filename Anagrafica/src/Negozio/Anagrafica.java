@@ -1,4 +1,5 @@
 package Negozio;
+import GUI.*;
 import java.util.Scanner;
 
 public abstract class Anagrafica extends Ogg{
@@ -23,6 +24,9 @@ public abstract class Anagrafica extends Ogg{
 		indirizzo=sc.nextLine();
 		System.out.println("Inserire eMail: ");
 		email=sc.nextLine();
+	}
+	public void setTipo(String a){
+		tipo=a;
 	}
 	public Anagrafica(String unCognome, String unNome){
 		cognome=unCognome;
@@ -68,12 +72,6 @@ public abstract class Anagrafica extends Ogg{
 	public abstract void pagamentoEffettuato(Double pagamento);
 	public String getTipo(){
 		return tipo;
-	}
-	public void setTipo(Boolean t){
-		if (t==true){
-			tipo="fornitore";
-		}
-		else tipo="cliente";
 	}
 	public Double getSaldo(){
 		return saldo;
