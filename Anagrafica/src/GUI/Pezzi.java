@@ -52,6 +52,12 @@ public class Pezzi {
 			b2.addActionListener(al2);
 			contenuto.add(b2);
 			
+			
+			consF.actionPerformed(e);
+	        consC.actionPerformed(e);
+	           * 
+	           * 
+	           * 
 			add("South",contenuto);
 			pack();
 		} 

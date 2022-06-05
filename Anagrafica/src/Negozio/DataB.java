@@ -20,6 +20,7 @@ public class DataB <T extends Ogg> {
 			System.out.println("Nominativo gia presente.");
 		}
 	}
+
 	public T get(int x) throws Exception{
 		if (x>=elenco.size())throw new Exception("Indice troppo grande");
 		else return elenco.get(x);
