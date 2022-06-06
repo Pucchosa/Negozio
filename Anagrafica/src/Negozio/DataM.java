@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class DataM {
-	HashMap<Integer,Merce> elenco;
+	public HashMap<Integer,Merce> elenco;
 	
 	public DataM(){
 		elenco=new HashMap<Integer,Merce>();

@@ -19,16 +19,17 @@ public class Program{
 			super("HOME");
 			setLayout(new BorderLayout(100,10));
 			setLocation(300,300);
+			setBackground(new Color(217,243,248));
 			Font ft=new Font("Lucida",Font.PLAIN,24);
 			
 			// ISTANZIO TUTTI I FRAME SECONDARI
 			DataB<Cliente> clienti=new DataB<Cliente>("cliente"); // poi togli
 			DataB<Fornitore> fornitori=new DataB<Fornitore>("fornitore"); // poi togli
-	//		DataM merci=new DataM(); // poi togli
+			DataM merci=new DataM(); // poi togli
 			ConsultaPersone consultaC=new ConsultaPersone(clienti, fornitori);
-	//		ConsulPersona<DataM> consultaM=new ConsulPersona<DataM>(merci);
+			ConsultaMerci consultaM=new ConsultaMerci(merci);
 			Al consP=new Al(consultaC);
-	//		Al consM=new Al(consultaM);
+			Al consM=new Al(consultaM);
 	//		Inseri inserisci=new Inseri();
 	//		Al ins=new Al(inserisci);
 			
@@ -41,15 +42,15 @@ public class Program{
 			add("North",tx);
 			
 			Button b1=new Button("Consulta DataBase Persone");
-			b1.setBackground(new Color(100,100,255));
+			b1.setBackground(new Color(26,200,219));
 			b1.setPreferredSize(new Dimension(80,50));
 			b1.addActionListener(consP);
 	        contenuto.add(b1);
 			
 	        Button b2=new Button("Consulta DataBase Merci");
-			b2.setBackground(new Color(100,255,100));
+			b2.setBackground(new Color(26,200,219));
 			b2.setPreferredSize(new Dimension(80,50));
-//			b2.addActionListener(consM);
+			b2.addActionListener(consM);
 	        contenuto.add(b2);
 			
 
@@ -57,7 +58,7 @@ public class Program{
 			add("Center",contenuto);
 			
 			Button bex=new Button("-ESCI-");
-			bex.setBackground(new Color(225,50,50));
+			bex.setBackground(new Color(2,146,183));
 			bex.setPreferredSize(new Dimension(80,50));
 			bex.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {

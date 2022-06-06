@@ -4,30 +4,36 @@ import Negozio.*;
 import java.awt.*;
 import Negozio.*;
 import javax.swing.*;
-
 import Negozio.Ogg;
-
 import java.awt.event.*;
 
 public class ConsultaPersone extends Frame {
 	boolean tipp=true;
 	public ConsultaPersone(DataB<Cliente> c,DataB<Fornitore> f){
 		super("CONSULTA data base Persone");
-//		setLayout(new BorderLayout(100,10));
+		setBackground(new Color(217,243,248));
 		setLocation(300,300);
 		Font ft=new Font("Lucida",Font.PLAIN,24);
 
 		Panel contenuto=new Panel();
-		contenuto.setLayout(new GridLayout(3,2));
+		contenuto.setLayout(new GridLayout(3,3));
 		
-/*comp1*/	JRadioButton client = new JRadioButton("Clienti");
+/*comp1*/  JLabel ty=new JLabel();
+		ty.setText("Scegliere DB: ");
+		ty.setFont(ft);
+		ty.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+		contenuto.add(ty);
+		
+/*comp2*/	JRadioButton client = new JRadioButton("Clienti");
+		client.setBackground(new Color(217,243,248));
 	    client.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent evt) {
 	            sett(true);
 	        }
 	    });
 	    contenuto.add(client);
- /*comp2*/    JRadioButton fornit = new JRadioButton("Fornitori");
+ /*comp3*/    JRadioButton fornit = new JRadioButton("Fornitori");
+ 		fornit.setBackground(new Color(217,243,248));
 	    fornit.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent evt) {
 	        	sett(false);
@@ -39,7 +45,8 @@ public class ConsultaPersone extends Frame {
 	    group.add(client);
 	    group.add(fornit);
 
-/*comp3*/  JLabel tx=new JLabel();
+/*comp4*/  JLabel tx=new JLabel();
+		tx.setBorder(BorderFactory.createEmptyBorder(30, 5, 5, 70));
 		String testo="Consulta ";
 		if (tipp==false){
 			testo=testo+"Fornitori: ";
@@ -51,7 +58,7 @@ public class ConsultaPersone extends Frame {
 		tx.setFont(ft);
 		contenuto.add(tx);
 		
-/*comp4*/Choice ele=new Choice();
+/*comp5*/Choice ele=new Choice();
 		ele.add("Scegli");
 		if (tipp==false){
 			try{
@@ -76,8 +83,18 @@ public class ConsultaPersone extends Frame {
 		ele.setFont(ft);
 		contenuto.add(ele);
 
-/*comp5*/Button bex=new Button("-ESCI-");
-		bex.setBackground(new Color(225,50,50));
+/*comp6*/Button bent=new Button("-INVIO-");
+		bent.setBackground(new Color(26,200,219));
+		bent.setPreferredSize(new Dimension(80,50));
+//		bent.addActionListener(new ActionListener() {
+//		    public void actionPerformed(ActionEvent e) {
+//		    	setVisible(false);
+//			}
+//		});
+		contenuto.add(bent);
+		
+/*comp7*/Button bex=new Button("-ESCI-");
+		bex.setBackground(new Color(2,146,183));
 		bex.setPreferredSize(new Dimension(80,50));
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
@@ -86,15 +103,19 @@ public class ConsultaPersone extends Frame {
 		});
 		contenuto.add(bex);
 		
-/*comp6*/Button bent=new Button("-INVIO-");
-		bent.setBackground(new Color(50,50,225));
-		bent.setPreferredSize(new Dimension(80,50));
-//		bent.addActionListener(new ActionListener() {
-//		    public void actionPerformed(ActionEvent e) {
-//		    	setVisible(false);
-//			}
-//		});
-		contenuto.add(bent);
+/*comp8*/JLabel tv=new JLabel();
+		tv.setText("           ");
+		tv.setFont(ft);
+		tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+		contenuto.add(tv);
+		
+		AggiungiPersona aggiungiP=new AggiungiPersona();
+		Al aggP=new Al(aggiungiP);
+/*comp9*/Button b2=new Button("+ Aggiungi +");
+		b2.setBackground(new Color(26,200,219));
+		b2.setPreferredSize(new Dimension(80,50));
+		b2.addActionListener(aggP);
+        contenuto.add(b2);
 		
 		add(contenuto);
 		pack();
