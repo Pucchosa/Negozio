@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Merce {
 	private final String nome;
 	private int codice;
-	private int quantita;
+	private Double quantita;
 	private int rincaro;
 	private Double prezzoA;
 	private Double prezzoV;
@@ -13,21 +13,28 @@ public class Merce {
 	private String unita;
 	private Scanner sc = new Scanner(System.in);
 	
-	public Merce(){
-		//codice
+	public Merce(DataM c){
 		System.out.println("Inserire nome prodotto: ");
 		nome=sc.nextLine();
 		System.out.println("Inserire lúnita di misura del prodotto: ");
 		unita=sc.nextLine();
-		System.out.println("Inserire quantita "+getUnit()+" acquistati: ");
-		quantita=sc.nextInt();
 		System.out.println("Inserire prezzo acquisto all unita: ");
 		prezzoA=sc.nextDouble();
 		System.out.println("Inserire percentuale rincaro alla vendita: ");
 		rincaro=sc.nextInt();
 		prezzoV=(prezzoA/100*rincaro)+prezzoA;
 		valore=quantita*prezzoA;
-/*		codice=DataM.nextIndice();	*/
+		codice=c.nextIndice();
+	}
+	public Merce(String nome, Double quantita, int rincaro, Double prezzoA, String unita,DataM c){
+		this.nome=nome;
+		this.quantita=quantita;
+		this.rincaro=rincaro;
+		this.prezzoA=prezzoA;
+		this.unita=unita;
+		this.prezzoV=prezzoA/100*rincaro;
+		this.valore=prezzoA*quantita;
+		this.codice=c.nextIndice();
 	}
 	public int getCod(){
 		return codice;
@@ -38,7 +45,7 @@ public class Merce {
 	public String getNome(){
 		return nome;
 	}
-	public int getQuantita(){
+	public Double getQuantita(){
 		return quantita;
 	}
 	public int getRincaro(){

@@ -65,7 +65,7 @@ public class ConsultaMerci extends Frame {
 			tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(tv);
 			
-			AggiungiMerce aggiungiM=new AggiungiMerce();
+			AggiungiMerce aggiungiM=new AggiungiMerce(c);
 			Al aggM=new Al(aggiungiM);
 /*comp6*/Button b2=new Button("+ Aggiungi +");
 			b2.setBackground(new Color(26,200,219));

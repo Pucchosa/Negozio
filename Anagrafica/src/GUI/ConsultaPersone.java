@@ -32,6 +32,7 @@ public class ConsultaPersone extends Frame {
 	        }
 	    });
 	    contenuto.add(client);
+	    
  /*comp3*/    JRadioButton fornit = new JRadioButton("Fornitori");
  		fornit.setBackground(new Color(217,243,248));
 	    fornit.addActionListener(new ActionListener() {
