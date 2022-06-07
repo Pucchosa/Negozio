@@ -11,7 +11,6 @@ public class ConsultaMerci extends Frame {
 		boolean tipp=true;
 		public ConsultaMerci(DataM c){
 			super("CONSULTA data base Merci");
-//			setLayout(new BorderLayout(100,10));
 			setLocation(300,300);
 			setBackground(new Color(217,243,248));
 			Font ft=new Font("Lucida",Font.PLAIN,24);
@@ -66,8 +65,6 @@ public class ConsultaMerci extends Frame {
 			tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(tv);
 			
-	//		AggiungiMerce aggiungiM=new AggiungiMerce(c);
-	//		Al aggM=new Al(new AggiungiMerce(c));
 /*comp6*/Button b2=new Button("+ Aggiungi +");
 			b2.setBackground(new Color(26,200,219));
 			b2.setPreferredSize(new Dimension(80,50));
@@ -88,32 +85,3 @@ public class ConsultaMerci extends Frame {
 			this.tipp=a;
 		}
 	}
-
-			
-	/*		
-			
-			JLabel tx=new JLabel();
-			tx.setText("<html>Pannello di consultazione: ");
-			tx.setFont(ft);
-			add("North",tx);
-			JLabel t1=new JLabel();
-			t1.setText("<html>Scegliere la voce <br/>dall'elenco: ");
-			t1.setFont(ft);
-			t1.setForeground(new Color(125,10,10));
-			contenuto.add(t1);
-			
-			
-			
-			add("Center",contenuto);
-			
-			Button b1=new Button("-ENTER-");
-			b1.setBackground(new Color(225,50,50));
-			b1.setPreferredSize(new Dimension(80,50));
-			b1.addActionListener(new ActionListener() {
-	            public void actionPerformed(ActionEvent e) {
-	            	// pri scheda persona
-	        	}
-			});
-	        add("South",b1);
-
-		*/

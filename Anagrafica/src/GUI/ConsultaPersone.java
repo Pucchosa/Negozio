@@ -100,6 +100,7 @@ public class ConsultaPersone extends Frame {
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
+		    	dispose();
 			}
 		});
 		contenuto.add(bex);
@@ -110,13 +111,17 @@ public class ConsultaPersone extends Frame {
 		tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(tv);
 		
-		AggiungiPersona aggiungiP=new AggiungiPersona();
-		Al aggP=new Al(aggiungiP);
 /*comp9*/Button b2=new Button("+ Aggiungi +");
 		b2.setBackground(new Color(26,200,219));
 		b2.setPreferredSize(new Dimension(80,50));
-		b2.addActionListener(aggP);
-        contenuto.add(b2);
+		b2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AggiungiPersona aggg=new AggiungiPersona(c,f);
+				aggg.setVisible(true);
+				dispose();
+			}
+		});
+		contenuto.add(b2);
 		
 		add(contenuto);
 		pack();
@@ -125,32 +130,3 @@ public class ConsultaPersone extends Frame {
 		this.tipp=a;
 	}
 }
-
-		
-/*		
-		
-		JLabel tx=new JLabel();
-		tx.setText("<html>Pannello di consultazione: ");
-		tx.setFont(ft);
-		add("North",tx);
-		JLabel t1=new JLabel();
-		t1.setText("<html>Scegliere la voce <br/>dall'elenco: ");
-		t1.setFont(ft);
-		t1.setForeground(new Color(125,10,10));
-		contenuto.add(t1);
-		
-		
-		
-		add("Center",contenuto);
-		
-		Button b1=new Button("-ENTER-");
-		b1.setBackground(new Color(225,50,50));
-		b1.setPreferredSize(new Dimension(80,50));
-		b1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	// pri scheda persona
-        	}
-		});
-        add("South",b1);
-
-	*/

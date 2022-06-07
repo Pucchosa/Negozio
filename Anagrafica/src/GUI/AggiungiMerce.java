@@ -16,8 +16,6 @@ public class AggiungiMerce extends Frame{
 	public AggiungiMerce(DataM c){
 		super("Aggiungi prodotto");
 		setLayout(new BorderLayout(100,10));
-		/*layout.numColumns = 3;
-    layout.makeColumnsEqualWidth = true;	*/
 		setLocation(300,300);
 		setBackground(new Color(217,243,248));
 		Font ft=new Font("Lucida",Font.PLAIN,24);
