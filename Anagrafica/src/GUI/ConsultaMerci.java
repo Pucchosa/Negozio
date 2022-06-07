@@ -56,7 +56,6 @@ public class ConsultaMerci extends Frame {
 			    public void actionPerformed(ActionEvent e) {
 			    	setVisible(false);
 			    	dispose();
-			    	System.exit(0);
 				}
 			});
 			contenuto.add(bex);

@@ -26,12 +26,6 @@ public class Program{
 			DataB<Cliente> clienti=new DataB<Cliente>("cliente");
 			DataB<Fornitore> fornitori=new DataB<Fornitore>("fornitore");
 			DataM merci=new DataM();
-	//		ConsultaPersone consultaC=new ConsultaPersone(clienti, fornitori);
-	//		Al consP=new Al(new ConsultaPersone(clienti, fornitori));
-	//		ConsultaMerci consultaM=new ConsultaMerci(merci);
-	//		Al consM=new Al(new ConsultaMerci(merci));
-	//		Inseri inserisci=new Inseri();
-	//		Al ins=new Al(inserisci);
 			
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(2,2));
@@ -74,6 +68,7 @@ public class Program{
 	            public void actionPerformed(ActionEvent e) {
 	            	setVisible(false);
 	            	dispose();
+	            	System.exit(0);
 	        	}
 			});
 	        add("South",bex);
