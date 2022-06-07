@@ -181,6 +181,9 @@ public class AggiungiMerce extends Frame{
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
+		    	ConsultaMerci consultaM=new ConsultaMerci(c);
+		    	consultaM.setVisible(true);
+		    	dispose();
 			}
 		});
 		contenuto.add(bex);
@@ -192,7 +195,10 @@ public class AggiungiMerce extends Frame{
 		    public void actionPerformed(ActionEvent e) {
 				Merce inserisci =new Merce(nome, quantita, rincaro, prezzoA, unita,c);
 				c.agg(inserisci);
+				ConsultaMerci consultaM=new ConsultaMerci(c);
+		    	consultaM.setVisible(true);
 		    	setVisible(false);
+		    	dispose();
 			}
 		});
 		

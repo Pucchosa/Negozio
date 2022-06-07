@@ -55,22 +55,30 @@ public class ConsultaMerci extends Frame {
 			bex.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	setVisible(false);
+			    	dispose();
+			    	System.exit(0);
 				}
 			});
 			contenuto.add(bex);
 			
-/*comp5*/JLabel tv=new JLabel();
+/*comp5*/	JLabel tv=new JLabel();
 			tv.setText("           ");
 			tv.setFont(ft);
 			tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(tv);
 			
-			AggiungiMerce aggiungiM=new AggiungiMerce(c);
-			Al aggM=new Al(aggiungiM);
+	//		AggiungiMerce aggiungiM=new AggiungiMerce(c);
+	//		Al aggM=new Al(new AggiungiMerce(c));
 /*comp6*/Button b2=new Button("+ Aggiungi +");
 			b2.setBackground(new Color(26,200,219));
 			b2.setPreferredSize(new Dimension(80,50));
-			b2.addActionListener(aggM);
+			b2.addActionListener(new ActionListener() {
+			    public void actionPerformed(ActionEvent e) {
+			    	AggiungiMerce aggg=new AggiungiMerce(c);
+			    	aggg.setVisible(true);
+			    	dispose();
+				}
+			});
 	        contenuto.add(b2);
 	        
 	        

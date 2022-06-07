@@ -23,13 +23,13 @@ public class Program{
 			Font ft=new Font("Lucida",Font.PLAIN,24);
 			
 			// ISTANZIO TUTTI I FRAME SECONDARI
-			DataB<Cliente> clienti=new DataB<Cliente>("cliente"); // poi togli
-			DataB<Fornitore> fornitori=new DataB<Fornitore>("fornitore"); // poi togli
-			DataM merci=new DataM(); // poi togli
-			ConsultaPersone consultaC=new ConsultaPersone(clienti, fornitori);
-			ConsultaMerci consultaM=new ConsultaMerci(merci);
-			Al consP=new Al(consultaC);
-			Al consM=new Al(consultaM);
+			DataB<Cliente> clienti=new DataB<Cliente>("cliente");
+			DataB<Fornitore> fornitori=new DataB<Fornitore>("fornitore");
+			DataM merci=new DataM();
+	//		ConsultaPersone consultaC=new ConsultaPersone(clienti, fornitori);
+	//		Al consP=new Al(new ConsultaPersone(clienti, fornitori));
+	//		ConsultaMerci consultaM=new ConsultaMerci(merci);
+	//		Al consM=new Al(new ConsultaMerci(merci));
 	//		Inseri inserisci=new Inseri();
 	//		Al ins=new Al(inserisci);
 			
@@ -44,13 +44,23 @@ public class Program{
 			Button b1=new Button("Consulta DataBase Persone");
 			b1.setBackground(new Color(26,200,219));
 			b1.setPreferredSize(new Dimension(80,50));
-			b1.addActionListener(consP);
+			b1.addActionListener(new ActionListener() {
+			    public void actionPerformed(ActionEvent e) {
+			    	ConsultaPersone consultaP=new ConsultaPersone(clienti, fornitori);
+			    	consultaP.setVisible(true);
+				}
+			});
 	        contenuto.add(b1);
 			
 	        Button b2=new Button("Consulta DataBase Merci");
 			b2.setBackground(new Color(26,200,219));
 			b2.setPreferredSize(new Dimension(80,50));
-			b2.addActionListener(consM);
+			b2.addActionListener(new ActionListener() {
+			    public void actionPerformed(ActionEvent e) {
+			    	ConsultaMerci consultaM=new ConsultaMerci(merci);
+			    	consultaM.setVisible(true);
+				}
+			});
 	        contenuto.add(b2);
 			
 
@@ -63,6 +73,7 @@ public class Program{
 			bex.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	            	setVisible(false);
+	            	dispose();
 	        	}
 			});
 	        add("South",bex);
