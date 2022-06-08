@@ -18,68 +18,51 @@ public class ConsultaPersone extends Frame {
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(3,3));
 		
-/*comp1*/  JLabel ty=new JLabel();
-		ty.setText("Scegliere DB: ");
-		ty.setFont(ft);
-		ty.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
-		contenuto.add(ty);
+/*comp1*/  JLabel tx1=new JLabel();
+		tx1.setBorder(BorderFactory.createEmptyBorder(30, 5, 5, 70));
+		String testo="Consulta Fornitori";
+		tx1.setText(testo);
+		tx1.setFont(ft);
+		contenuto.add(tx1);
 		
-/*comp2*/	JRadioButton client = new JRadioButton("Clienti");
-		client.setBackground(new Color(217,243,248));
-	    client.addActionListener(new ActionListener() {
-	        public void actionPerformed(ActionEvent evt) {
-	            sett(true);
-	        }
-	    });
-	    contenuto.add(client);
-	    
- /*comp3*/    JRadioButton fornit = new JRadioButton("Fornitori");
- 		fornit.setBackground(new Color(217,243,248));
-	    fornit.addActionListener(new ActionListener() {
-	        public void actionPerformed(ActionEvent evt) {
-	        	sett(false);
-	        }
-	    });
-	    contenuto.add(fornit);
-	    //Group the radio buttons.
-	    ButtonGroup group = new ButtonGroup();
-	    group.add(client);
-	    group.add(fornit);
+/*comp2*/Choice ele1=new Choice();
+		ele1.add("Scegli");
+		try{
+			for (Fornitore a:f.elenco){
+				ele1.add(a.getCognome()+" "+a.getNome());
+			}
+		}
+		catch (Exception e){
+			ele1.add("Lista vuota");
+		}
+		ele1.setFont(ft);
+		contenuto.add(ele1);
+
+/*comp6*/Button bent1=new Button("-INVIO-");
+		bent1.setBackground(new Color(26,200,219));
+		bent1.setPreferredSize(new Dimension(80,50));
+//		bent.addActionListener(new ActionListener() {
+//		    public void actionPerformed(ActionEvent e) {
+//		    	setVisible(false);
+//			}
+//		});
+		contenuto.add(bent1);
 
 /*comp4*/  JLabel tx=new JLabel();
 		tx.setBorder(BorderFactory.createEmptyBorder(30, 5, 5, 70));
-		String testo="Consulta ";
-		if (tipp==false){
-			testo=testo+"Fornitori: ";
-		}
-		else if (tipp==true){
-			testo=testo+"Clienti: ";
-		}
-		tx.setText(testo);
+		tx.setText("Consulta Clienti");
 		tx.setFont(ft);
 		contenuto.add(tx);
 		
 /*comp5*/Choice ele=new Choice();
 		ele.add("Scegli");
-		if (tipp==false){
-			try{
-				for (Fornitore a:f.elenco){
-					ele.add(a.getCognome()+" "+a.getNome());
-				}
-			}
-			catch (Exception e){
-				ele.add("Lista vuota");
+		try{
+			for (Cliente a:c.elenco){
+				ele.add(a.getCognome()+" "+a.getNome());
 			}
 		}
-		else if (tipp==true){
-			try{
-				for (Cliente a:c.elenco){
-					ele.add(a.getCognome()+" "+a.getNome());
-				}
-			}
-			catch (Exception e){
-				ele.add("Lista vuota");
-			}
+		catch (Exception e){
+			ele.add("Lista vuota");
 		}
 		ele.setFont(ft);
 		contenuto.add(ele);

@@ -7,15 +7,9 @@ public class Cliente extends Anagrafica {
 		super(unCognome, unNome);
 		setTipo("cliente");
 	}
-	public Cliente(){
-		super();
-		System.out.println("E in possesso di P.Iva?(S/N) ");
-		String risp=sc.nextLine();
+	public Cliente(String titolo,String nome,String cognome,String telefono,String email,String iva,String indirizzo,Double saldo){
+		super(titolo, nome, cognome, telefono, email, iva, indirizzo, saldo);
 		setTipo("cliente");
-		if (risp.equalsIgnoreCase("s")){
-			System.out.println("Inserire P.Iva: ");
-			setIva(sc.nextLine());
-		}
 	}
 
 	public void pagamentoEffettuato(Double pagamento){

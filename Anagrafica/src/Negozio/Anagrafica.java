@@ -3,6 +3,7 @@ import GUI.*;
 import java.util.Scanner;
 
 public abstract class Anagrafica extends Ogg{
+	private String titolo;
 	private String cognome;
 	private String nome;
 	private String iva="";
@@ -13,17 +14,15 @@ public abstract class Anagrafica extends Ogg{
 	private String tipo;
 	Scanner sc = new Scanner(System.in);
 
-	public Anagrafica(){
-		System.out.println("Inserire cognome: ");
-		cognome=sc.nextLine();
-		System.out.println("Inserire nome: ");
-		nome=sc.nextLine();
-		System.out.println("Inserire numero di telefono: ");
-		telefono=sc.nextLine();
-		System.out.println("Inserire indirizzo: ");
-		indirizzo=sc.nextLine();
-		System.out.println("Inserire eMail: ");
-		email=sc.nextLine();
+	public Anagrafica(String titolo,String nome,String cognome,String telefono,String email,String iva,String indirizzo,Double saldo){
+		this.cognome=cognome;
+		this.nome=nome;
+		this.titolo=titolo;
+		this.telefono=telefono;
+		this.email=email;
+		this.iva=iva;
+		this.indirizzo=indirizzo;
+		this.saldo=saldo;
 	}
 	public void setTipo(String a){
 		tipo=a;

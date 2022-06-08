@@ -3,7 +3,7 @@ import GUI.*;
 import java.util.Scanner;
 
 public class Program{
-
+/*
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		int c=0;
@@ -61,7 +61,7 @@ public class Program{
 				System.out.println(a);
 			}
 		}	*/
-		
+	/*	
 		// FAI OPERAZ
 		int o=0;
 		while (o==0){
@@ -151,5 +151,5 @@ public class Program{
 			System.out.println(clienti);
 		}
 		
-	}
+	}	*/
 }

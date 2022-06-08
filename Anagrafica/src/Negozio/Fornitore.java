@@ -7,10 +7,8 @@ public class Fornitore extends Anagrafica {
 		super(unCognome, unNome);
 		setTipo("fornitore");
 	}
-	public Fornitore(){
-		super();
-		System.out.println("Inserire P.Iva: ");
-		setIva(sc.nextLine());
+	public Fornitore(String titolo,String nome,String cognome,String telefono,String email,String iva,String indirizzo,Double saldo){
+		super(titolo, nome, cognome, telefono, email, iva, indirizzo, saldo);
 		setTipo("fornitore");
 	}
 

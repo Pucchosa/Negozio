@@ -3,7 +3,7 @@ import GUI.*;
 import java.util.*;
 
 public class DataB <T extends Ogg> {
-	public ArrayList<T> elenco;
+	public ArrayList<T> elenco=new ArrayList<T>();
 	String tip="";
 	
 	public DataB(String s){
@@ -27,28 +27,31 @@ public class DataB <T extends Ogg> {
 		
 	}
 	public int trovaNome(String nome){
-		for (int i=0;i<elenco.size();i++){
-			if (elenco.get(i).getNome().equals(nome)){
-				return i;
+		if (elenco.size()>0){
+			for (T t:elenco){
+				if (t.getNome().equals(nome)){
+					return elenco.indexOf(t);
+				}
 			}
 		}
-		System.out.println("Identificativo non trovato.");
 		return -1;
 	}
+	
 	public int trovaCognome(String cognome){
-		for (int i=0;i<elenco.size();i++){
-			if (elenco.get(i).getCognome().equals(cognome)){
-				return i;
+		if (elenco.size()>0){
+			for (T t:elenco){
+				if (t.getCognome().equals(cognome)){
+					return elenco.indexOf(t);
+				}
 			}
 		}
-		System.out.println("Identificativo non trovato.");
 		return -1;
 	}
 	public boolean eDuplicato(String nominativo){
 		String[] nom=nominativo.split(" ");
 		if (nom.length==2){
-			if (trovaCognome(nom[0])!=-1){
-				if (trovaNome(nom[1])!=-1){
+			if (trovaCognome(nom[0])!=-1||trovaCognome(nom[1])!=-1){
+				if (trovaNome(nom[1])!=-1||trovaNome(nom[0])!=-1){
 					return true;
 				}
 			}
@@ -56,9 +59,8 @@ public class DataB <T extends Ogg> {
 		return false;
 	}
 	public boolean eDuplicato(String co, String no){
-		String[] nom={co, no};
-		if (trovaCognome(nom[0])!=-1){
-			if (trovaNome(nom[1])!=-1){
+		if (trovaCognome(co)!=-1||trovaCognome(no)!=-1){
+			if (trovaNome(co)!=-1||trovaNome(no)!=-1){
 				return true;
 			}
 		}
@@ -74,9 +76,11 @@ public class DataB <T extends Ogg> {
 		return false;
 	}
 	public int trovaIva(String iva){
-		for (int i=0;i<elenco.size();i++){
-			if (elenco.get(i).getIva().equals(iva)){
-				return i;
+		if (elenco.size()>0){
+			for (int i=0;i<elenco.size();i++){
+				if (elenco.get(i).getIva().equals(iva)){
+					return i;
+				}
 			}
 		}
 		System.out.println("Identificativo non trovato.");
@@ -84,8 +88,10 @@ public class DataB <T extends Ogg> {
 	}
 	public String toString(){
 		String ss="";
-		for (T a:elenco){
-			ss=ss+a.getCognome()+" "+a.getNome()+"\n";
+		if (elenco.size()>0){
+			for (T a:elenco){
+				ss=ss+a.getCognome()+" "+a.getNome()+"\n";
+			}
 		}
 		return ss;
 	}
