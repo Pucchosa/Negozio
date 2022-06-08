@@ -9,6 +9,7 @@ import java.awt.event.*;
 
 public class ConsultaMerci extends Frame {
 		boolean tipp=true;
+		int index=-1;
 		public ConsultaMerci(DataM c){
 			super("CONSULTA data base Merci");
 			setLocation(300,300);
@@ -29,23 +30,40 @@ public class ConsultaMerci extends Frame {
 			ele.add("Scegli");
 			try{
 				for (Merce a:c.elenco.values()){
-					ele.add(a.getNome()+" "+a.getQuantita());
+					ele.add(a.getNome()+" "+a.getCod());
 				}
 			}
 			catch (Exception e){
 				ele.add("Lista vuota");
 			}
 			ele.setFont(ft);
+			ele.addFocusListener(new FocusListener() {
+				public void focusGained(FocusEvent e){
+				}
+				public void focusLost(FocusEvent e){
+					if (ele.getSelectedItem().equals("Scegli")||ele.getSelectedItem().equals("Lista vuota")){
+					}
+					else {
+						String temp=ele.getSelectedItem();
+						String[] temAr=temp.split(" ");
+						index=Integer.parseInt(temAr[temAr.length-1]);
+					}
+				}
+			});
 			contenuto.add(ele);
 
 /*comp3*/Button bent=new Button("-INVIO-");
 			bent.setBackground(new Color(26,200,219));
 			bent.setPreferredSize(new Dimension(80,50));
-			//bent.addActionListener(new ActionListener() {
-			//    public void actionPerformed(ActionEvent e) {
-			//    	setVisible(false);
-			//	}
-			//});
+			bent.addActionListener(new ActionListener() {
+			    public void actionPerformed(ActionEvent e) {
+			    	if (index!=-1){
+				    	SchedaMerce aggg=new SchedaMerce(c, index);
+				    	aggg.setVisible(true);
+				    	dispose();
+			    	}
+				}
+			});
 			contenuto.add(bent);
 
 /*comp4*/Button bex=new Button("-ESCI-");
