@@ -77,7 +77,7 @@ public class SchedaMerce extends Frame{
 		ri.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(ri);
 		JLabel rr=new JLabel();
-		rr.setText(prezzoV+"eu (rincaro del "+rincaro+"%");
+		rr.setText(prezzoV+"eu (rincaro del "+rincaro+"%)");
 		rr.setFont(ft);
 		rr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(rr);
@@ -111,11 +111,13 @@ public class SchedaMerce extends Frame{
 		bin.setPreferredSize(new Dimension(80,50));
 		bin.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		    	setVisible(false);
-		//    	ConsultaMerci consultaM=new ConsultaMerci(c);
-		//    	consultaM.setVisible(true);
+		    	if (x!=-1){
+			    	setVisible(false);
+			    	AggiungiMerce modifM=new AggiungiMerce(m, x);
+			    	modifM.setVisible(true);
 		    	
-		    	dispose();
+			    	dispose();
+		    	}
 			}
 		});
 		contenuto.add(bin);

@@ -83,4 +83,10 @@ public class Merce {
 		togli(x);
 		return (x*prezzoV);
 	}
+	public void setQuantita(Double x){
+		quantita=x;
+	}
+	public void setUnita(String x){
+		unita=x;
+	}
 }
