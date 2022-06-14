@@ -62,17 +62,19 @@ public class Merce {
 	}
 	public void togli(int x){
 		quantita=quantita-x;
+		valore=quantita*prezzoA;
 	}
 	public void aggiungi(int x){
 		quantita=quantita+x;
+		valore=quantita*prezzoA;
 	}
 	public void setRincaro(int x){
 		rincaro=x;
-		prezzoV=(prezzoA/100*rincaro)+prezzoA;
+		prezzoV=(prezzoA/100*rincaro);
 	}
 	public void setPrezzoA(Double x){
 		prezzoA=x;
-		prezzoV=(prezzoA/100*rincaro)+prezzoA;
+		prezzoV=(prezzoA/100*rincaro);
 		valore=quantita*prezzoA;
 	}
 	public Double compra(int x){
@@ -85,6 +87,7 @@ public class Merce {
 	}
 	public void setQuantita(Double x){
 		quantita=x;
+		valore=quantita*prezzoA;
 	}
 	public void setUnita(String x){
 		unita=x;
