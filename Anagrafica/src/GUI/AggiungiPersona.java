@@ -17,7 +17,7 @@ public class AggiungiPersona extends Frame{
 	String titolo="";
 	String iva="";
 	boolean sett;
-	
+	Anagrafica mer=null;
 	public AggiungiPersona(DataB<Cliente> c,DataB<Fornitore> f){
 		super("Aggiungi persona");
 		setLayout(new BorderLayout(100,10));
@@ -339,5 +339,330 @@ public class AggiungiPersona extends Frame{
 		
 		add(contenuto);
 		pack();
+	}
+	
+	public AggiungiPersona(DataB<Cliente> c,DataB<Fornitore> f,int x,String tipo){
+		super("Modifica persona");
+		
+		if (tipo.equals("fornitore")){
+			try {
+				mer=f.get(x);
+			}
+			catch (Exception e){
+				ErrorMessage err=new ErrorMessage("Indice elenco errato...");
+				err.setVisible(true);
+				setVisible(false);
+			    ConsultaPersone consultaP=new ConsultaPersone(c,f);
+			    consultaP.setVisible(true);
+			   	dispose();
+			}
+		}
+		else {
+			try {
+				mer=c.get(x);
+			}
+			catch (Exception e){
+				ErrorMessage err=new ErrorMessage("Indice elenco errato...");
+				err.setVisible(true);
+				setVisible(false);
+			   	ConsultaPersone consultaP=new ConsultaPersone(c,f);
+			   	consultaP.setVisible(true);
+			   	dispose();		
+			}
+		}
+		
+			setLayout(new BorderLayout(100,10));
+			setLocation(200,200);
+			setBackground(new Color(217,243,248));
+			Font ft=new Font("Lucida",Font.PLAIN,24);
+			
+			Panel contenuto=new Panel();
+			contenuto.setLayout(new GridLayout(10,2));
+			
+			titolo=mer.getTitolo();
+    		iva=mer.getIva();
+    		telefono=mer.getTelefono();
+    		email=mer.getEmail();
+    		saldo=mer.getSaldo();
+    		indirizzo=mer.getIndirizzo();
+			
+	/*comp1*/  JLabel ty=new JLabel();
+			ty.setText("Tipo persona: ");
+			ty.setFont(ft);
+			ty.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(ty);
+			
+	/*comp2*/JLabel ty1=new JLabel();
+			ty1.setText(" "+tipo);
+			ty1.setFont(ft);
+			ty1.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(ty1);
+			
+	/*comp3*/  JLabel un=new JLabel();
+			un.setText("Titolo: ");
+			un.setFont(ft);
+			un.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(un);
+	/*comp4*/JLabel uni=new JLabel();
+			uni.setText(mer.getTitolo());
+			uni.setFont(ft);
+			uni.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(uni);
+			
+	/*comp5*/  JLabel non=new JLabel();
+			non.setText("Nome: ");
+			non.setFont(ft);
+			non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(non);
+	/*comp6*/ JLabel nomm=new JLabel();
+			nomm.setText(mer.getNome());
+			nomm.setFont(ft);
+			nomm.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(nomm);
+	
+	/*comp7*/  JLabel qtt=new JLabel();
+			qtt.setText("Cognome: ");
+			qtt.setFont(ft);
+			qtt.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(qtt);
+	/*comp8*/JLabel qtr=new JLabel();
+			qtr.setText(mer.getCognome());
+			qtr.setFont(ft);
+			qtr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(qtr);
+			
+	/*comp9*/  JLabel tel=new JLabel();
+			tel.setText("Telefono: ");
+			tel.setFont(ft);
+			tel.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(tel);
+	/*comp10*/JPanel pan3=new JPanel();
+			JTextField tf3 = new JTextField(mer.getTelefono(), 15);
+			tf3.setForeground(new Color(117,223,235));
+			tf3.addFocusListener(new FocusListener() {
+				public void focusGained(FocusEvent e){
+					if (tf3.getText().equals(mer.getTelefono())){
+						tf3.setText("");
+						tf3.setForeground(Color.BLACK);
+					}
+				}
+				public void focusLost(FocusEvent e){
+					if (tf3.getText().isEmpty()){
+						tf3.setText(mer.getTelefono());
+						tf3.setForeground(new Color(117,223,235));
+					}
+					else {
+						telefono=tf3.getText();
+					}
+				}
+			});
+			tf3.setFont(ft);
+			pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+			pan3.add(tf3);
+			pan3.setBackground(new Color(217,243,248));
+			contenuto.add(pan3);
+			
+	/*comp11*/  JLabel mai=new JLabel();
+			mai.setText("eMail: ");
+			mai.setFont(ft);
+			mai.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(mai);
+	/*comp12*/JPanel pan4=new JPanel();
+			JTextField tf4 = new JTextField(mer.getEmail(), 15);
+			tf4.setForeground(new Color(117,223,235));
+			tf4.addFocusListener(new FocusListener() {
+				public void focusGained(FocusEvent e){
+					if (tf4.getText().equals(mer.getEmail())){
+						tf4.setText("");
+						tf4.setForeground(Color.BLACK);
+					}
+				}
+				public void focusLost(FocusEvent e){
+					if (tf4.getText().isEmpty()){
+						tf4.setText(mer.getEmail());
+						tf4.setForeground(new Color(117,223,235));
+					}
+					else {
+						email=tf4.getText();
+					}
+				}
+			});
+			tf4.setFont(ft);
+			pan4.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+			pan4.add(tf4);
+			pan4.setBackground(new Color(217,243,248));
+			contenuto.add(pan4);
+			
+	/*comp13*/  JLabel ivv=new JLabel();
+			ivv.setText("Partita IVA: ");
+			ivv.setFont(ft);
+			ivv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(ivv);
+	/*comp14*/JPanel pan5=new JPanel();
+			JTextField tf5 = new JTextField(mer.getIva(), 15);
+			tf5.setForeground(new Color(117,223,235));
+			tf5.addFocusListener(new FocusListener() {
+				public void focusGained(FocusEvent e){
+					if (tf5.getText().equals(mer.getIva())){
+						tf5.setText("");
+						tf5.setForeground(Color.BLACK);
+					}
+				}
+				public void focusLost(FocusEvent e){
+					if (tf5.getText().isEmpty()){
+						tf5.setText(mer.getIva());
+						tf5.setForeground(new Color(117,223,235));
+					}
+					else {
+						iva=tf5.getText();
+					}
+				}
+			});
+			tf5.setFont(ft);
+			pan5.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+			pan5.add(tf5);
+			pan5.setBackground(new Color(217,243,248));
+			contenuto.add(pan5);
+			
+	/*comp15*/  JLabel ind=new JLabel();
+			ind.setText("Indirizzo: ");
+			ind.setFont(ft);
+			ind.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(ind);
+	/*comp16*/JPanel pan6=new JPanel();
+			JTextField tf6 = new JTextField(mer.getIndirizzo(), 15);
+			tf6.setForeground(new Color(117,223,235));
+			tf6.addFocusListener(new FocusListener() {
+				public void focusGained(FocusEvent e){
+					if (tf6.getText().equals(mer.getIndirizzo())){
+						tf6.setText("");
+						tf6.setForeground(Color.BLACK);
+					}
+				}
+				public void focusLost(FocusEvent e){
+					if (tf6.getText().isEmpty()){
+						tf6.setText(mer.getIndirizzo());
+						tf6.setForeground(new Color(117,223,235));
+					}
+					else {
+						indirizzo=tf6.getText();
+					}
+				}
+			});
+			tf6.setFont(ft);
+			pan6.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+			pan6.add(tf6);
+			pan6.setBackground(new Color(217,243,248));
+			contenuto.add(pan6);
+			
+	/*comp17*/  JLabel prr=new JLabel();
+			prr.setText("Saldo iniziale: ");
+			prr.setFont(ft);
+			prr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			contenuto.add(prr);
+	/*comp18*/ JPanel pan7=new JPanel();
+			JTextField tf7 = new JTextField(""+mer.getSaldo(), 15);
+			tf7.setForeground(new Color(117,223,235));
+			tf7.addFocusListener(new FocusListener() {
+				public void focusGained(FocusEvent e){
+					if (tf7.getText().equals(""+mer.getSaldo())){
+						tf7.setText("");
+						tf7.setForeground(Color.BLACK);
+					}
+				}
+				public void focusLost(FocusEvent e){
+					if (tf7.getText().isEmpty()){
+						tf7.setText(""+mer.getSaldo());
+						tf7.setForeground(new Color(117,223,235));
+					}
+					else {
+						try {
+							saldo=Double.parseDouble(tf7.getText());
+						}
+						catch (Exception ex){
+							ErrorMessage err=new ErrorMessage("inserire numero con . ");
+							err.setVisible(true);
+						}
+					}
+				}
+			});
+			tf7.setFont(ft);
+			pan7.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+			pan7.add(tf7);
+			pan7.setBackground(new Color(217,243,248));
+			contenuto.add(pan7);
+				
+	/*comp19*/Button bex=new Button("-ESCI-");
+			bex.setBackground(new Color(2,146,183));
+			bex.setPreferredSize(new Dimension(80,50));
+			bex.addActionListener(new ActionListener() {
+			    public void actionPerformed(ActionEvent e) {
+			    	setVisible(false);
+			    	ConsultaPersone consultaP=new ConsultaPersone(c,f);
+			    	consultaP.setVisible(true);
+			    	dispose();
+				}
+			});
+			contenuto.add(bex);
+			
+	/*comp20*/Button bent=new Button("-INVIO-");
+			bent.setBackground(new Color(26,200,219));
+			bent.setPreferredSize(new Dimension(80,50));
+			bent.addActionListener(new ActionListener() {
+			    public void actionPerformed(ActionEvent e) {
+			    	if (tipo.contentEquals("cliente")){
+			    		try {
+			    		
+				    //		c.get(x).setCognome(cognome);
+				    		c.get(x).setTitolo(titolo);
+				    //		c.get(x).setNome(nome);
+				    		c.get(x).setIva(iva);
+				    		c.get(x).setTelefono(telefono);
+				    		c.get(x).setEmail(email);
+				    		c.get(x).setSaldo(saldo);
+				    		c.get(x).setIndirizzo(indirizzo);
+				    		ConsultaPersone consultaP=new ConsultaPersone(c,f);
+					    	consultaP.setVisible(true);
+					    	dispose();
+			    		}
+			    		catch (Exception r){
+			    			ErrorMessage err=new ErrorMessage("Indice elenco errato...");
+			    			err.setVisible(true);
+							setVisible(false);
+						    ConsultaPersone consultaP=new ConsultaPersone(c,f);
+						    consultaP.setVisible(true);
+						    dispose();			    			
+			    		}
+			    	}
+			    	else if (tipo.contentEquals("fornitore")){
+			    		try {
+				//    		f.get(x).setCognome(cognome);
+				    		f.get(x).setTitolo(titolo);
+				//    		f.get(x).setNome(nome);
+				    		f.get(x).setIva(iva);
+				    		f.get(x).setTelefono(telefono);
+				    		f.get(x).setEmail(email);
+				    		f.get(x).setSaldo(saldo);
+				    		f.get(x).setIndirizzo(indirizzo);
+				    		ConsultaPersone consultaP=new ConsultaPersone(c,f);
+					    	consultaP.setVisible(true);
+					    	dispose();
+			    		}
+			    		catch (Exception u){
+			    			ErrorMessage err=new ErrorMessage("Indice elenco errato...");
+			    			err.setVisible(true);
+							setVisible(false);
+						    ConsultaPersone consultaP=new ConsultaPersone(c,f);
+						    consultaP.setVisible(true);
+						    dispose();	
+			    		}
+			    	}
+				}
+			});
+			contenuto.add(bent);
+			
+			add(contenuto);
+			pack();
+
 	}
 }

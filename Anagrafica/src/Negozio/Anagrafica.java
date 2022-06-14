@@ -27,6 +27,12 @@ public abstract class Anagrafica extends Ogg{
 	public void setTipo(String a){
 		tipo=a;
 	}
+	public String getTitolo(){
+		return titolo;
+	}
+	public void setTitolo(String tit){
+		titolo=tit;
+	}
 	public Anagrafica(String unCognome, String unNome){
 		cognome=unCognome;
 		nome=unNome;

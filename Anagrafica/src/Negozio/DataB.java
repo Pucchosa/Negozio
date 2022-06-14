@@ -2,7 +2,7 @@ package Negozio;
 import GUI.*;
 import java.util.*;
 
-public class DataB <T extends Ogg> {
+public class DataB <T extends Anagrafica> {
 	public ArrayList<T> elenco=new ArrayList<T>();
 	String tip="";
 	
@@ -57,6 +57,20 @@ public class DataB <T extends Ogg> {
 			}
 		}
 		return false;
+	}
+	public int trovaPersona(String cogn, String nom){
+		ArrayList<Integer> indici=new ArrayList<Integer>();
+		for (int i=0;i<elenco.size();i++){
+			if (elenco.get(i).getCognome().equals(cogn)){
+				indici.add(i);
+			}
+		}
+		for (int a:indici){
+			if (elenco.get(a).getNome().equals(nom)){
+				return a;
+			}
+		}
+		return -1;
 	}
 	public boolean eDuplicato(String co, String no){
 		if (trovaCognome(co)!=-1||trovaCognome(no)!=-1){

@@ -7,7 +7,9 @@ import javax.swing.*;
 import Negozio.Ogg;
 import java.awt.event.*;
 
-public class ConsultaPersone extends Frame {
+public class ConsultaPersone  extends Frame {
+	int indexF=-1;
+	int indexC=-1;
 	boolean tipp=true;
 	public ConsultaPersone(DataB<Cliente> c,DataB<Fornitore> f){
 		super("CONSULTA data base Persone");
@@ -36,16 +38,32 @@ public class ConsultaPersone extends Frame {
 			ele1.add("Lista vuota");
 		}
 		ele1.setFont(ft);
+		ele1.addFocusListener(new FocusListener() {
+			public void focusGained(FocusEvent e){
+			}
+			public void focusLost(FocusEvent e){
+				if (ele1.getSelectedItem().equals("Scegli")||ele1.getSelectedItem().equals("Lista vuota")){
+				}
+				else {
+					String[] temp=ele1.getSelectedItem().split(", ");
+					indexF=f.trovaPersona(temp[0], temp[1]);
+				}
+			}
+		});
 		contenuto.add(ele1);
 
-/*comp6*/Button bent1=new Button("-INVIO-");
+/*comp3*/Button bent1=new Button("-INVIO-");
 		bent1.setBackground(new Color(26,200,219));
 		bent1.setPreferredSize(new Dimension(80,50));
-//		bent.addActionListener(new ActionListener() {
-//		    public void actionPerformed(ActionEvent e) {
-//		    	setVisible(false);
-//			}
-//		});
+		bent1.addActionListener(new ActionListener() {
+			 public void actionPerformed(ActionEvent e) {
+				 if (indexF!=-1){
+					SchedaPersona aggg=new SchedaPersona(c,f, indexF,"fornitore");
+				    aggg.setVisible(true);
+				    dispose();
+				 }
+			}
+		});
 		contenuto.add(bent1);
 
 /*comp4*/  JLabel tx=new JLabel();
@@ -58,23 +76,39 @@ public class ConsultaPersone extends Frame {
 		ele.add("Scegli");
 		try{
 			for (Cliente a:c.elenco){
-				ele.add(a.getCognome()+" "+a.getNome());
+				ele.add(a.getCognome()+", "+a.getNome());
 			}
 		}
 		catch (Exception e){
 			ele.add("Lista vuota");
 		}
 		ele.setFont(ft);
+		ele.addFocusListener(new FocusListener() {
+			public void focusGained(FocusEvent e){
+			}
+			public void focusLost(FocusEvent e){
+				if (ele.getSelectedItem().equals("Scegli")||ele.getSelectedItem().equals("Lista vuota")){
+				}
+				else {
+					String[] temp=ele.getSelectedItem().split(", ");
+					indexC=c.trovaPersona(temp[0], temp[1]);
+				}
+			}
+		});
 		contenuto.add(ele);
 
 /*comp6*/Button bent=new Button("-INVIO-");
 		bent.setBackground(new Color(26,200,219));
 		bent.setPreferredSize(new Dimension(80,50));
-//		bent.addActionListener(new ActionListener() {
-//		    public void actionPerformed(ActionEvent e) {
-//		    	setVisible(false);
-//			}
-//		});
+		bent.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		    	if (indexC!=-1){
+		    		SchedaPersona aggg=new SchedaPersona(c,f, indexC,"cliente");
+			    	aggg.setVisible(true);
+			    	dispose();
+			 }
+		}
+	});
 		contenuto.add(bent);
 		
 /*comp7*/Button bex=new Button("-ESCI-");
