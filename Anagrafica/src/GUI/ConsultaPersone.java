@@ -14,7 +14,7 @@ public class ConsultaPersone  extends Frame {
 	public ConsultaPersone(DataB<Cliente> c,DataB<Fornitore> f){
 		super("CONSULTA data base Persone");
 		setBackground(new Color(217,243,248));
-		setLocation(300,300);
+		setLocation(150,150);
 		Font ft=new Font("Lucida",Font.PLAIN,24);
 
 		Panel contenuto=new Panel();

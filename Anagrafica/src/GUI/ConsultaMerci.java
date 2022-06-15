@@ -12,7 +12,7 @@ public class ConsultaMerci extends Frame {
 		int index=-1;
 		public ConsultaMerci(DataM c){
 			super("CONSULTA data base Merci");
-			setLocation(300,300);
+			setLocation(150,150);
 			setBackground(new Color(217,243,248));
 			Font ft=new Font("Lucida",Font.PLAIN,24);
 

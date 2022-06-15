@@ -18,7 +18,7 @@ public class Program{
 		public Home(){
 			super("HOME");
 			setLayout(new BorderLayout(100,10));
-			setLocation(300,300);
+			setLocation(150,150);
 			setBackground(new Color(217,243,248));
 			Font ft=new Font("Lucida",Font.PLAIN,24);
 			
