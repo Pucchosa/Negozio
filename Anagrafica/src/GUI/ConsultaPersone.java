@@ -15,7 +15,6 @@ public class ConsultaPersone  extends Frame {
 		super("CONSULTA data base Persone");
 		setBackground(new Color(217,243,248));
 		setLocation(150,150);
-		Font ft=new Font("Lucida",Font.PLAIN,24);
 
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(3,3));
@@ -24,20 +23,20 @@ public class ConsultaPersone  extends Frame {
 		tx1.setBorder(BorderFactory.createEmptyBorder(30, 5, 5, 70));
 		String testo="Consulta Fornitori";
 		tx1.setText(testo);
-		tx1.setFont(ft);
+		tx1.setFont(Est.font);
 		contenuto.add(tx1);
 		
 /*comp2*/Choice ele1=new Choice();
 		ele1.add("Scegli");
 		try{
 			for (Fornitore a:f.elenco){
-				ele1.add(a.getCognome()+" "+a.getNome());
+				ele1.add(a.getCognome()+", "+a.getNome());
 			}
 		}
 		catch (Exception e){
 			ele1.add("Lista vuota");
 		}
-		ele1.setFont(ft);
+		ele1.setFont(Est.font);
 		ele1.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 			}
@@ -66,10 +65,11 @@ public class ConsultaPersone  extends Frame {
 		});
 		contenuto.add(bent1);
 
+
 /*comp4*/  JLabel tx=new JLabel();
 		tx.setBorder(BorderFactory.createEmptyBorder(30, 5, 5, 70));
 		tx.setText("Consulta Clienti");
-		tx.setFont(ft);
+		tx.setFont(Est.font);
 		contenuto.add(tx);
 		
 /*comp5*/Choice ele=new Choice();
@@ -82,7 +82,7 @@ public class ConsultaPersone  extends Frame {
 		catch (Exception e){
 			ele.add("Lista vuota");
 		}
-		ele.setFont(ft);
+		ele.setFont(Est.font);
 		ele.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 			}
@@ -124,7 +124,7 @@ public class ConsultaPersone  extends Frame {
 		
 /*comp8*/JLabel tv=new JLabel();
 		tv.setText("           ");
-		tv.setFont(ft);
+		tv.setFont(Est.font);
 		tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(tv);
 		

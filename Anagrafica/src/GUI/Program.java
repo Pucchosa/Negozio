@@ -20,7 +20,6 @@ public class Program{
 			setLayout(new BorderLayout(100,10));
 			setLocation(150,150);
 			setBackground(new Color(217,243,248));
-			Font ft=new Font("Lucida",Font.PLAIN,24);
 			
 			// ISTANZIO TUTTI I FRAME SECONDARI
 			DataB<Cliente> clienti=new DataB<Cliente>("cliente");
@@ -32,7 +31,7 @@ public class Program{
 			
 			JLabel tx=new JLabel();
 			tx.setText("<html>Benvenuti nel database, cosa si desidera fare? ");
-			tx.setFont(ft);
+			tx.setFont(Est.font);
 			add("North",tx);
 			
 			Button b1=new Button("Consulta DataBase Persone");

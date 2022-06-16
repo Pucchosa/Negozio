@@ -33,63 +33,62 @@ public class SchedaMerce extends Frame{
 		setLayout(new BorderLayout(100,10));
 		setLocation(150,150);
 		setBackground(new Color(217,243,248));
-		Font ft=new Font("Lucida",Font.PLAIN,24);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
 		
 /*comp1*/  JLabel non=new JLabel();
 		non.setText("Merce: ");
-		non.setFont(ft);
+		non.setFont(Est.font);
 		non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(non);	
 		JLabel nn=new JLabel();
 		nn.setText(""+nome);
-		nn.setFont(ft);
+		nn.setFont(Est.font);
 		nn.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(nn);	
 		
 /*comp2*/  JLabel uni=new JLabel();
 		uni.setText("In magazzino: ");
-		uni.setFont(ft);
+		uni.setFont(Est.font);
 		uni.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(uni);
 		JLabel uu=new JLabel();
 		uu.setText(quantita+" "+unita);
-		uu.setFont(ft);
+		uu.setFont(Est.font);
 		uu.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(uu);
 		
 /*comp3*/  JLabel ac=new JLabel();
 		ac.setText("Prezzo d acquisto: ");
-		ac.setFont(ft);
+		ac.setFont(Est.font);
 		ac.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(ac);
 		JLabel aa=new JLabel();
 		aa.setText(prezzoA+"eu al "+unita);
-		aa.setFont(ft);
+		aa.setFont(Est.font);
 		aa.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(aa);
 		
 /*comp4*/  JLabel ri=new JLabel();
 		ri.setText("Prezzo di vendita: ");
-		ri.setFont(ft);
+		ri.setFont(Est.font);
 		ri.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(ri);
 		JLabel rr=new JLabel();
 		rr.setText(prezzoV+"eu (rincaro del "+rincaro+"%)");
-		rr.setFont(ft);
+		rr.setFont(Est.font);
 		rr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(rr);
 		
 /*comp5*/  JLabel va=new JLabel();
 		va.setText("Valore complessivo merce: ");
-		va.setFont(ft);
+		va.setFont(Est.font);
 		va.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(va);
 		JLabel vv=new JLabel();
 		vv.setText(valore+"eu");
-		vv.setFont(ft);
+		vv.setFont(Est.font);
 		vv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(vv);
 		

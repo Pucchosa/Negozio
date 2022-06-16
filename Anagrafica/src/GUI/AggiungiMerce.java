@@ -18,14 +18,13 @@ public class AggiungiMerce extends Frame{
 		setLayout(new BorderLayout(100,10));
 		setLocation(150,150);
 		setBackground(new Color(217,243,248));
-		Font ft=new Font("Lucida",Font.PLAIN,24);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
 
 /*comp1*/  JLabel non=new JLabel();
 		non.setText("Merce: ");
-		non.setFont(ft);
+		non.setFont(Est.font);
 		non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(non);
 /*comp2*/ JPanel pan1=new JPanel();
@@ -46,7 +45,7 @@ public class AggiungiMerce extends Frame{
 				else nome=tf1.getText();
 			}
 		});
-		tf1.setFont(ft);
+		tf1.setFont(Est.font);
 		pan1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan1.add(tf1);
 		pan1.setBackground(new Color(217,243,248));
@@ -54,7 +53,7 @@ public class AggiungiMerce extends Frame{
 		
 /*comp3*/  JLabel un=new JLabel();
 		un.setText("Scelta Unita: ");
-		un.setFont(ft);
+		un.setFont(Est.font);
 		un.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(un);
 /*comp4*/Choice uni=new Choice();
@@ -64,7 +63,7 @@ public class AggiungiMerce extends Frame{
 		uni.add("grammi");
 		uni.add("quintali");
 		uni.add("tonnellate");
-		uni.setFont(ft);
+		uni.setFont(Est.font);
 		uni.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 			}
@@ -78,7 +77,7 @@ public class AggiungiMerce extends Frame{
 		
 /*comp5*/  JLabel qtt=new JLabel();
 		qtt.setText("Quantita: ");
-		qtt.setFont(ft);
+		qtt.setFont(Est.font);
 		qtt.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(qtt);
 /*comp6*/JPanel pan2=new JPanel();
@@ -107,7 +106,7 @@ public class AggiungiMerce extends Frame{
 				}
 			}
 		});
-		tf2.setFont(ft);
+		tf2.setFont(Est.font);
 		pan2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan2.add(tf2);
 		pan2.setBackground(new Color(217,243,248));
@@ -115,7 +114,7 @@ public class AggiungiMerce extends Frame{
 		
 /*comp7*/  JLabel prr=new JLabel();
 		prr.setText("Prezzo d'acquisto: ");
-		prr.setFont(ft);
+		prr.setFont(Est.font);
 		prr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(prr);
 /*comp8*/ JPanel pan3=new JPanel();
@@ -144,7 +143,7 @@ public class AggiungiMerce extends Frame{
 				}
 			}
 		});
-		tf3.setFont(ft);
+		tf3.setFont(Est.font);
 		pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan3.add(tf3);
 		pan3.setBackground(new Color(217,243,248));
@@ -152,7 +151,7 @@ public class AggiungiMerce extends Frame{
 		
 /*comp9*/  JLabel rin=new JLabel();
 		rin.setText("Imposta % rincaro: ");
-		rin.setFont(ft);
+		rin.setFont(Est.font);
 		rin.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(rin);
 /*comp10*/Choice rim=new Choice();
@@ -161,7 +160,7 @@ public class AggiungiMerce extends Frame{
 		rim.add("20");
 		rim.add("30");
 		rim.add("50");
-		rim.setFont(ft);
+		rim.setFont(Est.font);
 		rim.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 			}
@@ -220,25 +219,24 @@ public class AggiungiMerce extends Frame{
 		setLayout(new BorderLayout(100,10));
 		setLocation(150,150);
 		setBackground(new Color(217,243,248));
-		Font ft=new Font("Lucida",Font.PLAIN,24);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
 
 /*comp1*/  JLabel non=new JLabel();
 		non.setText("Merce: ");
-		non.setFont(ft);
+		non.setFont(Est.font);
 		non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(non);
 /*comp2*/ JLabel nom=new JLabel();
 		nom.setText(nome);
-		nom.setFont(ft);
+		nom.setFont(Est.font);
 		nom.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(nom);
 		
 /*comp3*/  JLabel un=new JLabel();
 		un.setText("Scelta Unita: ");
-		un.setFont(ft);
+		un.setFont(Est.font);
 		un.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(un);
 /*comp4*/Choice uni=new Choice();
@@ -248,7 +246,7 @@ public class AggiungiMerce extends Frame{
 		uni.add("grammi");
 		uni.add("quintali");
 		uni.add("tonnellate");
-		uni.setFont(ft);
+		uni.setFont(Est.font);
 		uni.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 			}
@@ -262,7 +260,7 @@ public class AggiungiMerce extends Frame{
 		
 /*comp5*/  JLabel qtt=new JLabel();
 		qtt.setText("Quantita: ");
-		qtt.setFont(ft);
+		qtt.setFont(Est.font);
 		qtt.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(qtt);
 /*comp6*/JPanel pan2=new JPanel();
@@ -291,7 +289,7 @@ public class AggiungiMerce extends Frame{
 				}
 			}
 		});
-		tf2.setFont(ft);
+		tf2.setFont(Est.font);
 		pan2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan2.add(tf2);
 		pan2.setBackground(new Color(217,243,248));
@@ -299,7 +297,7 @@ public class AggiungiMerce extends Frame{
 		
 /*comp7*/  JLabel prr=new JLabel();
 		prr.setText("Prezzo d'acquisto: ");
-		prr.setFont(ft);
+		prr.setFont(Est.font);
 		prr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(prr);
 /*comp8*/ JPanel pan3=new JPanel();
@@ -328,7 +326,7 @@ public class AggiungiMerce extends Frame{
 				}
 			}
 		});
-		tf3.setFont(ft);
+		tf3.setFont(Est.font);
 		pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan3.add(tf3);
 		pan3.setBackground(new Color(217,243,248));
@@ -336,7 +334,7 @@ public class AggiungiMerce extends Frame{
 		
 /*comp9*/  JLabel rin=new JLabel();
 		rin.setText("Imposta % rincaro: ");
-		rin.setFont(ft);
+		rin.setFont(Est.font);
 		rin.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(rin);
 /*comp10*/Choice rim=new Choice();
@@ -345,7 +343,7 @@ public class AggiungiMerce extends Frame{
 		rim.add("20");
 		rim.add("30");
 		rim.add("50");
-		rim.setFont(ft);
+		rim.setFont(Est.font);
 		rim.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 			}

@@ -21,16 +21,15 @@ public class AggiungiPersona extends Frame{
 	public AggiungiPersona(DataB<Cliente> c,DataB<Fornitore> f){
 		super("Aggiungi persona");
 		setLayout(new BorderLayout(100,10));
-		setLocation(200,200);
+		setLocation(150,150);
 		setBackground(new Color(217,243,248));
-		Font ft=new Font("Lucida",Font.PLAIN,24);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(10,2));
 		
 /*comp1*/  JLabel ty=new JLabel();
 		ty.setText("Scegliere DB: ");
-		ty.setFont(ft);
+		ty.setFont(Est.font);
 		ty.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(ty);
 		
@@ -60,7 +59,7 @@ public class AggiungiPersona extends Frame{
 		
 /*comp3*/  JLabel un=new JLabel();
 		un.setText("Titolo: ");
-		un.setFont(ft);
+		un.setFont(Est.font);
 		un.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(un);
 /*comp4*/Choice uni=new Choice();
@@ -68,7 +67,7 @@ public class AggiungiPersona extends Frame{
 		uni.add("Ditta");
 		uni.add("Sig.");
 		uni.add("Sig.ra");
-		uni.setFont(ft);
+		uni.setFont(Est.font);
 		uni.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 			}
@@ -82,7 +81,7 @@ public class AggiungiPersona extends Frame{
 		
 /*comp5*/  JLabel non=new JLabel();
 		non.setText("Nome: ");
-		non.setFont(ft);
+		non.setFont(Est.font);
 		non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(non);
 /*comp6*/ JPanel pan1=new JPanel();
@@ -103,7 +102,7 @@ public class AggiungiPersona extends Frame{
 				else nome=tf1.getText();
 			}
 		});
-		tf1.setFont(ft);
+		tf1.setFont(Est.font);
 		pan1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan1.add(tf1);
 		pan1.setBackground(new Color(217,243,248));
@@ -111,7 +110,7 @@ public class AggiungiPersona extends Frame{
 
 /*comp7*/  JLabel qtt=new JLabel();
 		qtt.setText("Cognome: ");
-		qtt.setFont(ft);
+		qtt.setFont(Est.font);
 		qtt.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(qtt);
 /*comp8*/JPanel pan2=new JPanel();
@@ -134,7 +133,7 @@ public class AggiungiPersona extends Frame{
 				}
 			}
 		});
-		tf2.setFont(ft);
+		tf2.setFont(Est.font);
 		pan2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan2.add(tf2);
 		pan2.setBackground(new Color(217,243,248));
@@ -142,7 +141,7 @@ public class AggiungiPersona extends Frame{
 		
 /*comp9*/  JLabel tel=new JLabel();
 		tel.setText("Telefono: ");
-		tel.setFont(ft);
+		tel.setFont(Est.font);
 		tel.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(tel);
 /*comp10*/JPanel pan3=new JPanel();
@@ -165,7 +164,7 @@ public class AggiungiPersona extends Frame{
 				}
 			}
 		});
-		tf3.setFont(ft);
+		tf3.setFont(Est.font);
 		pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan3.add(tf3);
 		pan3.setBackground(new Color(217,243,248));
@@ -173,7 +172,7 @@ public class AggiungiPersona extends Frame{
 		
 /*comp11*/  JLabel mai=new JLabel();
 		mai.setText("eMail: ");
-		mai.setFont(ft);
+		mai.setFont(Est.font);
 		mai.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(mai);
 /*comp12*/JPanel pan4=new JPanel();
@@ -196,7 +195,7 @@ public class AggiungiPersona extends Frame{
 				}
 			}
 		});
-		tf4.setFont(ft);
+		tf4.setFont(Est.font);
 		pan4.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan4.add(tf4);
 		pan4.setBackground(new Color(217,243,248));
@@ -204,7 +203,7 @@ public class AggiungiPersona extends Frame{
 		
 /*comp13*/  JLabel ivv=new JLabel();
 		ivv.setText("Partita IVA: ");
-		ivv.setFont(ft);
+		ivv.setFont(Est.font);
 		ivv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(ivv);
 /*comp14*/JPanel pan5=new JPanel();
@@ -227,7 +226,7 @@ public class AggiungiPersona extends Frame{
 				}
 			}
 		});
-		tf5.setFont(ft);
+		tf5.setFont(Est.font);
 		pan5.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan5.add(tf5);
 		pan5.setBackground(new Color(217,243,248));
@@ -235,7 +234,7 @@ public class AggiungiPersona extends Frame{
 		
 /*comp15*/  JLabel ind=new JLabel();
 		ind.setText("Indirizzo: ");
-		ind.setFont(ft);
+		ind.setFont(Est.font);
 		ind.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(ind);
 /*comp16*/JPanel pan6=new JPanel();
@@ -258,7 +257,7 @@ public class AggiungiPersona extends Frame{
 				}
 			}
 		});
-		tf6.setFont(ft);
+		tf6.setFont(Est.font);
 		pan6.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan6.add(tf6);
 		pan6.setBackground(new Color(217,243,248));
@@ -266,7 +265,7 @@ public class AggiungiPersona extends Frame{
 		
 /*comp17*/  JLabel prr=new JLabel();
 		prr.setText("Saldo iniziale: ");
-		prr.setFont(ft);
+		prr.setFont(Est.font);
 		prr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(prr);
 /*comp18*/ JPanel pan7=new JPanel();
@@ -295,7 +294,7 @@ public class AggiungiPersona extends Frame{
 				}
 			}
 		});
-		tf7.setFont(ft);
+		tf7.setFont(Est.font);
 		pan7.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan7.add(tf7);
 		pan7.setBackground(new Color(217,243,248));
@@ -374,7 +373,6 @@ public class AggiungiPersona extends Frame{
 			setLayout(new BorderLayout(100,10));
 			setLocation(150,150);
 			setBackground(new Color(217,243,248));
-			Font ft=new Font("Lucida",Font.PLAIN,24);
 			
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(10,2));
@@ -388,52 +386,52 @@ public class AggiungiPersona extends Frame{
 			
 	/*comp1*/  JLabel ty=new JLabel();
 			ty.setText("Tipo persona: ");
-			ty.setFont(ft);
+			ty.setFont(Est.font);
 			ty.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(ty);
 			
 	/*comp2*/JLabel ty1=new JLabel();
-			ty1.setText(" "+tipo);
-			ty1.setFont(ft);
+			ty1.setText(""+tipo);
+			ty1.setFont(Est.font);
 			ty1.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(ty1);
 			
 	/*comp3*/  JLabel un=new JLabel();
 			un.setText("Titolo: ");
-			un.setFont(ft);
+			un.setFont(Est.font);
 			un.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(un);
 	/*comp4*/JLabel uni=new JLabel();
 			uni.setText(mer.getTitolo());
-			uni.setFont(ft);
+			uni.setFont(Est.font);
 			uni.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(uni);
 			
 	/*comp5*/  JLabel non=new JLabel();
 			non.setText("Nome: ");
-			non.setFont(ft);
+			non.setFont(Est.font);
 			non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(non);
 	/*comp6*/ JLabel nomm=new JLabel();
 			nomm.setText(mer.getNome());
-			nomm.setFont(ft);
+			nomm.setFont(Est.font);
 			nomm.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(nomm);
 	
 	/*comp7*/  JLabel qtt=new JLabel();
 			qtt.setText("Cognome: ");
-			qtt.setFont(ft);
+			qtt.setFont(Est.font);
 			qtt.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(qtt);
 	/*comp8*/JLabel qtr=new JLabel();
 			qtr.setText(mer.getCognome());
-			qtr.setFont(ft);
+			qtr.setFont(Est.font);
 			qtr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(qtr);
 			
 	/*comp9*/  JLabel tel=new JLabel();
 			tel.setText("Telefono: ");
-			tel.setFont(ft);
+			tel.setFont(Est.font);
 			tel.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(tel);
 	/*comp10*/JPanel pan3=new JPanel();
@@ -456,7 +454,7 @@ public class AggiungiPersona extends Frame{
 					}
 				}
 			});
-			tf3.setFont(ft);
+			tf3.setFont(Est.font);
 			pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan3.add(tf3);
 			pan3.setBackground(new Color(217,243,248));
@@ -464,7 +462,7 @@ public class AggiungiPersona extends Frame{
 			
 	/*comp11*/  JLabel mai=new JLabel();
 			mai.setText("eMail: ");
-			mai.setFont(ft);
+			mai.setFont(Est.font);
 			mai.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(mai);
 	/*comp12*/JPanel pan4=new JPanel();
@@ -487,7 +485,7 @@ public class AggiungiPersona extends Frame{
 					}
 				}
 			});
-			tf4.setFont(ft);
+			tf4.setFont(Est.font);
 			pan4.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan4.add(tf4);
 			pan4.setBackground(new Color(217,243,248));
@@ -495,7 +493,7 @@ public class AggiungiPersona extends Frame{
 			
 	/*comp13*/  JLabel ivv=new JLabel();
 			ivv.setText("Partita IVA: ");
-			ivv.setFont(ft);
+			ivv.setFont(Est.font);
 			ivv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(ivv);
 	/*comp14*/JPanel pan5=new JPanel();
@@ -518,7 +516,7 @@ public class AggiungiPersona extends Frame{
 					}
 				}
 			});
-			tf5.setFont(ft);
+			tf5.setFont(Est.font);
 			pan5.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan5.add(tf5);
 			pan5.setBackground(new Color(217,243,248));
@@ -526,7 +524,7 @@ public class AggiungiPersona extends Frame{
 			
 	/*comp15*/  JLabel ind=new JLabel();
 			ind.setText("Indirizzo: ");
-			ind.setFont(ft);
+			ind.setFont(Est.font);
 			ind.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(ind);
 	/*comp16*/JPanel pan6=new JPanel();
@@ -549,7 +547,7 @@ public class AggiungiPersona extends Frame{
 					}
 				}
 			});
-			tf6.setFont(ft);
+			tf6.setFont(Est.font);
 			pan6.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan6.add(tf6);
 			pan6.setBackground(new Color(217,243,248));
@@ -557,7 +555,7 @@ public class AggiungiPersona extends Frame{
 			
 	/*comp17*/  JLabel prr=new JLabel();
 			prr.setText("Saldo iniziale: ");
-			prr.setFont(ft);
+			prr.setFont(Est.font);
 			prr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(prr);
 	/*comp18*/ JPanel pan7=new JPanel();
@@ -586,7 +584,7 @@ public class AggiungiPersona extends Frame{
 					}
 				}
 			});
-			tf7.setFont(ft);
+			tf7.setFont(Est.font);
 			pan7.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan7.add(tf7);
 			pan7.setBackground(new Color(217,243,248));

@@ -14,7 +14,6 @@ public class ConsultaMerci extends Frame {
 			super("CONSULTA data base Merci");
 			setLocation(150,150);
 			setBackground(new Color(217,243,248));
-			Font ft=new Font("Lucida",Font.PLAIN,24);
 
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(2,3));
@@ -22,7 +21,7 @@ public class ConsultaMerci extends Frame {
 
 	/*comp1*/  JLabel tx=new JLabel();
 			tx.setText("Consulta merci: ");
-			tx.setFont(ft);
+			tx.setFont(Est.font);
 			tx.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(tx);
 			
@@ -36,7 +35,7 @@ public class ConsultaMerci extends Frame {
 			catch (Exception e){
 				ele.add("Lista vuota");
 			}
-			ele.setFont(ft);
+			ele.setFont(Est.font);
 			ele.addFocusListener(new FocusListener() {
 				public void focusGained(FocusEvent e){
 				}
@@ -79,7 +78,7 @@ public class ConsultaMerci extends Frame {
 			
 /*comp5*/	JLabel tv=new JLabel();
 			tv.setText("           ");
-			tv.setFont(ft);
+			tv.setFont(Est.font);
 			tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(tv);
 			
