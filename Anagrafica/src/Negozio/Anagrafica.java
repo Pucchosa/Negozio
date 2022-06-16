@@ -2,7 +2,7 @@ package Negozio;
 import GUI.*;
 import java.util.Scanner;
 
-public abstract class Anagrafica extends Ogg{
+public abstract class Anagrafica {
 	private String titolo;
 	private String cognome;
 	private String nome;

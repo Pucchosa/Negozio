@@ -4,7 +4,7 @@ import Negozio.*;
 import java.awt.*;
 import Negozio.*;
 import javax.swing.*;
-import Negozio.Ogg;
+//import Negozio.Ogg;
 import java.awt.event.*;
 
 public class ConsultaPersone  extends Frame {
