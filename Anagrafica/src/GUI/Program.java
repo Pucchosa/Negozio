@@ -19,12 +19,15 @@ public class Program{
 			super("HOME");
 			setLayout(new BorderLayout(100,10));
 			setLocation(150,150);
-			setBackground(new Color(217,243,248));
+			setBackground(Est.chiaro);
 			
 			// ISTANZIO TUTTI I FRAME SECONDARI
 			DataB<Cliente> clienti=new DataB<Cliente>("cliente");
 			DataB<Fornitore> fornitori=new DataB<Fornitore>("fornitore");
 			DataM merci=new DataM();
+			MyReadM.carica(merci);
+			MyReadF.carica(fornitori);
+			MyReadC.carica(clienti);
 			
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(2,2));
@@ -35,8 +38,8 @@ public class Program{
 			add("North",tx);
 			
 			Button b1=new Button("Consulta DataBase Persone");
-			b1.setBackground(new Color(26,200,219));
-			b1.setPreferredSize(new Dimension(80,50));
+			b1.setBackground(Est.medio);
+			b1.setPreferredSize(Est.piccolo);
 			b1.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	ConsultaPersone consultaP=new ConsultaPersone(clienti, fornitori);
@@ -46,8 +49,8 @@ public class Program{
 	        contenuto.add(b1);
 			
 	        Button b2=new Button("Consulta DataBase Merci");
-			b2.setBackground(new Color(26,200,219));
-			b2.setPreferredSize(new Dimension(80,50));
+			b2.setBackground(Est.medio);
+			b2.setPreferredSize(Est.piccolo);
 			b2.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	ConsultaMerci consultaM=new ConsultaMerci(merci);
@@ -61,10 +64,13 @@ public class Program{
 			add("Center",contenuto);
 			
 			Button bex=new Button("-ESCI-");
-			bex.setBackground(new Color(2,146,183));
-			bex.setPreferredSize(new Dimension(80,50));
+			bex.setBackground(Est.scuro);
+			bex.setPreferredSize(Est.piccolo);
 			bex.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
+	            	MyReadM.scarica(merci);
+	    			MyReadF.scarica(fornitori);
+	    			MyReadC.scarica(clienti);
 	            	setVisible(false);
 	            	dispose();
 	            	System.exit(0);
