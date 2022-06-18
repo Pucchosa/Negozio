@@ -5,8 +5,9 @@ import java.awt.*;
 import Negozio.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.beans.PropertyChangeListener;
 
-public class SchedaMerce extends Frame{
+public class SchedaMerce extends Finestra{
 	String nome;
 	int codice;
 	Double quantita;
@@ -29,10 +30,6 @@ public class SchedaMerce extends Frame{
 			this.valore=mer.getValore();
 			this.codice=x;
 		}
-		
-		setLayout(new BorderLayout(100,10));
-		setLocation(150,150);
-		setBackground(Est.chiaro);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
@@ -90,4 +87,5 @@ public class SchedaMerce extends Frame{
 		add(contenuto);
 		pack();
 	}
+	
 }

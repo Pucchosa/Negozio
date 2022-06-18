@@ -7,14 +7,12 @@ import javax.swing.*;
 //import Negozio.Ogg;
 import java.awt.event.*;
 
-public class ConsultaPersone  extends Frame {
+public class ConsultaPersone  extends Finestra {
 	int indexF=-1;
 	int indexC=-1;
 	boolean tipp=true;
 	public ConsultaPersone(DataB<Cliente> c,DataB<Fornitore> f){
 		super("CONSULTA data base Persone");
-		setBackground(Est.chiaro);
-		setLocation(150,150);
 
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(3,3));

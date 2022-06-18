@@ -6,7 +6,7 @@ import Negozio.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class AggiungiPersona extends Frame{
+public class AggiungiPersona extends Finestra{
 	String cognome="";
 	String nome="";
 	String telefono="";
@@ -20,9 +20,6 @@ public class AggiungiPersona extends Frame{
 	Anagrafica mer=null;
 	public AggiungiPersona(DataB<Cliente> c,DataB<Fornitore> f){
 		super("Aggiungi persona");
-		setLayout(new BorderLayout(100,10));
-		setLocation(150,150);
-		setBackground(Est.chiaro);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(10,2));

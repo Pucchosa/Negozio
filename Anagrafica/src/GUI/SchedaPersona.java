@@ -6,7 +6,7 @@ import Negozio.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class SchedaPersona extends Frame{
+public class SchedaPersona extends Finestra{
 
 	String titolo;
 	String cognome;
@@ -46,10 +46,6 @@ public class SchedaPersona extends Frame{
 				this.saldo=mer.getSaldo();
 				this.indirizzo=mer.getIndirizzo();
 			}
-			
-			setLayout(new BorderLayout(100,10));
-			setLocation(150,150);
-			setBackground(Est.chiaro);
 			
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(6,2));

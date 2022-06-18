@@ -7,13 +7,11 @@ import javax.swing.*;
 //import Negozio.Ogg;
 import java.awt.event.*;
 
-public class ConsultaMerci extends Frame {
+public class ConsultaMerci<T extends DataBase> extends Finestra {
 		boolean tipp=true;
 		int index=-1;
-		public ConsultaMerci(DataM c){
+		public ConsultaMerci(T c){
 			super("CONSULTA data base Merci");
-			setLocation(150,150);
-			setBackground(Est.chiaro);
 
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(2,3));
