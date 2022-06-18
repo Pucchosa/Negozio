@@ -92,9 +92,7 @@ public class SchedaMerce extends Frame{
 		vv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(vv);
 		
-/*comp6*/Button bex=new Button("-ESCI-");
-		bex.setBackground(Est.scuro);
-		bex.setPreferredSize(Est.piccolo);
+/*comp6*/Pulsante bex=new Pulsante("-ESCI-");
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
@@ -105,9 +103,7 @@ public class SchedaMerce extends Frame{
 		});
 		contenuto.add(bex);
 		
-		Button bin=new Button("-MODIFICA-");
-		bin.setBackground(Est.medio);
-		bin.setPreferredSize(Est.piccolo);
+		Pulsante bin=new Pulsante("-MODIFICA-");
 		bin.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	if (x!=-1){

@@ -51,9 +51,7 @@ public class ConsultaMerci extends Frame {
 			});
 			contenuto.add(ele);
 
-/*comp3*/Button bent=new Button("-INVIO-");
-			bent.setBackground(Est.medio);
-			bent.setPreferredSize(Est.piccolo);
+/*comp3*/Pulsante bent=new Pulsante("-INVIO-");
 			bent.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	if (index!=-1){
@@ -65,9 +63,7 @@ public class ConsultaMerci extends Frame {
 			});
 			contenuto.add(bent);
 
-/*comp4*/Button bex=new Button("-ESCI-");
-			bex.setBackground(Est.scuro);
-			bex.setPreferredSize(Est.piccolo);
+/*comp4*/Pulsante bex=new Pulsante("-ESCI-");
 			bex.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	setVisible(false);
@@ -82,9 +78,7 @@ public class ConsultaMerci extends Frame {
 			tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(tv);
 			
-/*comp6*/Button b2=new Button("+ Aggiungi +");
-			b2.setBackground(Est.chiarissimo);
-			b2.setPreferredSize(Est.piccolo);
+/*comp6*/Pulsante b2=new Pulsante("+ Aggiungi +");
 			b2.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	AggiungiMerce aggg=new AggiungiMerce(c);

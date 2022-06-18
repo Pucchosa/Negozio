@@ -37,9 +37,7 @@ public class Program{
 			tx.setFont(Est.font);
 			add("North",tx);
 			
-			Button b1=new Button("Consulta DataBase Persone");
-			b1.setBackground(Est.medio);
-			b1.setPreferredSize(Est.piccolo);
+			Pulsante b1=new Pulsante("Consulta DataBase Persone");
 			b1.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	ConsultaPersone consultaP=new ConsultaPersone(clienti, fornitori);
@@ -48,9 +46,7 @@ public class Program{
 			});
 	        contenuto.add(b1);
 			
-	        Button b2=new Button("Consulta DataBase Merci");
-			b2.setBackground(Est.medio);
-			b2.setPreferredSize(Est.piccolo);
+	        Pulsante b2=new Pulsante("Consulta DataBase Merci");
 			b2.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	ConsultaMerci consultaM=new ConsultaMerci(merci);
@@ -63,9 +59,7 @@ public class Program{
 			
 			add("Center",contenuto);
 			
-			Button bex=new Button("-ESCI-");
-			bex.setBackground(Est.scuro);
-			bex.setPreferredSize(Est.piccolo);
+			Pulsante bex=new Pulsante("-ESCI-");
 			bex.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	            	MyReadM.scarica(merci);

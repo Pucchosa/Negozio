@@ -300,9 +300,7 @@ public class AggiungiPersona extends Frame{
 		pan7.setBackground(Est.chiaro);
 		contenuto.add(pan7);
 			
-/*comp19*/Button bex=new Button("-ESCI-");
-		bex.setBackground(Est.scuro);
-		bex.setPreferredSize(Est.piccolo);
+/*comp19*/Pulsante bex=new Pulsante("-ESCI-");
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
@@ -313,9 +311,7 @@ public class AggiungiPersona extends Frame{
 		});
 		contenuto.add(bex);
 		
-/*comp20*/Button bent=new Button("-INVIO-");
-		bent.setBackground(Est.medio);
-		bent.setPreferredSize(Est.piccolo);
+/*comp20*/Pulsante bent=new Pulsante("-INVIO-");
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	if (tipo.contentEquals("cliente")){
@@ -590,9 +586,7 @@ public class AggiungiPersona extends Frame{
 			pan7.setBackground(Est.chiaro);
 			contenuto.add(pan7);
 				
-	/*comp19*/Button bex=new Button("-ESCI-");
-			bex.setBackground(Est.scuro);
-			bex.setPreferredSize(Est.piccolo);
+	/*comp19*/Pulsante bex=new Pulsante("-ESCI-");
 			bex.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	setVisible(false);
@@ -603,9 +597,7 @@ public class AggiungiPersona extends Frame{
 			});
 			contenuto.add(bex);
 			
-	/*comp20*/Button bent=new Button("-INVIO-");
-			bent.setBackground(Est.medio);
-			bent.setPreferredSize(Est.piccolo);
+	/*comp20*/Pulsante bent=new Pulsante("-INVIO-");
 			bent.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	if (tipo.contentEquals("cliente")){

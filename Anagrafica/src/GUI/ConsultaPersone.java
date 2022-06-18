@@ -51,9 +51,7 @@ public class ConsultaPersone  extends Frame {
 		});
 		contenuto.add(ele1);
 
-/*comp3*/Button bent1=new Button("-INVIO-");
-		bent1.setBackground(Est.medio);
-		bent1.setPreferredSize(Est.piccolo);
+/*comp3*/Pulsante bent1=new Pulsante("-INVIO-");
 		bent1.addActionListener(new ActionListener() {
 			 public void actionPerformed(ActionEvent e) {
 				 if (indexF!=-1){
@@ -97,9 +95,7 @@ public class ConsultaPersone  extends Frame {
 		});
 		contenuto.add(ele);
 
-/*comp6*/Button bent=new Button("-INVIO-");
-		bent.setBackground(Est.medio);
-		bent.setPreferredSize(Est.piccolo);
+/*comp6*/Pulsante bent=new Pulsante("-INVIO-");
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	if (indexC!=-1){
@@ -111,9 +107,7 @@ public class ConsultaPersone  extends Frame {
 	});
 		contenuto.add(bent);
 		
-/*comp7*/Button bex=new Button("-ESCI-");
-		bex.setBackground(Est.scuro);
-		bex.setPreferredSize(Est.piccolo);
+/*comp7*/Pulsante bex=new Pulsante("-ESCI-");
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
@@ -128,9 +122,7 @@ public class ConsultaPersone  extends Frame {
 		tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		contenuto.add(tv);
 		
-/*comp9*/Button b2=new Button("+ Aggiungi +");
-		b2.setBackground(Est.chiarissimo);
-		b2.setPreferredSize(Est.piccolo);
+/*comp9*/Pulsante b2=new Pulsante("+ Aggiungi +");
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AggiungiPersona aggg=new AggiungiPersona(c,f);

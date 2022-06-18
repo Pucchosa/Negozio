@@ -172,9 +172,7 @@ public class AggiungiMerce extends Frame{
 		});
 		contenuto.add(rim);	
 			
-/*comp11*/Button bex=new Button("-ESCI-");
-		bex.setBackground(Est.scuro);
-		bex.setPreferredSize(new Dimension(80,50));
+/*comp11*/Pulsante bex=new Pulsante("-ESCI-");
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
@@ -185,9 +183,7 @@ public class AggiungiMerce extends Frame{
 		});
 		contenuto.add(bex);
 		
-/*comp12*/Button bent=new Button("-INVIO-");
-		bent.setBackground(Est.medio);
-		bent.setPreferredSize(Est.piccolo);
+/*comp12*/Pulsante bent=new Pulsante("-INVIO-");
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 				Merce inserisci =new Merce(nome, quantita, rincaro, prezzoA, unita,c);
@@ -355,9 +351,7 @@ public class AggiungiMerce extends Frame{
 		});
 		contenuto.add(rim);	
 			
-/*comp11*/Button bex=new Button("-ESCI-");
-		bex.setBackground(Est.scuro);
-		bex.setPreferredSize(Est.piccolo);
+/*comp11*/Pulsante bex=new Pulsante("-ESCI-");
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
@@ -368,9 +362,7 @@ public class AggiungiMerce extends Frame{
 		});
 		contenuto.add(bex);
 		
-/*comp12*/Button bent=new Button("-INVIO-");
-		bent.setBackground(Est.medio);
-		bent.setPreferredSize(Est.piccolo);
+/*comp12*/Pulsante bent=new Pulsante("-INVIO-");
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	c.get(x).setPrezzoA(prezzoA);
