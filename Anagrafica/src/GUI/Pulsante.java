@@ -1,5 +1,4 @@
 package GUI;
-
 import java.awt.Button;
 
 public class Pulsante extends Button{

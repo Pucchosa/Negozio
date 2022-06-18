@@ -603,9 +603,7 @@ public class AggiungiPersona extends Frame{
 			    	if (tipo.contentEquals("cliente")){
 			    		try {
 			    		
-				    //		c.get(x).setCognome(cognome);
 				    		c.get(x).setTitolo(titolo);
-				    //		c.get(x).setNome(nome);
 				    		c.get(x).setIva(iva);
 				    		c.get(x).setTelefono(telefono);
 				    		c.get(x).setEmail(email);
@@ -626,9 +624,7 @@ public class AggiungiPersona extends Frame{
 			    	}
 			    	else if (tipo.contentEquals("fornitore")){
 			    		try {
-				//    		f.get(x).setCognome(cognome);
 				    		f.get(x).setTitolo(titolo);
-				//    		f.get(x).setNome(nome);
 				    		f.get(x).setIva(iva);
 				    		f.get(x).setTelefono(telefono);
 				    		f.get(x).setEmail(email);
