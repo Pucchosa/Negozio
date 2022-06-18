@@ -13,7 +13,7 @@ public class ConsultaMerci extends Frame {
 		public ConsultaMerci(DataM c){
 			super("CONSULTA data base Merci");
 			setLocation(150,150);
-			setBackground(new Color(217,243,248));
+			setBackground(Est.chiaro);
 
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(2,3));
@@ -52,8 +52,8 @@ public class ConsultaMerci extends Frame {
 			contenuto.add(ele);
 
 /*comp3*/Button bent=new Button("-INVIO-");
-			bent.setBackground(new Color(26,200,219));
-			bent.setPreferredSize(new Dimension(80,50));
+			bent.setBackground(Est.medio);
+			bent.setPreferredSize(Est.piccolo);
 			bent.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	if (index!=-1){
@@ -66,8 +66,8 @@ public class ConsultaMerci extends Frame {
 			contenuto.add(bent);
 
 /*comp4*/Button bex=new Button("-ESCI-");
-			bex.setBackground(new Color(2,146,183));
-			bex.setPreferredSize(new Dimension(80,50));
+			bex.setBackground(Est.scuro);
+			bex.setPreferredSize(Est.piccolo);
 			bex.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	setVisible(false);
@@ -83,8 +83,8 @@ public class ConsultaMerci extends Frame {
 			contenuto.add(tv);
 			
 /*comp6*/Button b2=new Button("+ Aggiungi +");
-			b2.setBackground(new Color(26,200,219));
-			b2.setPreferredSize(new Dimension(80,50));
+			b2.setBackground(Est.chiarissimo);
+			b2.setPreferredSize(Est.piccolo);
 			b2.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	AggiungiMerce aggg=new AggiungiMerce(c);

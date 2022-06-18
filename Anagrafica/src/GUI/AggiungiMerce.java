@@ -17,7 +17,7 @@ public class AggiungiMerce extends Frame{
 		super("Aggiungi prodotto");
 		setLayout(new BorderLayout(100,10));
 		setLocation(150,150);
-		setBackground(new Color(217,243,248));
+		setBackground(Est.chiaro);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
@@ -29,7 +29,7 @@ public class AggiungiMerce extends Frame{
 		contenuto.add(non);
 /*comp2*/ JPanel pan1=new JPanel();
 		JTextField tf1 = new JTextField("Nome", 15);
-		tf1.setForeground(new Color(117,223,235));
+		tf1.setForeground(Est.chiarissimo);
 		tf1.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf1.getText().equals("Nome")){
@@ -40,7 +40,7 @@ public class AggiungiMerce extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf1.getText().isEmpty()){
 					tf1.setText("Nome");
-					tf1.setForeground(new Color(117,223,235));
+					tf1.setForeground(Est.chiarissimo);
 				}
 				else nome=tf1.getText();
 			}
@@ -48,7 +48,7 @@ public class AggiungiMerce extends Frame{
 		tf1.setFont(Est.font);
 		pan1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan1.add(tf1);
-		pan1.setBackground(new Color(217,243,248));
+		pan1.setBackground(Est.chiarissimo);
 		contenuto.add(pan1);
 		
 /*comp3*/  JLabel un=new JLabel();
@@ -82,7 +82,7 @@ public class AggiungiMerce extends Frame{
 		contenuto.add(qtt);
 /*comp6*/JPanel pan2=new JPanel();
 		JTextField tf2 = new JTextField("Quantita", 15);
-		tf2.setForeground(new Color(117,223,235));
+		tf2.setForeground(Est.chiarissimo);
 		tf2.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf2.getText().equals("Quantita")){
@@ -93,7 +93,7 @@ public class AggiungiMerce extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf2.getText().isEmpty()){
 					tf2.setText("Quantita");
-					tf2.setForeground(new Color(117,223,235));
+					tf2.setForeground(Est.chiarissimo);
 				}
 				else {
 					try {
@@ -109,7 +109,7 @@ public class AggiungiMerce extends Frame{
 		tf2.setFont(Est.font);
 		pan2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan2.add(tf2);
-		pan2.setBackground(new Color(217,243,248));
+		pan2.setBackground(Est.chiaro);
 		contenuto.add(pan2);
 		
 /*comp7*/  JLabel prr=new JLabel();
@@ -119,7 +119,7 @@ public class AggiungiMerce extends Frame{
 		contenuto.add(prr);
 /*comp8*/ JPanel pan3=new JPanel();
 		JTextField tf3 = new JTextField("Prezzo", 15);
-		tf3.setForeground(new Color(117,223,235));
+		tf3.setForeground(Est.chiarissimo);
 		tf3.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf3.getText().equals("Prezzo")){
@@ -130,7 +130,7 @@ public class AggiungiMerce extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf3.getText().isEmpty()){
 					tf3.setText("Prezzo");
-					tf3.setForeground(new Color(117,223,235));
+					tf3.setForeground(Est.chiarissimo);
 				}
 				else {
 					try {
@@ -146,7 +146,7 @@ public class AggiungiMerce extends Frame{
 		tf3.setFont(Est.font);
 		pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan3.add(tf3);
-		pan3.setBackground(new Color(217,243,248));
+		pan3.setBackground(Est.chiaro);
 		contenuto.add(pan3);
 		
 /*comp9*/  JLabel rin=new JLabel();
@@ -173,7 +173,7 @@ public class AggiungiMerce extends Frame{
 		contenuto.add(rim);	
 			
 /*comp11*/Button bex=new Button("-ESCI-");
-		bex.setBackground(new Color(2,146,183));
+		bex.setBackground(Est.scuro);
 		bex.setPreferredSize(new Dimension(80,50));
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
@@ -186,8 +186,8 @@ public class AggiungiMerce extends Frame{
 		contenuto.add(bex);
 		
 /*comp12*/Button bent=new Button("-INVIO-");
-		bent.setBackground(new Color(26,200,219));
-		bent.setPreferredSize(new Dimension(80,50));
+		bent.setBackground(Est.medio);
+		bent.setPreferredSize(Est.piccolo);
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 				Merce inserisci =new Merce(nome, quantita, rincaro, prezzoA, unita,c);
@@ -218,7 +218,7 @@ public class AggiungiMerce extends Frame{
 		
 		setLayout(new BorderLayout(100,10));
 		setLocation(150,150);
-		setBackground(new Color(217,243,248));
+		setBackground(Est.chiaro);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
@@ -265,7 +265,7 @@ public class AggiungiMerce extends Frame{
 		contenuto.add(qtt);
 /*comp6*/JPanel pan2=new JPanel();
 		JTextField tf2 = new JTextField(quantita+"", 15);
-		tf2.setForeground(new Color(117,223,235));
+		tf2.setForeground(Est.chiarissimo);
 		tf2.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf2.getText().equals(quantita)){
@@ -276,7 +276,7 @@ public class AggiungiMerce extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf2.getText().isEmpty()){
 					tf2.setText(quantita+"");
-					tf2.setForeground(new Color(117,223,235));
+					tf2.setForeground(Est.chiarissimo);
 				}
 				else {
 					try {
@@ -292,7 +292,7 @@ public class AggiungiMerce extends Frame{
 		tf2.setFont(Est.font);
 		pan2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan2.add(tf2);
-		pan2.setBackground(new Color(217,243,248));
+		pan2.setBackground(Est.chiaro);
 		contenuto.add(pan2);
 		
 /*comp7*/  JLabel prr=new JLabel();
@@ -302,7 +302,7 @@ public class AggiungiMerce extends Frame{
 		contenuto.add(prr);
 /*comp8*/ JPanel pan3=new JPanel();
 		JTextField tf3 = new JTextField(prezzoA+"", 15);
-		tf3.setForeground(new Color(117,223,235));
+		tf3.setForeground(Est.chiarissimo);
 		tf3.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf3.getText().equals(prezzoA)){
@@ -313,7 +313,7 @@ public class AggiungiMerce extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf3.getText().isEmpty()){
 					tf3.setText(prezzoA+"");
-					tf3.setForeground(new Color(117,223,235));
+					tf3.setForeground(Est.chiarissimo);
 				}
 				else {
 					try {
@@ -329,7 +329,7 @@ public class AggiungiMerce extends Frame{
 		tf3.setFont(Est.font);
 		pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan3.add(tf3);
-		pan3.setBackground(new Color(217,243,248));
+		pan3.setBackground(Est.chiaro);
 		contenuto.add(pan3);
 		
 /*comp9*/  JLabel rin=new JLabel();
@@ -356,8 +356,8 @@ public class AggiungiMerce extends Frame{
 		contenuto.add(rim);	
 			
 /*comp11*/Button bex=new Button("-ESCI-");
-		bex.setBackground(new Color(2,146,183));
-		bex.setPreferredSize(new Dimension(80,50));
+		bex.setBackground(Est.scuro);
+		bex.setPreferredSize(Est.piccolo);
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
@@ -369,8 +369,8 @@ public class AggiungiMerce extends Frame{
 		contenuto.add(bex);
 		
 /*comp12*/Button bent=new Button("-INVIO-");
-		bent.setBackground(new Color(26,200,219));
-		bent.setPreferredSize(new Dimension(80,50));
+		bent.setBackground(Est.medio);
+		bent.setPreferredSize(Est.piccolo);
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	c.get(x).setPrezzoA(prezzoA);

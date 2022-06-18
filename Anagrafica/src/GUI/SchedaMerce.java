@@ -32,7 +32,7 @@ public class SchedaMerce extends Frame{
 		
 		setLayout(new BorderLayout(100,10));
 		setLocation(150,150);
-		setBackground(new Color(217,243,248));
+		setBackground(Est.chiaro);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
@@ -93,8 +93,8 @@ public class SchedaMerce extends Frame{
 		contenuto.add(vv);
 		
 /*comp6*/Button bex=new Button("-ESCI-");
-		bex.setBackground(new Color(2,146,183));
-		bex.setPreferredSize(new Dimension(80,50));
+		bex.setBackground(Est.scuro);
+		bex.setPreferredSize(Est.piccolo);
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
@@ -106,8 +106,8 @@ public class SchedaMerce extends Frame{
 		contenuto.add(bex);
 		
 		Button bin=new Button("-MODIFICA-");
-		bin.setBackground(new Color(2,146,183));
-		bin.setPreferredSize(new Dimension(80,50));
+		bin.setBackground(Est.medio);
+		bin.setPreferredSize(Est.piccolo);
 		bin.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	if (x!=-1){

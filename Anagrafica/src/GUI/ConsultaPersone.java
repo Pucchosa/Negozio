@@ -13,7 +13,7 @@ public class ConsultaPersone  extends Frame {
 	boolean tipp=true;
 	public ConsultaPersone(DataB<Cliente> c,DataB<Fornitore> f){
 		super("CONSULTA data base Persone");
-		setBackground(new Color(217,243,248));
+		setBackground(Est.chiaro);
 		setLocation(150,150);
 
 		Panel contenuto=new Panel();
@@ -52,8 +52,8 @@ public class ConsultaPersone  extends Frame {
 		contenuto.add(ele1);
 
 /*comp3*/Button bent1=new Button("-INVIO-");
-		bent1.setBackground(new Color(26,200,219));
-		bent1.setPreferredSize(new Dimension(80,50));
+		bent1.setBackground(Est.medio);
+		bent1.setPreferredSize(Est.piccolo);
 		bent1.addActionListener(new ActionListener() {
 			 public void actionPerformed(ActionEvent e) {
 				 if (indexF!=-1){
@@ -98,8 +98,8 @@ public class ConsultaPersone  extends Frame {
 		contenuto.add(ele);
 
 /*comp6*/Button bent=new Button("-INVIO-");
-		bent.setBackground(new Color(26,200,219));
-		bent.setPreferredSize(new Dimension(80,50));
+		bent.setBackground(Est.medio);
+		bent.setPreferredSize(Est.piccolo);
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	if (indexC!=-1){
@@ -112,8 +112,8 @@ public class ConsultaPersone  extends Frame {
 		contenuto.add(bent);
 		
 /*comp7*/Button bex=new Button("-ESCI-");
-		bex.setBackground(new Color(2,146,183));
-		bex.setPreferredSize(new Dimension(80,50));
+		bex.setBackground(Est.scuro);
+		bex.setPreferredSize(Est.piccolo);
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
@@ -129,8 +129,8 @@ public class ConsultaPersone  extends Frame {
 		contenuto.add(tv);
 		
 /*comp9*/Button b2=new Button("+ Aggiungi +");
-		b2.setBackground(new Color(26,200,219));
-		b2.setPreferredSize(new Dimension(80,50));
+		b2.setBackground(Est.chiarissimo);
+		b2.setPreferredSize(Est.piccolo);
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AggiungiPersona aggg=new AggiungiPersona(c,f);

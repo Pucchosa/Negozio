@@ -22,7 +22,7 @@ public class AggiungiPersona extends Frame{
 		super("Aggiungi persona");
 		setLayout(new BorderLayout(100,10));
 		setLocation(150,150);
-		setBackground(new Color(217,243,248));
+		setBackground(Est.chiaro);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(10,2));
@@ -36,7 +36,7 @@ public class AggiungiPersona extends Frame{
 /*comp2*/Panel ss=new Panel();
 		ss.setLayout(new GridLayout(1,2));
 		JRadioButton client = new JRadioButton("Clienti");
-		client.setBackground(new Color(217,243,248));
+		client.setBackground(Est.chiaro);
 	    client.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent evt) {
 	            tipo="cliente";
@@ -44,7 +44,7 @@ public class AggiungiPersona extends Frame{
 	    });
 	    ss.add(client);
 		JRadioButton fornit = new JRadioButton("Fornitori");
- 		fornit.setBackground(new Color(217,243,248));
+ 		fornit.setBackground(Est.chiaro);
 	    fornit.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent evt) {
 	        	tipo="fornitore";
@@ -86,7 +86,7 @@ public class AggiungiPersona extends Frame{
 		contenuto.add(non);
 /*comp6*/ JPanel pan1=new JPanel();
 		JTextField tf1 = new JTextField("Nome", 15);
-		tf1.setForeground(new Color(117,223,235));
+		tf1.setForeground(Est.chiarissimo);
 		tf1.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf1.getText().equals("Nome")){
@@ -97,7 +97,7 @@ public class AggiungiPersona extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf1.getText().isEmpty()){
 					tf1.setText("Nome");
-					tf1.setForeground(new Color(117,223,235));
+					tf1.setForeground(Est.chiarissimo);
 				}
 				else nome=tf1.getText();
 			}
@@ -105,7 +105,7 @@ public class AggiungiPersona extends Frame{
 		tf1.setFont(Est.font);
 		pan1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan1.add(tf1);
-		pan1.setBackground(new Color(217,243,248));
+		pan1.setBackground(Est.chiaro);
 		contenuto.add(pan1);
 
 /*comp7*/  JLabel qtt=new JLabel();
@@ -115,7 +115,7 @@ public class AggiungiPersona extends Frame{
 		contenuto.add(qtt);
 /*comp8*/JPanel pan2=new JPanel();
 		JTextField tf2 = new JTextField("Cognome", 15);
-		tf2.setForeground(new Color(117,223,235));
+		tf2.setForeground(Est.chiarissimo);
 		tf2.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf2.getText().equals("Cognome")){
@@ -126,7 +126,7 @@ public class AggiungiPersona extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf2.getText().isEmpty()){
 					tf2.setText("Cognome");
-					tf2.setForeground(new Color(117,223,235));
+					tf2.setForeground(Est.chiarissimo);
 				}
 				else {
 					cognome=tf2.getText();
@@ -136,7 +136,7 @@ public class AggiungiPersona extends Frame{
 		tf2.setFont(Est.font);
 		pan2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan2.add(tf2);
-		pan2.setBackground(new Color(217,243,248));
+		pan2.setBackground(Est.chiaro);
 		contenuto.add(pan2);
 		
 /*comp9*/  JLabel tel=new JLabel();
@@ -146,7 +146,7 @@ public class AggiungiPersona extends Frame{
 		contenuto.add(tel);
 /*comp10*/JPanel pan3=new JPanel();
 		JTextField tf3 = new JTextField("Telefono", 15);
-		tf3.setForeground(new Color(117,223,235));
+		tf3.setForeground(Est.chiarissimo);
 		tf3.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf3.getText().equals("Telefono")){
@@ -157,7 +157,7 @@ public class AggiungiPersona extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf3.getText().isEmpty()){
 					tf3.setText("Telefono");
-					tf3.setForeground(new Color(117,223,235));
+					tf3.setForeground(Est.chiarissimo);
 				}
 				else {
 					telefono=tf3.getText();
@@ -167,7 +167,7 @@ public class AggiungiPersona extends Frame{
 		tf3.setFont(Est.font);
 		pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan3.add(tf3);
-		pan3.setBackground(new Color(217,243,248));
+		pan3.setBackground(Est.chiaro);
 		contenuto.add(pan3);
 		
 /*comp11*/  JLabel mai=new JLabel();
@@ -177,7 +177,7 @@ public class AggiungiPersona extends Frame{
 		contenuto.add(mai);
 /*comp12*/JPanel pan4=new JPanel();
 		JTextField tf4 = new JTextField("eMail", 15);
-		tf4.setForeground(new Color(117,223,235));
+		tf4.setForeground(Est.chiarissimo);
 		tf4.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf4.getText().equals("eMail")){
@@ -188,7 +188,7 @@ public class AggiungiPersona extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf4.getText().isEmpty()){
 					tf4.setText("eMail");
-					tf4.setForeground(new Color(117,223,235));
+					tf4.setForeground(Est.chiarissimo);
 				}
 				else {
 					email=tf4.getText();
@@ -198,7 +198,7 @@ public class AggiungiPersona extends Frame{
 		tf4.setFont(Est.font);
 		pan4.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan4.add(tf4);
-		pan4.setBackground(new Color(217,243,248));
+		pan4.setBackground(Est.chiaro);
 		contenuto.add(pan4);
 		
 /*comp13*/  JLabel ivv=new JLabel();
@@ -208,7 +208,7 @@ public class AggiungiPersona extends Frame{
 		contenuto.add(ivv);
 /*comp14*/JPanel pan5=new JPanel();
 		JTextField tf5 = new JTextField("IVA n.", 15);
-		tf5.setForeground(new Color(117,223,235));
+		tf5.setForeground(Est.chiarissimo);
 		tf5.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf5.getText().equals("IVA n.")){
@@ -219,7 +219,7 @@ public class AggiungiPersona extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf5.getText().isEmpty()){
 					tf5.setText("IVA n.");
-					tf5.setForeground(new Color(117,223,235));
+					tf5.setForeground(Est.chiarissimo);
 				}
 				else {
 					iva=tf5.getText();
@@ -229,7 +229,7 @@ public class AggiungiPersona extends Frame{
 		tf5.setFont(Est.font);
 		pan5.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan5.add(tf5);
-		pan5.setBackground(new Color(217,243,248));
+		pan5.setBackground(Est.chiaro);
 		contenuto.add(pan5);
 		
 /*comp15*/  JLabel ind=new JLabel();
@@ -239,7 +239,7 @@ public class AggiungiPersona extends Frame{
 		contenuto.add(ind);
 /*comp16*/JPanel pan6=new JPanel();
 		JTextField tf6 = new JTextField("indirizzo", 15);
-		tf6.setForeground(new Color(117,223,235));
+		tf6.setForeground(Est.chiarissimo);
 		tf6.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf6.getText().equals("indirizzo")){
@@ -250,7 +250,7 @@ public class AggiungiPersona extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf6.getText().isEmpty()){
 					tf6.setText("indirizzo");
-					tf6.setForeground(new Color(117,223,235));
+					tf6.setForeground(Est.chiarissimo);
 				}
 				else {
 					indirizzo=tf6.getText();
@@ -260,7 +260,7 @@ public class AggiungiPersona extends Frame{
 		tf6.setFont(Est.font);
 		pan6.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan6.add(tf6);
-		pan6.setBackground(new Color(217,243,248));
+		pan6.setBackground(Est.chiaro);
 		contenuto.add(pan6);
 		
 /*comp17*/  JLabel prr=new JLabel();
@@ -270,7 +270,7 @@ public class AggiungiPersona extends Frame{
 		contenuto.add(prr);
 /*comp18*/ JPanel pan7=new JPanel();
 		JTextField tf7 = new JTextField("Saldo", 15);
-		tf7.setForeground(new Color(117,223,235));
+		tf7.setForeground(Est.chiarissimo);
 		tf7.addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
 				if (tf7.getText().equals("Saldo")){
@@ -281,7 +281,7 @@ public class AggiungiPersona extends Frame{
 			public void focusLost(FocusEvent e){
 				if (tf7.getText().isEmpty()){
 					tf7.setText("Saldo");
-					tf7.setForeground(new Color(117,223,235));
+					tf7.setForeground(Est.chiarissimo);
 				}
 				else {
 					try {
@@ -297,12 +297,12 @@ public class AggiungiPersona extends Frame{
 		tf7.setFont(Est.font);
 		pan7.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan7.add(tf7);
-		pan7.setBackground(new Color(217,243,248));
+		pan7.setBackground(Est.chiaro);
 		contenuto.add(pan7);
 			
 /*comp19*/Button bex=new Button("-ESCI-");
-		bex.setBackground(new Color(2,146,183));
-		bex.setPreferredSize(new Dimension(80,50));
+		bex.setBackground(Est.scuro);
+		bex.setPreferredSize(Est.piccolo);
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
@@ -314,8 +314,8 @@ public class AggiungiPersona extends Frame{
 		contenuto.add(bex);
 		
 /*comp20*/Button bent=new Button("-INVIO-");
-		bent.setBackground(new Color(26,200,219));
-		bent.setPreferredSize(new Dimension(80,50));
+		bent.setBackground(Est.medio);
+		bent.setPreferredSize(Est.piccolo);
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	if (tipo.contentEquals("cliente")){
@@ -372,7 +372,7 @@ public class AggiungiPersona extends Frame{
 		
 			setLayout(new BorderLayout(100,10));
 			setLocation(150,150);
-			setBackground(new Color(217,243,248));
+			setBackground(Est.chiaro);
 			
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(10,2));
@@ -436,7 +436,7 @@ public class AggiungiPersona extends Frame{
 			contenuto.add(tel);
 	/*comp10*/JPanel pan3=new JPanel();
 			JTextField tf3 = new JTextField(mer.getTelefono(), 15);
-			tf3.setForeground(new Color(117,223,235));
+			tf3.setForeground(Est.chiarissimo);
 			tf3.addFocusListener(new FocusListener() {
 				public void focusGained(FocusEvent e){
 					if (tf3.getText().equals(mer.getTelefono())){
@@ -447,7 +447,7 @@ public class AggiungiPersona extends Frame{
 				public void focusLost(FocusEvent e){
 					if (tf3.getText().isEmpty()){
 						tf3.setText(mer.getTelefono());
-						tf3.setForeground(new Color(117,223,235));
+						tf3.setForeground(Est.chiarissimo);
 					}
 					else {
 						telefono=tf3.getText();
@@ -457,7 +457,7 @@ public class AggiungiPersona extends Frame{
 			tf3.setFont(Est.font);
 			pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan3.add(tf3);
-			pan3.setBackground(new Color(217,243,248));
+			pan3.setBackground(Est.chiaro);
 			contenuto.add(pan3);
 			
 	/*comp11*/  JLabel mai=new JLabel();
@@ -467,7 +467,7 @@ public class AggiungiPersona extends Frame{
 			contenuto.add(mai);
 	/*comp12*/JPanel pan4=new JPanel();
 			JTextField tf4 = new JTextField(mer.getEmail(), 15);
-			tf4.setForeground(new Color(117,223,235));
+			tf4.setForeground(Est.chiarissimo);
 			tf4.addFocusListener(new FocusListener() {
 				public void focusGained(FocusEvent e){
 					if (tf4.getText().equals(mer.getEmail())){
@@ -478,7 +478,7 @@ public class AggiungiPersona extends Frame{
 				public void focusLost(FocusEvent e){
 					if (tf4.getText().isEmpty()){
 						tf4.setText(mer.getEmail());
-						tf4.setForeground(new Color(117,223,235));
+						tf4.setForeground(Est.chiarissimo);
 					}
 					else {
 						email=tf4.getText();
@@ -488,7 +488,7 @@ public class AggiungiPersona extends Frame{
 			tf4.setFont(Est.font);
 			pan4.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan4.add(tf4);
-			pan4.setBackground(new Color(217,243,248));
+			pan4.setBackground(Est.chiaro);
 			contenuto.add(pan4);
 			
 	/*comp13*/  JLabel ivv=new JLabel();
@@ -498,7 +498,7 @@ public class AggiungiPersona extends Frame{
 			contenuto.add(ivv);
 	/*comp14*/JPanel pan5=new JPanel();
 			JTextField tf5 = new JTextField(mer.getIva(), 15);
-			tf5.setForeground(new Color(117,223,235));
+			tf5.setForeground(Est.chiarissimo);
 			tf5.addFocusListener(new FocusListener() {
 				public void focusGained(FocusEvent e){
 					if (tf5.getText().equals(mer.getIva())){
@@ -509,7 +509,7 @@ public class AggiungiPersona extends Frame{
 				public void focusLost(FocusEvent e){
 					if (tf5.getText().isEmpty()){
 						tf5.setText(mer.getIva());
-						tf5.setForeground(new Color(117,223,235));
+						tf5.setForeground(Est.chiarissimo);
 					}
 					else {
 						iva=tf5.getText();
@@ -519,7 +519,7 @@ public class AggiungiPersona extends Frame{
 			tf5.setFont(Est.font);
 			pan5.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan5.add(tf5);
-			pan5.setBackground(new Color(217,243,248));
+			pan5.setBackground(Est.chiaro);
 			contenuto.add(pan5);
 			
 	/*comp15*/  JLabel ind=new JLabel();
@@ -529,7 +529,7 @@ public class AggiungiPersona extends Frame{
 			contenuto.add(ind);
 	/*comp16*/JPanel pan6=new JPanel();
 			JTextField tf6 = new JTextField(mer.getIndirizzo(), 15);
-			tf6.setForeground(new Color(117,223,235));
+			tf6.setForeground(Est.chiarissimo);
 			tf6.addFocusListener(new FocusListener() {
 				public void focusGained(FocusEvent e){
 					if (tf6.getText().equals(mer.getIndirizzo())){
@@ -540,7 +540,7 @@ public class AggiungiPersona extends Frame{
 				public void focusLost(FocusEvent e){
 					if (tf6.getText().isEmpty()){
 						tf6.setText(mer.getIndirizzo());
-						tf6.setForeground(new Color(117,223,235));
+						tf6.setForeground(Est.chiarissimo);
 					}
 					else {
 						indirizzo=tf6.getText();
@@ -550,7 +550,7 @@ public class AggiungiPersona extends Frame{
 			tf6.setFont(Est.font);
 			pan6.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan6.add(tf6);
-			pan6.setBackground(new Color(217,243,248));
+			pan6.setBackground(Est.chiaro);
 			contenuto.add(pan6);
 			
 	/*comp17*/  JLabel prr=new JLabel();
@@ -560,7 +560,7 @@ public class AggiungiPersona extends Frame{
 			contenuto.add(prr);
 	/*comp18*/ JPanel pan7=new JPanel();
 			JTextField tf7 = new JTextField(""+mer.getSaldo(), 15);
-			tf7.setForeground(new Color(117,223,235));
+			tf7.setForeground(Est.chiarissimo);
 			tf7.addFocusListener(new FocusListener() {
 				public void focusGained(FocusEvent e){
 					if (tf7.getText().equals(""+mer.getSaldo())){
@@ -571,7 +571,7 @@ public class AggiungiPersona extends Frame{
 				public void focusLost(FocusEvent e){
 					if (tf7.getText().isEmpty()){
 						tf7.setText(""+mer.getSaldo());
-						tf7.setForeground(new Color(117,223,235));
+						tf7.setForeground(Est.chiarissimo);
 					}
 					else {
 						try {
@@ -587,12 +587,12 @@ public class AggiungiPersona extends Frame{
 			tf7.setFont(Est.font);
 			pan7.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan7.add(tf7);
-			pan7.setBackground(new Color(217,243,248));
+			pan7.setBackground(Est.chiaro);
 			contenuto.add(pan7);
 				
 	/*comp19*/Button bex=new Button("-ESCI-");
-			bex.setBackground(new Color(2,146,183));
-			bex.setPreferredSize(new Dimension(80,50));
+			bex.setBackground(Est.scuro);
+			bex.setPreferredSize(Est.piccolo);
 			bex.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	setVisible(false);
@@ -604,8 +604,8 @@ public class AggiungiPersona extends Frame{
 			contenuto.add(bex);
 			
 	/*comp20*/Button bent=new Button("-INVIO-");
-			bent.setBackground(new Color(26,200,219));
-			bent.setPreferredSize(new Dimension(80,50));
+			bent.setBackground(Est.medio);
+			bent.setPreferredSize(Est.piccolo);
 			bent.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	if (tipo.contentEquals("cliente")){
