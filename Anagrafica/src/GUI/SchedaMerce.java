@@ -37,59 +37,29 @@ public class SchedaMerce extends Frame{
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
 		
-/*comp1*/  JLabel non=new JLabel();
-		non.setText("Merce: ");
-		non.setFont(Est.font);
-		non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp1*/  Etichetta non=new Etichetta("Merce: ");
 		contenuto.add(non);	
-		JLabel nn=new JLabel();
-		nn.setText(""+nome);
-		nn.setFont(Est.font);
-		nn.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+		Etichetta nn=new Etichetta(""+nome);
 		contenuto.add(nn);	
 		
-/*comp2*/  JLabel uni=new JLabel();
-		uni.setText("In magazzino: ");
-		uni.setFont(Est.font);
-		uni.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp2*/  Etichetta uni=new Etichetta("In magazzino: ");
 		contenuto.add(uni);
-		JLabel uu=new JLabel();
-		uu.setText(quantita+" "+unita);
-		uu.setFont(Est.font);
-		uu.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+		Etichetta uu=new Etichetta(quantita+" "+unita);
 		contenuto.add(uu);
 		
-/*comp3*/  JLabel ac=new JLabel();
-		ac.setText("Prezzo d acquisto: ");
-		ac.setFont(Est.font);
-		ac.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp3*/  Etichetta ac=new Etichetta("Prezzo d acquisto: ");
 		contenuto.add(ac);
-		JLabel aa=new JLabel();
-		aa.setText(prezzoA+"eu al "+unita);
-		aa.setFont(Est.font);
-		aa.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+		Etichetta aa=new Etichetta(prezzoA+"eu al "+unita);
 		contenuto.add(aa);
 		
-/*comp4*/  JLabel ri=new JLabel();
-		ri.setText("Prezzo di vendita: ");
-		ri.setFont(Est.font);
-		ri.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp4*/  Etichetta ri=new Etichetta("Prezzo di vendita: ");
 		contenuto.add(ri);
-		JLabel rr=new JLabel();
-		rr.setText(prezzoV+"eu (rincaro del "+rincaro+"%)");
-		rr.setFont(Est.font);
-		rr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+		Etichetta rr=new Etichetta(prezzoV+"eu (rincaro del "+rincaro+"%)");
 		contenuto.add(rr);
 		
-/*comp5*/  JLabel va=new JLabel();
-		va.setText("Valore complessivo merce: ");
-		va.setFont(Est.font);
-		va.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp5*/  Etichetta va=new Etichetta("Valore complessivo merce: ");
 		contenuto.add(va);
-		JLabel vv=new JLabel();
-		vv.setText(valore+"eu");
-		vv.setFont(Est.font);
-		vv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+		Etichetta vv=new Etichetta(valore+"eu");
 		contenuto.add(vv);
 		
 /*comp6*/Pulsante bex=new Pulsante("-ESCI-");

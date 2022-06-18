@@ -27,10 +27,7 @@ public class AggiungiPersona extends Frame{
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(10,2));
 		
-/*comp1*/  JLabel ty=new JLabel();
-		ty.setText("Scegliere DB: ");
-		ty.setFont(Est.font);
-		ty.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp1*/  Etichetta ty=new Etichetta("Scegliere DB: ");
 		contenuto.add(ty);
 		
 /*comp2*/Panel ss=new Panel();
@@ -57,11 +54,9 @@ public class AggiungiPersona extends Frame{
 	    group.add(fornit);
 	    contenuto.add(ss);
 		
-/*comp3*/  JLabel un=new JLabel();
-		un.setText("Titolo: ");
-		un.setFont(Est.font);
-		un.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp3*/  Etichetta un=new Etichetta("Titolo: ");
 		contenuto.add(un);
+		
 /*comp4*/Choice uni=new Choice();
 		uni.add("Scegli");
 		uni.add("Ditta");
@@ -79,10 +74,7 @@ public class AggiungiPersona extends Frame{
 		});
 		contenuto.add(uni);	
 		
-/*comp5*/  JLabel non=new JLabel();
-		non.setText("Nome: ");
-		non.setFont(Est.font);
-		non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp5*/  Etichetta non=new Etichetta("Nome: ");
 		contenuto.add(non);
 /*comp6*/ JPanel pan1=new JPanel();
 		JTextField tf1 = new JTextField("Nome", 15);
@@ -108,10 +100,7 @@ public class AggiungiPersona extends Frame{
 		pan1.setBackground(Est.chiaro);
 		contenuto.add(pan1);
 
-/*comp7*/  JLabel qtt=new JLabel();
-		qtt.setText("Cognome: ");
-		qtt.setFont(Est.font);
-		qtt.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp7*/  Etichetta qtt=new Etichetta("Cognome: ");
 		contenuto.add(qtt);
 /*comp8*/JPanel pan2=new JPanel();
 		JTextField tf2 = new JTextField("Cognome", 15);
@@ -139,10 +128,7 @@ public class AggiungiPersona extends Frame{
 		pan2.setBackground(Est.chiaro);
 		contenuto.add(pan2);
 		
-/*comp9*/  JLabel tel=new JLabel();
-		tel.setText("Telefono: ");
-		tel.setFont(Est.font);
-		tel.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp9*/  Etichetta tel=new Etichetta("Telefono: ");
 		contenuto.add(tel);
 /*comp10*/JPanel pan3=new JPanel();
 		JTextField tf3 = new JTextField("Telefono", 15);
@@ -170,10 +156,7 @@ public class AggiungiPersona extends Frame{
 		pan3.setBackground(Est.chiaro);
 		contenuto.add(pan3);
 		
-/*comp11*/  JLabel mai=new JLabel();
-		mai.setText("eMail: ");
-		mai.setFont(Est.font);
-		mai.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp11*/  Etichetta mai=new Etichetta("eMail: ");
 		contenuto.add(mai);
 /*comp12*/JPanel pan4=new JPanel();
 		JTextField tf4 = new JTextField("eMail", 15);
@@ -201,10 +184,7 @@ public class AggiungiPersona extends Frame{
 		pan4.setBackground(Est.chiaro);
 		contenuto.add(pan4);
 		
-/*comp13*/  JLabel ivv=new JLabel();
-		ivv.setText("Partita IVA: ");
-		ivv.setFont(Est.font);
-		ivv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp13*/  Etichetta ivv=new Etichetta("Partita IVA: ");
 		contenuto.add(ivv);
 /*comp14*/JPanel pan5=new JPanel();
 		JTextField tf5 = new JTextField("IVA n.", 15);
@@ -232,10 +212,7 @@ public class AggiungiPersona extends Frame{
 		pan5.setBackground(Est.chiaro);
 		contenuto.add(pan5);
 		
-/*comp15*/  JLabel ind=new JLabel();
-		ind.setText("Indirizzo: ");
-		ind.setFont(Est.font);
-		ind.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp15*/  Etichetta ind=new Etichetta("Indirizzo: ");
 		contenuto.add(ind);
 /*comp16*/JPanel pan6=new JPanel();
 		JTextField tf6 = new JTextField("indirizzo", 15);
@@ -263,10 +240,7 @@ public class AggiungiPersona extends Frame{
 		pan6.setBackground(Est.chiaro);
 		contenuto.add(pan6);
 		
-/*comp17*/  JLabel prr=new JLabel();
-		prr.setText("Saldo iniziale: ");
-		prr.setFont(Est.font);
-		prr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp17*/  Etichetta prr=new Etichetta("Saldo iniziale: ");
 		contenuto.add(prr);
 /*comp18*/ JPanel pan7=new JPanel();
 		JTextField tf7 = new JTextField("Saldo", 15);
@@ -380,22 +354,13 @@ public class AggiungiPersona extends Frame{
     		saldo=mer.getSaldo();
     		indirizzo=mer.getIndirizzo();
 			
-	/*comp1*/  JLabel ty=new JLabel();
-			ty.setText("Tipo persona: ");
-			ty.setFont(Est.font);
-			ty.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp1*/  Etichetta ty=new Etichetta("Tipo persona: ");
 			contenuto.add(ty);
 			
-	/*comp2*/JLabel ty1=new JLabel();
-			ty1.setText(""+tipo);
-			ty1.setFont(Est.font);
-			ty1.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp2*/Etichetta ty1=new Etichetta(""+tipo);
 			contenuto.add(ty1);
 			
-	/*comp3*/  JLabel un=new JLabel();
-			un.setText("Titolo: ");
-			un.setFont(Est.font);
-			un.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp3*/  Etichetta un=new Etichetta("Titolo: ");
 			contenuto.add(un);
 	/*comp4*/JLabel uni=new JLabel();
 			uni.setText(mer.getTitolo());
@@ -403,32 +368,17 @@ public class AggiungiPersona extends Frame{
 			uni.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 			contenuto.add(uni);
 			
-	/*comp5*/  JLabel non=new JLabel();
-			non.setText("Nome: ");
-			non.setFont(Est.font);
-			non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp5*/  Etichetta non=new Etichetta("Nome: ");
 			contenuto.add(non);
-	/*comp6*/ JLabel nomm=new JLabel();
-			nomm.setText(mer.getNome());
-			nomm.setFont(Est.font);
-			nomm.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp6*/ Etichetta nomm=new Etichetta(mer.getNome());
 			contenuto.add(nomm);
 	
-	/*comp7*/  JLabel qtt=new JLabel();
-			qtt.setText("Cognome: ");
-			qtt.setFont(Est.font);
-			qtt.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp7*/  Etichetta qtt=new Etichetta("Cognome: ");
 			contenuto.add(qtt);
-	/*comp8*/JLabel qtr=new JLabel();
-			qtr.setText(mer.getCognome());
-			qtr.setFont(Est.font);
-			qtr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp8*/Etichetta qtr=new Etichetta(mer.getCognome());
 			contenuto.add(qtr);
 			
-	/*comp9*/  JLabel tel=new JLabel();
-			tel.setText("Telefono: ");
-			tel.setFont(Est.font);
-			tel.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp9*/  Etichetta tel=new Etichetta("Telefono: ");
 			contenuto.add(tel);
 	/*comp10*/JPanel pan3=new JPanel();
 			JTextField tf3 = new JTextField(mer.getTelefono(), 15);
@@ -456,10 +406,7 @@ public class AggiungiPersona extends Frame{
 			pan3.setBackground(Est.chiaro);
 			contenuto.add(pan3);
 			
-	/*comp11*/  JLabel mai=new JLabel();
-			mai.setText("eMail: ");
-			mai.setFont(Est.font);
-			mai.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp11*/  Etichetta mai=new Etichetta("eMail: ");
 			contenuto.add(mai);
 	/*comp12*/JPanel pan4=new JPanel();
 			JTextField tf4 = new JTextField(mer.getEmail(), 15);
@@ -487,10 +434,7 @@ public class AggiungiPersona extends Frame{
 			pan4.setBackground(Est.chiaro);
 			contenuto.add(pan4);
 			
-	/*comp13*/  JLabel ivv=new JLabel();
-			ivv.setText("Partita IVA: ");
-			ivv.setFont(Est.font);
-			ivv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp13*/  Etichetta ivv=new Etichetta("Partita IVA: ");
 			contenuto.add(ivv);
 	/*comp14*/JPanel pan5=new JPanel();
 			JTextField tf5 = new JTextField(mer.getIva(), 15);
@@ -518,10 +462,7 @@ public class AggiungiPersona extends Frame{
 			pan5.setBackground(Est.chiaro);
 			contenuto.add(pan5);
 			
-	/*comp15*/  JLabel ind=new JLabel();
-			ind.setText("Indirizzo: ");
-			ind.setFont(Est.font);
-			ind.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp15*/  Etichetta ind=new Etichetta("Indirizzo: ");
 			contenuto.add(ind);
 	/*comp16*/JPanel pan6=new JPanel();
 			JTextField tf6 = new JTextField(mer.getIndirizzo(), 15);
@@ -549,10 +490,7 @@ public class AggiungiPersona extends Frame{
 			pan6.setBackground(Est.chiaro);
 			contenuto.add(pan6);
 			
-	/*comp17*/  JLabel prr=new JLabel();
-			prr.setText("Saldo iniziale: ");
-			prr.setFont(Est.font);
-			prr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp17*/  Etichetta prr=new Etichetta("Saldo iniziale: ");
 			contenuto.add(prr);
 	/*comp18*/ JPanel pan7=new JPanel();
 			JTextField tf7 = new JTextField(""+mer.getSaldo(), 15);

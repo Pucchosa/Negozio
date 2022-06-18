@@ -19,10 +19,7 @@ public class ConsultaMerci extends Frame {
 			contenuto.setLayout(new GridLayout(2,3));
 			
 
-	/*comp1*/  JLabel tx=new JLabel();
-			tx.setText("Consulta merci: ");
-			tx.setFont(Est.font);
-			tx.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp1*/  Etichetta tx=new Etichetta("Consulta merci: ");
 			contenuto.add(tx);
 			
 	/*comp2*/Choice ele=new Choice();
@@ -72,10 +69,7 @@ public class ConsultaMerci extends Frame {
 			});
 			contenuto.add(bex);
 			
-/*comp5*/	JLabel tv=new JLabel();
-			tv.setText("           ");
-			tv.setFont(Est.font);
-			tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp5*/	Etichetta tv=new Etichetta("           ");
 			contenuto.add(tv);
 			
 /*comp6*/Pulsante b2=new Pulsante("+ Aggiungi +");

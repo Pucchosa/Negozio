@@ -19,11 +19,7 @@ public class ConsultaPersone  extends Frame {
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(3,3));
 		
-/*comp1*/  JLabel tx1=new JLabel();
-		tx1.setBorder(BorderFactory.createEmptyBorder(30, 5, 5, 70));
-		String testo="Consulta Fornitori";
-		tx1.setText(testo);
-		tx1.setFont(Est.font);
+/*comp1*/  Etichetta tx1=new Etichetta("Consulta Fornitori");
 		contenuto.add(tx1);
 		
 /*comp2*/Choice ele1=new Choice();
@@ -64,10 +60,7 @@ public class ConsultaPersone  extends Frame {
 		contenuto.add(bent1);
 
 
-/*comp4*/  JLabel tx=new JLabel();
-		tx.setBorder(BorderFactory.createEmptyBorder(30, 5, 5, 70));
-		tx.setText("Consulta Clienti");
-		tx.setFont(Est.font);
+/*comp4*/  Etichetta tx=new Etichetta("Consulta Clienti");
 		contenuto.add(tx);
 		
 /*comp5*/Choice ele=new Choice();
@@ -116,10 +109,7 @@ public class ConsultaPersone  extends Frame {
 		});
 		contenuto.add(bex);
 		
-/*comp8*/JLabel tv=new JLabel();
-		tv.setText("           ");
-		tv.setFont(Est.font);
-		tv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp8*/Etichetta tv=new Etichetta("           ");
 		contenuto.add(tv);
 		
 /*comp9*/Pulsante b2=new Pulsante("+ Aggiungi +");

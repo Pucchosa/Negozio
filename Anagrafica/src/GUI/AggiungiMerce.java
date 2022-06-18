@@ -22,10 +22,7 @@ public class AggiungiMerce extends Frame{
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
 
-/*comp1*/  JLabel non=new JLabel();
-		non.setText("Merce: ");
-		non.setFont(Est.font);
-		non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp1*/  Etichetta non=new Etichetta("Merce: ");
 		contenuto.add(non);
 /*comp2*/ JPanel pan1=new JPanel();
 		JTextField tf1 = new JTextField("Nome", 15);
@@ -51,10 +48,7 @@ public class AggiungiMerce extends Frame{
 		pan1.setBackground(Est.chiarissimo);
 		contenuto.add(pan1);
 		
-/*comp3*/  JLabel un=new JLabel();
-		un.setText("Scelta Unita: ");
-		un.setFont(Est.font);
-		un.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp3*/  Etichetta un=new Etichetta("Scelta Unita: ");
 		contenuto.add(un);
 /*comp4*/Choice uni=new Choice();
 		uni.add("Scegli");
@@ -75,10 +69,7 @@ public class AggiungiMerce extends Frame{
 		});
 		contenuto.add(uni);	
 		
-/*comp5*/  JLabel qtt=new JLabel();
-		qtt.setText("Quantita: ");
-		qtt.setFont(Est.font);
-		qtt.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp5*/  Etichetta qtt=new Etichetta("Quantita: ");
 		contenuto.add(qtt);
 /*comp6*/JPanel pan2=new JPanel();
 		JTextField tf2 = new JTextField("Quantita", 15);
@@ -112,10 +103,7 @@ public class AggiungiMerce extends Frame{
 		pan2.setBackground(Est.chiaro);
 		contenuto.add(pan2);
 		
-/*comp7*/  JLabel prr=new JLabel();
-		prr.setText("Prezzo d'acquisto: ");
-		prr.setFont(Est.font);
-		prr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp7*/  Etichetta prr=new Etichetta("Prezzo d'acquisto: ");
 		contenuto.add(prr);
 /*comp8*/ JPanel pan3=new JPanel();
 		JTextField tf3 = new JTextField("Prezzo", 15);
@@ -149,10 +137,7 @@ public class AggiungiMerce extends Frame{
 		pan3.setBackground(Est.chiaro);
 		contenuto.add(pan3);
 		
-/*comp9*/  JLabel rin=new JLabel();
-		rin.setText("Imposta % rincaro: ");
-		rin.setFont(Est.font);
-		rin.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp9*/  Etichetta rin=new Etichetta("Imposta % rincaro: ");
 		contenuto.add(rin);
 /*comp10*/Choice rim=new Choice();
 		rim.add("Scegli");
@@ -219,21 +204,12 @@ public class AggiungiMerce extends Frame{
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
 
-/*comp1*/  JLabel non=new JLabel();
-		non.setText("Merce: ");
-		non.setFont(Est.font);
-		non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp1*/  Etichetta non=new Etichetta("Merce: ");
 		contenuto.add(non);
-/*comp2*/ JLabel nom=new JLabel();
-		nom.setText(nome);
-		nom.setFont(Est.font);
-		nom.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp2*/ Etichetta nom=new Etichetta(nome);
 		contenuto.add(nom);
 		
-/*comp3*/  JLabel un=new JLabel();
-		un.setText("Scelta Unita: ");
-		un.setFont(Est.font);
-		un.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp3*/  Etichetta un=new Etichetta("Scelta Unita: ");
 		contenuto.add(un);
 /*comp4*/Choice uni=new Choice();
 		uni.add(unita);
@@ -254,10 +230,7 @@ public class AggiungiMerce extends Frame{
 		});
 		contenuto.add(uni);	
 		
-/*comp5*/  JLabel qtt=new JLabel();
-		qtt.setText("Quantita: ");
-		qtt.setFont(Est.font);
-		qtt.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp5*/  Etichetta qtt=new Etichetta("Quantita: ");
 		contenuto.add(qtt);
 /*comp6*/JPanel pan2=new JPanel();
 		JTextField tf2 = new JTextField(quantita+"", 15);
@@ -291,10 +264,7 @@ public class AggiungiMerce extends Frame{
 		pan2.setBackground(Est.chiaro);
 		contenuto.add(pan2);
 		
-/*comp7*/  JLabel prr=new JLabel();
-		prr.setText("Prezzo d'acquisto: ");
-		prr.setFont(Est.font);
-		prr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp7*/  Etichetta prr=new Etichetta("Prezzo d'acquisto: ");
 		contenuto.add(prr);
 /*comp8*/ JPanel pan3=new JPanel();
 		JTextField tf3 = new JTextField(prezzoA+"", 15);
@@ -328,10 +298,7 @@ public class AggiungiMerce extends Frame{
 		pan3.setBackground(Est.chiaro);
 		contenuto.add(pan3);
 		
-/*comp9*/  JLabel rin=new JLabel();
-		rin.setText("Imposta % rincaro: ");
-		rin.setFont(Est.font);
-		rin.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+/*comp9*/  Etichetta rin=new Etichetta("Imposta % rincaro: ");
 		contenuto.add(rin);
 /*comp10*/Choice rim=new Choice();
 		rim.add(""+(rincaro-100));

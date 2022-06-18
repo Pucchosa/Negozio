@@ -32,9 +32,7 @@ public class Program{
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(2,2));
 			
-			JLabel tx=new JLabel();
-			tx.setText("<html>Benvenuti nel database, cosa si desidera fare? ");
-			tx.setFont(Est.font);
+			Etichetta tx=new Etichetta("<html>Benvenuti nel database, cosa si desidera fare? ");
 			add("North",tx);
 			
 			Pulsante b1=new Pulsante("Consulta DataBase Persone");

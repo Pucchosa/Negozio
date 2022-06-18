@@ -54,59 +54,29 @@ public class SchedaPersona extends Frame{
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(6,2));
 			
-	/*comp1*/  JLabel non=new JLabel();
-			non.setText("Nominativo: ");
-			non.setFont(Est.font);
-			non.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp1*/  Etichetta non=new Etichetta("Nominativo: ");
 			contenuto.add(non);	
-			JLabel nn=new JLabel();
-			nn.setText(titolo+" "+cognome+" "+nome);
-			nn.setFont(Est.font);
-			nn.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			Etichetta nn=new Etichetta(titolo+" "+cognome+" "+nome);
 			contenuto.add(nn);	
 			
-	/*comp2*/  JLabel uni=new JLabel();
-			uni.setText("Contatti: ");
-			uni.setFont(Est.font);
-			uni.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp2*/  Etichetta uni=new Etichetta("Contatti: ");
 			contenuto.add(uni);
-			JLabel uu=new JLabel();
-			uu.setText("tel: "+telefono+" eMail: "+email);
-			uu.setFont(Est.font);
-			uu.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			Etichetta uu=new Etichetta("tel: "+telefono+" eMail: "+email);
 			contenuto.add(uu);
 			
-	/*comp3*/  JLabel ac=new JLabel();
-			ac.setText("Partita IVA: ");
-			ac.setFont(Est.font);
-			ac.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp3*/  Etichetta ac=new Etichetta("Partita IVA: ");
 			contenuto.add(ac);
-			JLabel aa=new JLabel();
-			aa.setText("n. "+iva);
-			aa.setFont(Est.font);
-			aa.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			Etichetta aa=new Etichetta("n. "+iva);
 			contenuto.add(aa);
 			
-	/*comp4*/  JLabel ri=new JLabel();
-			ri.setText("Saldo: ");
-			ri.setFont(Est.font);
-			ri.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp4*/  Etichetta ri=new Etichetta("Saldo: ");
 			contenuto.add(ri);
-			JLabel rr=new JLabel();
-			rr.setText(saldo+" eu. ");
-			rr.setFont(Est.font);
-			rr.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			Etichetta rr=new Etichetta(saldo+" eu. ");
 			contenuto.add(rr);
 			
-	/*comp5*/  JLabel va=new JLabel();
-			va.setText("Indirizzo: ");
-			va.setFont(Est.font);
-			va.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+	/*comp5*/  Etichetta va=new Etichetta("Indirizzo: ");
 			contenuto.add(va);
-			JLabel vv=new JLabel();
-			vv.setText(indirizzo+" ");
-			vv.setFont(Est.font);
-			vv.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+			Etichetta vv=new Etichetta(indirizzo+" ");
 			contenuto.add(vv);
 			
 	/*comp6*/Pulsante bex=new Pulsante("-ESCI-");
