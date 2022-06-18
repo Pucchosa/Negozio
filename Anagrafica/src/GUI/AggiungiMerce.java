@@ -7,7 +7,7 @@ import javax.swing.*;
 
 import java.awt.event.*;
 
-public class AggiungiMerce extends Frame{
+public class AggiungiMerce extends Finestra{
 	String nome="";
 	Double quantita=0.0;
 	Double prezzoA=0.0;
@@ -15,9 +15,6 @@ public class AggiungiMerce extends Frame{
 	String unita="";
 	public AggiungiMerce(DataM c){
 		super("Aggiungi prodotto");
-		setLayout(new BorderLayout(100,10));
-		setLocation(150,150);
-		setBackground(Est.chiaro);
 		
 		Panel contenuto=new Panel();
 		contenuto.setLayout(new GridLayout(6,2));
