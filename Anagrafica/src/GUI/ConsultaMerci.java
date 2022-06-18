@@ -7,10 +7,10 @@ import javax.swing.*;
 //import Negozio.Ogg;
 import java.awt.event.*;
 
-public class ConsultaMerci<T extends DataBase> extends Finestra {
+public class ConsultaMerci extends Finestra {
 		boolean tipp=true;
 		int index=-1;
-		public ConsultaMerci(T c){
+		public ConsultaMerci(DataM c){
 			super("CONSULTA data base Merci");
 
 			Panel contenuto=new Panel();
