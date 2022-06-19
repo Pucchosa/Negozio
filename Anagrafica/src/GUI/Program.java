@@ -69,8 +69,7 @@ public class Program{
 	        	}
 			});
 	        add("South",bex);
-    	
-
+	        
 			pack();
 		}
 	}

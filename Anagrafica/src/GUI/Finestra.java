@@ -15,6 +15,6 @@ public class Finestra extends Frame{
 		setLayout(new BorderLayout(100,10));
 		setLocation(150,150);
 		setBackground(Est.chiaro);
-				
+		
 	}
 }

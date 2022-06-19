@@ -1,0 +1,33 @@
+package GUI;
+
+import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+
+import javax.swing.JTextField;
+
+public class FormVuoto extends JTextField{
+	String ret;
+	public FormVuoto(String tit){
+		super(tit, 15);
+		setForeground(Est.chiarissimo);
+		addFocusListener(new FocusListener() {
+			public void focusGained(FocusEvent e){
+				if (getText().equals(tit)){
+					setText("");
+					setForeground(Color.BLACK);
+				}
+			}
+			public void focusLost(FocusEvent e){
+				if (getText().isEmpty()){
+					setText(tit);
+					setForeground(Est.chiarissimo);
+				}
+				else ret=getText();
+			}
+		});
+		setFont(Est.font);
+		
+	}
+
+}
