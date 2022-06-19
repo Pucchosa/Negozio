@@ -74,24 +74,7 @@ public class AggiungiPersona extends Finestra{
 /*comp5*/  Etichetta non=new Etichetta("Nome: ");
 		contenuto.add(non);
 /*comp6*/ JPanel pan1=new JPanel();
-		JTextField tf1 = new JTextField("Nome", 15);
-		tf1.setForeground(Est.chiarissimo);
-		tf1.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf1.getText().equals("Nome")){
-					tf1.setText("");
-					tf1.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf1.getText().isEmpty()){
-					tf1.setText("Nome");
-					tf1.setForeground(Est.chiarissimo);
-				}
-				else nome=tf1.getText();
-			}
-		});
-		tf1.setFont(Est.font);
+		FormVuoto tf1 = new FormVuoto("Nome");
 		pan1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan1.add(tf1);
 		pan1.setBackground(Est.chiaro);
@@ -100,26 +83,7 @@ public class AggiungiPersona extends Finestra{
 /*comp7*/  Etichetta qtt=new Etichetta("Cognome: ");
 		contenuto.add(qtt);
 /*comp8*/JPanel pan2=new JPanel();
-		JTextField tf2 = new JTextField("Cognome", 15);
-		tf2.setForeground(Est.chiarissimo);
-		tf2.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf2.getText().equals("Cognome")){
-					tf2.setText("");
-					tf2.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf2.getText().isEmpty()){
-					tf2.setText("Cognome");
-					tf2.setForeground(Est.chiarissimo);
-				}
-				else {
-					cognome=tf2.getText();
-				}
-			}
-		});
-		tf2.setFont(Est.font);
+		FormVuoto tf2 = new FormVuoto("Cognome");
 		pan2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan2.add(tf2);
 		pan2.setBackground(Est.chiaro);
@@ -128,25 +92,7 @@ public class AggiungiPersona extends Finestra{
 /*comp9*/  Etichetta tel=new Etichetta("Telefono: ");
 		contenuto.add(tel);
 /*comp10*/JPanel pan3=new JPanel();
-		JTextField tf3 = new JTextField("Telefono", 15);
-		tf3.setForeground(Est.chiarissimo);
-		tf3.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf3.getText().equals("Telefono")){
-					tf3.setText("");
-					tf3.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf3.getText().isEmpty()){
-					tf3.setText("Telefono");
-					tf3.setForeground(Est.chiarissimo);
-				}
-				else {
-					telefono=tf3.getText();
-				}
-			}
-		});
+		FormVuoto tf3 = new FormVuoto("Telefono");
 		tf3.setFont(Est.font);
 		pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan3.add(tf3);
@@ -156,26 +102,7 @@ public class AggiungiPersona extends Finestra{
 /*comp11*/  Etichetta mai=new Etichetta("eMail: ");
 		contenuto.add(mai);
 /*comp12*/JPanel pan4=new JPanel();
-		JTextField tf4 = new JTextField("eMail", 15);
-		tf4.setForeground(Est.chiarissimo);
-		tf4.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf4.getText().equals("eMail")){
-					tf4.setText("");
-					tf4.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf4.getText().isEmpty()){
-					tf4.setText("eMail");
-					tf4.setForeground(Est.chiarissimo);
-				}
-				else {
-					email=tf4.getText();
-				}
-			}
-		});
-		tf4.setFont(Est.font);
+		FormVuoto tf4 = new FormVuoto("eMail");
 		pan4.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan4.add(tf4);
 		pan4.setBackground(Est.chiaro);
@@ -184,26 +111,7 @@ public class AggiungiPersona extends Finestra{
 /*comp13*/  Etichetta ivv=new Etichetta("Partita IVA: ");
 		contenuto.add(ivv);
 /*comp14*/JPanel pan5=new JPanel();
-		JTextField tf5 = new JTextField("IVA n.", 15);
-		tf5.setForeground(Est.chiarissimo);
-		tf5.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf5.getText().equals("IVA n.")){
-					tf5.setText("");
-					tf5.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf5.getText().isEmpty()){
-					tf5.setText("IVA n.");
-					tf5.setForeground(Est.chiarissimo);
-				}
-				else {
-					iva=tf5.getText();
-				}
-			}
-		});
-		tf5.setFont(Est.font);
+		FormVuoto tf5 = new FormVuoto("IVA n.");
 		pan5.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan5.add(tf5);
 		pan5.setBackground(Est.chiaro);
@@ -212,26 +120,7 @@ public class AggiungiPersona extends Finestra{
 /*comp15*/  Etichetta ind=new Etichetta("Indirizzo: ");
 		contenuto.add(ind);
 /*comp16*/JPanel pan6=new JPanel();
-		JTextField tf6 = new JTextField("indirizzo", 15);
-		tf6.setForeground(Est.chiarissimo);
-		tf6.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf6.getText().equals("indirizzo")){
-					tf6.setText("");
-					tf6.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf6.getText().isEmpty()){
-					tf6.setText("indirizzo");
-					tf6.setForeground(Est.chiarissimo);
-				}
-				else {
-					indirizzo=tf6.getText();
-				}
-			}
-		});
-		tf6.setFont(Est.font);
+		FormVuoto tf6 = new FormVuoto("indirizzo");
 		pan6.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan6.add(tf6);
 		pan6.setBackground(Est.chiaro);
@@ -240,32 +129,7 @@ public class AggiungiPersona extends Finestra{
 /*comp17*/  Etichetta prr=new Etichetta("Saldo iniziale: ");
 		contenuto.add(prr);
 /*comp18*/ JPanel pan7=new JPanel();
-		JTextField tf7 = new JTextField("Saldo", 15);
-		tf7.setForeground(Est.chiarissimo);
-		tf7.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf7.getText().equals("Saldo")){
-					tf7.setText("");
-					tf7.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf7.getText().isEmpty()){
-					tf7.setText("Saldo");
-					tf7.setForeground(Est.chiarissimo);
-				}
-				else {
-					try {
-						saldo=Double.parseDouble(tf7.getText());
-					}
-					catch (Exception ex){
-						ErrorMessage err=new ErrorMessage("inserire numero con . ");
-						err.setVisible(true);
-					}
-				}
-			}
-		});
-		tf7.setFont(Est.font);
+		FormVuoto tf7 = new FormVuoto("Saldo");
 		pan7.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan7.add(tf7);
 		pan7.setBackground(Est.chiaro);
@@ -285,6 +149,20 @@ public class AggiungiPersona extends Finestra{
 /*comp20*/Pulsante bent=new Pulsante("-INVIO-");
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
+				nome=tf1.ret;
+				cognome=tf2.ret;
+				telefono=tf3.ret;
+				email=tf4.ret;
+				iva=tf5.ret;
+				indirizzo=tf6.ret;
+				try {
+					saldo=Double.parseDouble(tf7.ret);
+				}
+				catch (Exception ex){
+					ErrorMessage err=new ErrorMessage("inserire numero con . ");
+					err.setVisible(true);
+				}
+		    	
 		    	if (tipo.contentEquals("cliente")){
 		    		Cliente inser=new Cliente(titolo, nome, cognome, telefono, email, iva, indirizzo, saldo);
 		    		c.agg(inser);
@@ -378,26 +256,7 @@ public class AggiungiPersona extends Finestra{
 	/*comp9*/  Etichetta tel=new Etichetta("Telefono: ");
 			contenuto.add(tel);
 	/*comp10*/JPanel pan3=new JPanel();
-			JTextField tf3 = new JTextField(mer.getTelefono(), 15);
-			tf3.setForeground(Est.chiarissimo);
-			tf3.addFocusListener(new FocusListener() {
-				public void focusGained(FocusEvent e){
-					if (tf3.getText().equals(mer.getTelefono())){
-						tf3.setText("");
-						tf3.setForeground(Color.BLACK);
-					}
-				}
-				public void focusLost(FocusEvent e){
-					if (tf3.getText().isEmpty()){
-						tf3.setText(mer.getTelefono());
-						tf3.setForeground(Est.chiarissimo);
-					}
-					else {
-						telefono=tf3.getText();
-					}
-				}
-			});
-			tf3.setFont(Est.font);
+			FormVuoto tf3 = new FormVuoto(mer.getTelefono());
 			pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan3.add(tf3);
 			pan3.setBackground(Est.chiaro);
@@ -406,26 +265,7 @@ public class AggiungiPersona extends Finestra{
 	/*comp11*/  Etichetta mai=new Etichetta("eMail: ");
 			contenuto.add(mai);
 	/*comp12*/JPanel pan4=new JPanel();
-			JTextField tf4 = new JTextField(mer.getEmail(), 15);
-			tf4.setForeground(Est.chiarissimo);
-			tf4.addFocusListener(new FocusListener() {
-				public void focusGained(FocusEvent e){
-					if (tf4.getText().equals(mer.getEmail())){
-						tf4.setText("");
-						tf4.setForeground(Color.BLACK);
-					}
-				}
-				public void focusLost(FocusEvent e){
-					if (tf4.getText().isEmpty()){
-						tf4.setText(mer.getEmail());
-						tf4.setForeground(Est.chiarissimo);
-					}
-					else {
-						email=tf4.getText();
-					}
-				}
-			});
-			tf4.setFont(Est.font);
+			FormVuoto tf4 = new FormVuoto(mer.getEmail());
 			pan4.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan4.add(tf4);
 			pan4.setBackground(Est.chiaro);
@@ -434,26 +274,7 @@ public class AggiungiPersona extends Finestra{
 	/*comp13*/  Etichetta ivv=new Etichetta("Partita IVA: ");
 			contenuto.add(ivv);
 	/*comp14*/JPanel pan5=new JPanel();
-			JTextField tf5 = new JTextField(mer.getIva(), 15);
-			tf5.setForeground(Est.chiarissimo);
-			tf5.addFocusListener(new FocusListener() {
-				public void focusGained(FocusEvent e){
-					if (tf5.getText().equals(mer.getIva())){
-						tf5.setText("");
-						tf5.setForeground(Color.BLACK);
-					}
-				}
-				public void focusLost(FocusEvent e){
-					if (tf5.getText().isEmpty()){
-						tf5.setText(mer.getIva());
-						tf5.setForeground(Est.chiarissimo);
-					}
-					else {
-						iva=tf5.getText();
-					}
-				}
-			});
-			tf5.setFont(Est.font);
+			FormVuoto tf5 = new FormVuoto(mer.getIva());
 			pan5.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan5.add(tf5);
 			pan5.setBackground(Est.chiaro);
@@ -462,26 +283,7 @@ public class AggiungiPersona extends Finestra{
 	/*comp15*/  Etichetta ind=new Etichetta("Indirizzo: ");
 			contenuto.add(ind);
 	/*comp16*/JPanel pan6=new JPanel();
-			JTextField tf6 = new JTextField(mer.getIndirizzo(), 15);
-			tf6.setForeground(Est.chiarissimo);
-			tf6.addFocusListener(new FocusListener() {
-				public void focusGained(FocusEvent e){
-					if (tf6.getText().equals(mer.getIndirizzo())){
-						tf6.setText("");
-						tf6.setForeground(Color.BLACK);
-					}
-				}
-				public void focusLost(FocusEvent e){
-					if (tf6.getText().isEmpty()){
-						tf6.setText(mer.getIndirizzo());
-						tf6.setForeground(Est.chiarissimo);
-					}
-					else {
-						indirizzo=tf6.getText();
-					}
-				}
-			});
-			tf6.setFont(Est.font);
+			FormVuoto tf6 = new FormVuoto(mer.getIndirizzo());
 			pan6.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan6.add(tf6);
 			pan6.setBackground(Est.chiaro);
@@ -490,32 +292,7 @@ public class AggiungiPersona extends Finestra{
 	/*comp17*/  Etichetta prr=new Etichetta("Saldo iniziale: ");
 			contenuto.add(prr);
 	/*comp18*/ JPanel pan7=new JPanel();
-			JTextField tf7 = new JTextField(""+mer.getSaldo(), 15);
-			tf7.setForeground(Est.chiarissimo);
-			tf7.addFocusListener(new FocusListener() {
-				public void focusGained(FocusEvent e){
-					if (tf7.getText().equals(""+mer.getSaldo())){
-						tf7.setText("");
-						tf7.setForeground(Color.BLACK);
-					}
-				}
-				public void focusLost(FocusEvent e){
-					if (tf7.getText().isEmpty()){
-						tf7.setText(""+mer.getSaldo());
-						tf7.setForeground(Est.chiarissimo);
-					}
-					else {
-						try {
-							saldo=Double.parseDouble(tf7.getText());
-						}
-						catch (Exception ex){
-							ErrorMessage err=new ErrorMessage("inserire numero con . ");
-							err.setVisible(true);
-						}
-					}
-				}
-			});
-			tf7.setFont(Est.font);
+			FormVuoto tf7 = new FormVuoto(""+mer.getSaldo());
 			pan7.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 			pan7.add(tf7);
 			pan7.setBackground(Est.chiaro);
@@ -535,6 +312,19 @@ public class AggiungiPersona extends Finestra{
 	/*comp20*/Pulsante bent=new Pulsante("-INVIO-");
 			bent.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
+			    	
+					telefono=tf3.ret;
+					email=tf4.ret;
+					iva=tf5.ret;
+					indirizzo=tf6.ret;
+					try {
+						saldo=Double.parseDouble(tf7.ret);
+					}
+					catch (Exception ex){
+						ErrorMessage err=new ErrorMessage("inserire numero con . ");
+						err.setVisible(true);
+					}
+			    	
 			    	if (tipo.contentEquals("cliente")){
 			    		try {
 			    		

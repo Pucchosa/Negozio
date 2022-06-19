@@ -21,28 +21,13 @@ public class AggiungiMerce extends Finestra{
 
 /*comp1*/  Etichetta non=new Etichetta("Merce: ");
 		contenuto.add(non);
-/*comp2*/ JPanel pan1=new JPanel();
-		JTextField tf1 = new JTextField("Nome", 15);
-		tf1.setForeground(Est.chiarissimo);
-		tf1.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf1.getText().equals("Nome")){
-					tf1.setText("");
-					tf1.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf1.getText().isEmpty()){
-					tf1.setText("Nome");
-					tf1.setForeground(Est.chiarissimo);
-				}
-				else nome=tf1.getText();
-			}
-		});
-		tf1.setFont(Est.font);
+		
+		
+		JPanel pan1=new JPanel();
+ /*comp2*/FormVuoto tf1=new FormVuoto("Nome");
 		pan1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan1.add(tf1);
-		pan1.setBackground(Est.chiarissimo);
+		pan1.setBackground(Est.chiaro);
 		contenuto.add(pan1);
 		
 /*comp3*/  Etichetta un=new Etichetta("Scelta Unita: ");
@@ -69,32 +54,7 @@ public class AggiungiMerce extends Finestra{
 /*comp5*/  Etichetta qtt=new Etichetta("Quantita: ");
 		contenuto.add(qtt);
 /*comp6*/JPanel pan2=new JPanel();
-		JTextField tf2 = new JTextField("Quantita", 15);
-		tf2.setForeground(Est.chiarissimo);
-		tf2.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf2.getText().equals("Quantita")){
-					tf2.setText("");
-					tf2.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf2.getText().isEmpty()){
-					tf2.setText("Quantita");
-					tf2.setForeground(Est.chiarissimo);
-				}
-				else {
-					try {
-						quantita=Double.parseDouble(tf2.getText());
-					}
-					catch (Exception ex){
-						ErrorMessage err=new ErrorMessage("inserire numero con . ");
-						err.setVisible(true);
-					}
-				}
-			}
-		});
-		tf2.setFont(Est.font);
+		FormVuoto tf2=new FormVuoto("Quantita");
 		pan2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan2.add(tf2);
 		pan2.setBackground(Est.chiaro);
@@ -103,32 +63,7 @@ public class AggiungiMerce extends Finestra{
 /*comp7*/  Etichetta prr=new Etichetta("Prezzo d'acquisto: ");
 		contenuto.add(prr);
 /*comp8*/ JPanel pan3=new JPanel();
-		JTextField tf3 = new JTextField("Prezzo", 15);
-		tf3.setForeground(Est.chiarissimo);
-		tf3.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf3.getText().equals("Prezzo")){
-					tf3.setText("");
-					tf3.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf3.getText().isEmpty()){
-					tf3.setText("Prezzo");
-					tf3.setForeground(Est.chiarissimo);
-				}
-				else {
-					try {
-						prezzoA=Double.parseDouble(tf3.getText());
-					}
-					catch (Exception ex){
-						ErrorMessage err=new ErrorMessage("inserire numero con . ");
-						err.setVisible(true);
-					}
-				}
-			}
-		});
-		tf3.setFont(Est.font);
+		FormVuoto tf3=new FormVuoto("Prezzo");
 		pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan3.add(tf3);
 		pan3.setBackground(Est.chiaro);
@@ -168,6 +103,21 @@ public class AggiungiMerce extends Finestra{
 /*comp12*/Pulsante bent=new Pulsante("-INVIO-");
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
+		    	nome=tf1.ret;
+		    	try {
+		    		quantita=Double.parseDouble(tf2.ret);
+		    	}
+		    	catch (Exception ex){
+		    		ErrorMessage err=new ErrorMessage("inserire numero con . ");
+		    		err.setVisible(true);
+		    	}
+		    	try {
+					prezzoA=Double.parseDouble(tf3.ret);
+				}
+				catch (Exception ex){
+					ErrorMessage err=new ErrorMessage("inserire numero con . ");
+					err.setVisible(true);
+				}
 				Merce inserisci =new Merce(nome, quantita, rincaro, prezzoA, unita,c);
 				c.agg(inserisci);
 				ConsultaMerci consultaM=new ConsultaMerci(c);
@@ -230,32 +180,7 @@ public class AggiungiMerce extends Finestra{
 /*comp5*/  Etichetta qtt=new Etichetta("Quantita: ");
 		contenuto.add(qtt);
 /*comp6*/JPanel pan2=new JPanel();
-		JTextField tf2 = new JTextField(quantita+"", 15);
-		tf2.setForeground(Est.chiarissimo);
-		tf2.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf2.getText().equals(quantita)){
-					tf2.setText("");
-					tf2.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf2.getText().isEmpty()){
-					tf2.setText(quantita+"");
-					tf2.setForeground(Est.chiarissimo);
-				}
-				else {
-					try {
-						quantita=Double.parseDouble(tf2.getText());
-					}
-					catch (Exception ex){
-						ErrorMessage err=new ErrorMessage("inserire numero con . ");
-						err.setVisible(true);
-					}
-				}
-			}
-		});
-		tf2.setFont(Est.font);
+		FormVuoto tf2=new FormVuoto(quantita+"");
 		pan2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan2.add(tf2);
 		pan2.setBackground(Est.chiaro);
@@ -264,32 +189,7 @@ public class AggiungiMerce extends Finestra{
 /*comp7*/  Etichetta prr=new Etichetta("Prezzo d'acquisto: ");
 		contenuto.add(prr);
 /*comp8*/ JPanel pan3=new JPanel();
-		JTextField tf3 = new JTextField(prezzoA+"", 15);
-		tf3.setForeground(Est.chiarissimo);
-		tf3.addFocusListener(new FocusListener() {
-			public void focusGained(FocusEvent e){
-				if (tf3.getText().equals(prezzoA)){
-					tf3.setText("");
-					tf3.setForeground(Color.BLACK);
-				}
-			}
-			public void focusLost(FocusEvent e){
-				if (tf3.getText().isEmpty()){
-					tf3.setText(prezzoA+"");
-					tf3.setForeground(Est.chiarissimo);
-				}
-				else {
-					try {
-						prezzoA=Double.parseDouble(tf3.getText());
-					}
-					catch (Exception ex){
-						ErrorMessage err=new ErrorMessage("inserire numero con . ");
-						err.setVisible(true);
-					}
-				}
-			}
-		});
-		tf3.setFont(Est.font);
+		FormVuoto tf3=new FormVuoto(prezzoA+"");
 		pan3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		pan3.add(tf3);
 		pan3.setBackground(Est.chiaro);
@@ -329,6 +229,16 @@ public class AggiungiMerce extends Finestra{
 /*comp12*/Pulsante bent=new Pulsante("-INVIO-");
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
+		    	try {
+		    		quantita=Double.parseDouble(tf2.ret);
+		    	}
+		    	catch (Exception ex){
+		    	}
+		    	try {
+					prezzoA=Double.parseDouble(tf3.ret);
+				}
+				catch (Exception ex){
+				}
 		    	c.get(x).setPrezzoA(prezzoA);
 		    	c.get(x).setQuantita(quantita);
 		    	c.get(x).setRincaro(rincaro);
