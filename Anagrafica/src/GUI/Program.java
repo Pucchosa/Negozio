@@ -24,8 +24,7 @@ public class Program{
 			// ISTANZIO TUTTI I FRAME SECONDARI
 			DataB<Cliente> clienti=new DataB<Cliente>("cliente");
 			DataB<Fornitore> fornitori=new DataB<Fornitore>("fornitore");
-			DataM merci=new DataM();
-			MyReadM.carica(merci);
+			MyReadM.carica();
 			MyReadF.carica(fornitori);
 			MyReadC.carica(clienti);
 			
@@ -47,7 +46,7 @@ public class Program{
 	        Pulsante b2=new Pulsante("Consulta DataBase Merci");
 			b2.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
-			    	ConsultaMerci consultaM=new ConsultaMerci(merci);
+			    	ConsultaMerci consultaM=new ConsultaMerci();
 			    	consultaM.setVisible(true);
 				}
 			});
@@ -61,7 +60,7 @@ public class Program{
 			bex.setBackground(Est.rosso);
 			bex.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
-	            	MyReadM.scarica(merci);
+	            	MyReadM.scarica();
 	    			MyReadF.scarica(fornitori);
 	    			MyReadC.scarica(clienti);
 	            	setVisible(false);

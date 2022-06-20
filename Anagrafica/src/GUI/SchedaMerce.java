@@ -16,11 +16,11 @@ public class SchedaMerce extends Finestra{
 	Double prezzoV;
 	Double valore;
 	String unita;
-	public SchedaMerce(DataM m, int x){
+	public SchedaMerce(int x){
 		super("Scheda prodotto");
 		
-		if (x!=-1&&m.elenco.containsKey(x)){
-			Merce mer=m.elenco.get(x);
+		if (x!=-1&&DataM.elenco.containsKey(x)){
+			Merce mer=DataM.elenco.get(x);
 			this.nome=mer.getNome();
 			this.quantita=mer.getQuantita();
 			this.rincaro=mer.getRincaro();
@@ -63,7 +63,7 @@ public class SchedaMerce extends Finestra{
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
-		    	ConsultaMerci consultaM=new ConsultaMerci(m);
+		    	ConsultaMerci consultaM=new ConsultaMerci();
 		    	consultaM.setVisible(true);
 		    	dispose();
 			}
@@ -75,7 +75,7 @@ public class SchedaMerce extends Finestra{
 		    public void actionPerformed(ActionEvent e) {
 		    	if (x!=-1){
 			    	setVisible(false);
-			    	AggiungiMerce modifM=new AggiungiMerce(m, x);
+			    	AggiungiMerce modifM=new AggiungiMerce(x);
 			    	modifM.setVisible(true);
 		    	
 			    	dispose();
@@ -91,7 +91,7 @@ public class SchedaMerce extends Finestra{
 		    public void actionPerformed(ActionEvent e) {
 		    	if (x!=-1){
 			    	setVisible(false);
-			    	ErrorMessage del=new ErrorMessage(x,m);
+			    	ErrorMessage del=new ErrorMessage(x);
 			    	del.setVisible(true);
 			    	dispose();
 		    	}

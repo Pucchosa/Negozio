@@ -50,14 +50,13 @@ public class ErrorMessage extends Frame implements ActionListener{
 		pack();
 	}
 	
-	public ErrorMessage(int a, DataM m){
+	public ErrorMessage(int a){
 		super("---ATTENZIONE---");
-//		setLayout(new BorderLayout(100,50));
 		setLocation(300,300);
 		setBackground(new Color(217,243,248));
 		
 		JLabel tx=new JLabel();
-		tx.setText("<html>Se è sicuri divoler eliminare questo prodotto? <br/> Numero:"+a+" Merce: "+m.elenco.get(a).getNome());
+		tx.setText("<html>Se è sicuri divoler eliminare questo prodotto? <br/> Numero:"+a+" Merce: "+DataM.elenco.get(a).getNome());
 		tx.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
 		tx.setFont(Est.font);
 		
@@ -65,7 +64,7 @@ public class ErrorMessage extends Frame implements ActionListener{
 		ok.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
-		    	ConsultaMerci consultaM=new ConsultaMerci(m);
+		    	ConsultaMerci consultaM=new ConsultaMerci();
 		    	consultaM.setVisible(true);
 		    	dispose();
 			}
@@ -75,9 +74,9 @@ public class ErrorMessage extends Frame implements ActionListener{
 		ty.setBackground(Est.rosso);
 		ty.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		    	m.elimina(a);
+		    	DataM.elimina(a);
 		    	setVisible(false);
-		    	ConsultaMerci consultaM=new ConsultaMerci(m);
+		    	ConsultaMerci consultaM=new ConsultaMerci();
 		    	consultaM.setVisible(true);
 		    	dispose();
 			}

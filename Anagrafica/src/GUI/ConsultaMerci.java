@@ -10,7 +10,7 @@ import java.awt.event.*;
 public class ConsultaMerci extends Finestra {
 		boolean tipp=true;
 		int index=-1;
-		public ConsultaMerci(DataM c){
+		public ConsultaMerci(){
 			super("CONSULTA data base Merci");
 
 			Panel contenuto=new Panel();
@@ -23,7 +23,7 @@ public class ConsultaMerci extends Finestra {
 	/*comp2*/Choice ele=new Choice();
 			ele.add("Scegli");
 			try{
-				for (Merce a:c.elenco.values()){
+				for (Merce a:DataM.elenco.values()){
 					ele.add(a.getNome()+" "+a.getCod());
 				}
 			}
@@ -50,7 +50,7 @@ public class ConsultaMerci extends Finestra {
 			bent.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	if (index!=-1){
-				    	SchedaMerce aggg=new SchedaMerce(c, index);
+				    	SchedaMerce aggg=new SchedaMerce(index);
 				    	aggg.setVisible(true);
 				    	dispose();
 			    	}
@@ -73,7 +73,7 @@ public class ConsultaMerci extends Finestra {
 /*comp6*/Pulsante b2=new Pulsante("+ Aggiungi +");
 			b2.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
-			    	AggiungiMerce aggg=new AggiungiMerce(c);
+			    	AggiungiMerce aggg=new AggiungiMerce();
 			    	aggg.setVisible(true);
 			    	dispose();
 				}

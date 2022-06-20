@@ -17,7 +17,7 @@ public class Merce {
 	private Scanner sc = new Scanner(System.in);
 	
 	
-	public Merce(DataM c){
+	public Merce(){
 		System.out.println("Inserire nome prodotto: ");
 		nome=sc.nextLine();
 		System.out.println("Inserire lúnita di misura del prodotto: ");
@@ -29,9 +29,9 @@ public class Merce {
 		prezzoV=(prezzoA/100*rincaro)+prezzoA;
 		prezzoF=prezzoV*quantita;
 		valore=quantita*prezzoA;
-		codice=c.nextIndice();
+		codice=DataM.nextIndice();
 	}
-	public Merce(String nome, Double quantita, int rincaro, Double prezzoA, String unita,DataM c){
+	public Merce(String nome, Double quantita, int rincaro, Double prezzoA, String unita){
 		this.nome=nome;
 		this.quantita=quantita;
 		this.rincaro=rincaro;
@@ -40,7 +40,7 @@ public class Merce {
 		this.prezzoV=prezzoA/100*rincaro;
 		this.prezzoF=prezzoV*quantita;
 		this.valore=prezzoA*quantita;
-		this.codice=c.nextIndice();
+		this.codice=DataM.nextIndice();
 	}
 	public int getCod(){
 		return codice;

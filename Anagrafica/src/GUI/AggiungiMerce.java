@@ -13,7 +13,7 @@ public class AggiungiMerce extends Finestra{
 	Double prezzoA=0.0;
 	int rincaro=0;
 	String unita="";
-	public AggiungiMerce(DataM c){
+	public AggiungiMerce(){
 		super("Aggiungi prodotto");
 		
 		Panel contenuto=new Panel();
@@ -93,7 +93,7 @@ public class AggiungiMerce extends Finestra{
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
-		    	ConsultaMerci consultaM=new ConsultaMerci(c);
+		    	ConsultaMerci consultaM=new ConsultaMerci();
 		    	consultaM.setVisible(true);
 		    	dispose();
 			}
@@ -118,9 +118,9 @@ public class AggiungiMerce extends Finestra{
 					ErrorMessage err=new ErrorMessage("inserire numero con . ");
 					err.setVisible(true);
 				}
-				Merce inserisci =new Merce(nome, quantita, rincaro, prezzoA, unita,c);
-				c.agg(inserisci);
-				ConsultaMerci consultaM=new ConsultaMerci(c);
+				Merce inserisci =new Merce(nome, quantita, rincaro, prezzoA, unita);
+				DataM.agg(inserisci);
+				ConsultaMerci consultaM=new ConsultaMerci(/*c*/);
 		    	consultaM.setVisible(true);
 		    	setVisible(false);
 		    	dispose();
@@ -134,9 +134,9 @@ public class AggiungiMerce extends Finestra{
 		pack();
 	}
 	
-	public AggiungiMerce(DataM c, int x){
+	public AggiungiMerce(int x){
 		super("Modifica prodotto");
-		Merce prod=c.get(x);
+		Merce prod=DataM.get(x);
 		
 		nome=prod.getNome();
 		quantita=prod.getQuantita();
@@ -219,7 +219,7 @@ public class AggiungiMerce extends Finestra{
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
-		    	ConsultaMerci consultaM=new ConsultaMerci(c);
+		    	ConsultaMerci consultaM=new ConsultaMerci();
 		    	consultaM.setVisible(true);
 		    	dispose();
 			}
@@ -239,12 +239,12 @@ public class AggiungiMerce extends Finestra{
 				}
 				catch (Exception ex){
 				}
-		    	c.get(x).setPrezzoA(prezzoA);
-		    	c.get(x).setQuantita(quantita);
-		    	c.get(x).setRincaro(rincaro);
-		    	c.get(x).setUnita(unita);
+		    	DataM.get(x).setPrezzoA(prezzoA);
+		    	DataM.get(x).setQuantita(quantita);
+		    	DataM.get(x).setRincaro(rincaro);
+		    	DataM.get(x).setUnita(unita);
 		    	
-				ConsultaMerci consultaM=new ConsultaMerci(c);
+				ConsultaMerci consultaM=new ConsultaMerci();
 		    	consultaM.setVisible(true);
 		    	setVisible(false);
 		    	dispose();

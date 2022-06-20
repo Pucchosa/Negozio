@@ -11,7 +11,7 @@ import Negozio.*;
 
 public class MyReadM {
 	
-	public static void carica(DataM c){
+	public static void carica(){
 		BufferedReader reader;
 		ArrayList<String> elenco=new ArrayList<String>();
 		try{
@@ -36,14 +36,14 @@ public class MyReadM {
 			int rincaro=Integer.parseInt(og[2]);
 			Double prezzoA=Double.parseDouble(og[3]);
 			String unita=og[4];
-			Merce ogetto=new Merce(nome, quantita, rincaro, prezzoA, unita,c);
-			c.agg(ogetto);
+			Merce ogetto=new Merce(nome, quantita, rincaro, prezzoA, unita);
+			DataM.agg(ogetto);
 			
 		}
 	}
-	public static void scarica(DataM c){
+	public static void scarica(){
 		ArrayList<String> elenco=new ArrayList<String>();
-		for (Merce f:c.elenco.values()){
+		for (Merce f:DataM.elenco.values()){
 			String temp=f.getNome()+","+f.getQuantita()+","+f.getRincaro()+","+f.getPrezzoA()+","+f.getUnit();
 			elenco.add(temp);
 		}
