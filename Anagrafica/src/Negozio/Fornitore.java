@@ -1,7 +1,10 @@
 package Negozio;
+import java.util.ArrayList;
+
 import GUI.*;
 
 public class Fornitore extends Anagrafica {
+	private ArrayList<Integer> catalogo;
 	
 	public Fornitore(String unCognome, String unNome){
 		super(unCognome, unNome);

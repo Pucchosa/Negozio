@@ -1,5 +1,7 @@
 package Negozio;
 import GUI.*;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Merce {
@@ -9,9 +11,11 @@ public class Merce {
 	private int rincaro;
 	private Double prezzoA;
 	private Double prezzoV;
+	private Double prezzoF;
 	private Double valore;
 	private String unita;
 	private Scanner sc = new Scanner(System.in);
+	
 	
 	public Merce(DataM c){
 		System.out.println("Inserire nome prodotto: ");
@@ -23,6 +27,7 @@ public class Merce {
 		System.out.println("Inserire percentuale rincaro alla vendita: ");
 		rincaro=sc.nextInt();
 		prezzoV=(prezzoA/100*rincaro)+prezzoA;
+		prezzoF=prezzoV*quantita;
 		valore=quantita*prezzoA;
 		codice=c.nextIndice();
 	}
@@ -33,6 +38,7 @@ public class Merce {
 		this.prezzoA=prezzoA;
 		this.unita=unita;
 		this.prezzoV=prezzoA/100*rincaro;
+		this.prezzoF=prezzoV*quantita;
 		this.valore=prezzoA*quantita;
 		this.codice=c.nextIndice();
 	}
@@ -60,13 +66,15 @@ public class Merce {
 	public Double getValore(){
 		return valore;
 	}
-	public void togli(int x){
+	public void togli(Double x){
 		quantita=quantita-x;
 		valore=quantita*prezzoA;
+		prezzoF=quantita*prezzoV;
 	}
 	public void aggiungi(int x){
 		quantita=quantita+x;
 		valore=quantita*prezzoA;
+		prezzoF=quantita*prezzoV;
 	}
 	public void setRincaro(int x){
 		rincaro=x;
@@ -76,20 +84,29 @@ public class Merce {
 		prezzoA=x;
 		prezzoV=(prezzoA/100*rincaro);
 		valore=quantita*prezzoA;
+		prezzoF=quantita*prezzoV;
 	}
 	public Double compra(int x){
 		aggiungi(x);
 		return (x*prezzoA);
 	}
-	public Double vendi(int x){
+	public Double vendi(Double x){
 		togli(x);
 		return (x*prezzoV);
 	}
 	public void setQuantita(Double x){
 		quantita=x;
 		valore=quantita*prezzoA;
+		prezzoF=quantita*prezzoV;
 	}
 	public void setUnita(String x){
 		unita=x;
+	}
+	public Double getPrezzoF(){
+		return prezzoF;
+	}
+	public String toString(){
+		String stampa=nome+" qt. "+quantita+" prezzo: "+prezzoF;
+		return stampa;
 	}
 }

@@ -58,6 +58,7 @@ public class Program{
 			add("Center",contenuto);
 			
 			Pulsante bex=new Pulsante("-ESCI-");
+			bex.setBackground(Est.rosso);
 			bex.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	            	MyReadM.scarica(merci);
