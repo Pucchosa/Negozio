@@ -37,7 +37,7 @@ public class Merce {
 		this.rincaro=rincaro;
 		this.prezzoA=prezzoA;
 		this.unita=unita;
-		this.prezzoV=prezzoA/100*rincaro;
+		this.prezzoV=(prezzoA/100*rincaro)+prezzoA;
 		this.prezzoF=prezzoV*quantita;
 		this.valore=prezzoA*quantita;
 		this.codice=DataM.nextIndice();
@@ -78,11 +78,11 @@ public class Merce {
 	}
 	public void setRincaro(int x){
 		rincaro=x;
-		prezzoV=(prezzoA/100*rincaro);
+		prezzoV=(prezzoA/100*rincaro)+prezzoA;
 	}
 	public void setPrezzoA(Double x){
 		prezzoA=x;
-		prezzoV=(prezzoA/100*rincaro);
+		prezzoV=(prezzoA/100*rincaro)+prezzoA;
 		valore=quantita*prezzoA;
 		prezzoF=quantita*prezzoV;
 	}

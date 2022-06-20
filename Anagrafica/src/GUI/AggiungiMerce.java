@@ -83,7 +83,7 @@ public class AggiungiMerce extends Finestra{
 			}
 			public void focusLost(FocusEvent e){
 				if (rim.getSelectedIndex()>0){
-					rincaro=Integer.parseInt(rim.getSelectedItem())+100;
+					rincaro=Integer.parseInt(rim.getSelectedItem());
 				}
 			}
 		});
@@ -198,7 +198,7 @@ public class AggiungiMerce extends Finestra{
 /*comp9*/  Etichetta rin=new Etichetta("Imposta % rincaro: ");
 		contenuto.add(rin);
 /*comp10*/Choice rim=new Choice();
-		rim.add(""+(rincaro-100));
+		rim.add(""+(rincaro));
 		rim.add("10");
 		rim.add("20");
 		rim.add("30");
@@ -209,7 +209,7 @@ public class AggiungiMerce extends Finestra{
 			}
 			public void focusLost(FocusEvent e){
 				if (rim.getSelectedIndex()>0){
-					rincaro=Integer.parseInt(rim.getSelectedItem())+100;
+					rincaro=Integer.parseInt(rim.getSelectedItem());
 				}
 			}
 		});
