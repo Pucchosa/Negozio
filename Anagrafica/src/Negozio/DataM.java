@@ -78,4 +78,7 @@ public class DataM {
 		}
 		return ss;
 	}
+	public void elimina(int x){
+		elenco.remove(x);
+	}
 }

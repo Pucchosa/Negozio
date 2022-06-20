@@ -84,7 +84,21 @@ public class SchedaMerce extends Finestra{
 		});
 		contenuto.add(bin);
 		
+		Pulsante eli=new Pulsante("-ELIMINA-");
+		eli.setPreferredSize(Est.piccolo);
+		eli.setBackground(Est.rosso);
+		eli.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		    	if (x!=-1){
+			    	setVisible(false);
+			    	ErrorMessage del=new ErrorMessage(x,m);
+			    	del.setVisible(true);
+			    	dispose();
+		    	}
+			}
+		});
 		add(contenuto);
+		add("South", eli);
 		pack();
 	}
 	
