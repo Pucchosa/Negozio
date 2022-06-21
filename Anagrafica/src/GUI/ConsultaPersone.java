@@ -11,7 +11,7 @@ public class ConsultaPersone  extends Finestra {
 	int indexF=-1;
 	int indexC=-1;
 	boolean tipp=true;
-	public ConsultaPersone(DataB<Cliente> c,DataB<Fornitore> f){
+	public ConsultaPersone(){
 		super("CONSULTA data base Persone");
 
 		Panel contenuto=new Panel();
@@ -23,7 +23,7 @@ public class ConsultaPersone  extends Finestra {
 /*comp2*/Choice ele1=new Choice();
 		ele1.add("Scegli");
 		try{
-			for (Fornitore a:f.elenco){
+			for (Fornitore a:DataB.fornitori){
 				ele1.add(a.getCognome()+", "+a.getNome());
 			}
 		}
@@ -39,7 +39,7 @@ public class ConsultaPersone  extends Finestra {
 				}
 				else {
 					String[] temp=ele1.getSelectedItem().split(", ");
-					indexF=f.trovaPersona(temp[0], temp[1]);
+					indexF=DataB.trovaPersona(temp[0], temp[1]);
 				}
 			}
 		});
@@ -49,7 +49,7 @@ public class ConsultaPersone  extends Finestra {
 		bent1.addActionListener(new ActionListener() {
 			 public void actionPerformed(ActionEvent e) {
 				 if (indexF!=-1){
-					SchedaPersona aggg=new SchedaPersona(c,f, indexF,"fornitore");
+					SchedaPersona aggg=new SchedaPersona(indexF,"fornitore");
 				    aggg.setVisible(true);
 				    dispose();
 				 }
@@ -64,7 +64,7 @@ public class ConsultaPersone  extends Finestra {
 /*comp5*/Choice ele=new Choice();
 		ele.add("Scegli");
 		try{
-			for (Cliente a:c.elenco){
+			for (Cliente a:DataB.clienti){
 				ele.add(a.getCognome()+", "+a.getNome());
 			}
 		}
@@ -80,7 +80,7 @@ public class ConsultaPersone  extends Finestra {
 				}
 				else {
 					String[] temp=ele.getSelectedItem().split(", ");
-					indexC=c.trovaPersona(temp[0], temp[1]);
+					indexC=DataB.trovaPersona(temp[0], temp[1], 5);
 				}
 			}
 		});
@@ -90,7 +90,7 @@ public class ConsultaPersone  extends Finestra {
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	if (indexC!=-1){
-		    		SchedaPersona aggg=new SchedaPersona(c,f, indexC,"cliente");
+		    		SchedaPersona aggg=new SchedaPersona(indexC,"cliente");
 			    	aggg.setVisible(true);
 			    	dispose();
 			 }
@@ -113,7 +113,7 @@ public class ConsultaPersone  extends Finestra {
 /*comp9*/Pulsante b2=new Pulsante("+ Aggiungi +");
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AggiungiPersona aggg=new AggiungiPersona(c,f);
+				AggiungiPersona aggg=new AggiungiPersona();
 				aggg.setVisible(true);
 				dispose();
 			}

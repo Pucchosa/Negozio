@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import Negozio.*;
 
 public class MyReadC{
-	public static void carica(DataB<Cliente> c){
+	public static void carica(){
 		BufferedReader reader;
 		ArrayList<String> elenco=new ArrayList<String>();
 		try{
@@ -38,13 +38,13 @@ public class MyReadC{
 			Double saldo=Double.parseDouble(og[7]);
 			
 			Cliente inser=new Cliente(titolo, nome, cognome, telefono, email, iva, indirizzo, saldo);
-			c.agg(inser);
+			DataB.agg(inser);
 			
 		}
 	}
-	public static void scarica(DataB<Cliente> c){
+	public static void scarica(){
 		ArrayList<String> elenco=new ArrayList<String>();
-		for (Cliente f:c.elenco){
+		for (Cliente f:DataB.clienti){
 			String temp=f.getTitolo()+","+f.getNome()+","+f.getCognome()+","+f.getTelefono()+","+f.getEmail()+","+f.getIva()+","+f.getIndirizzo()+","+f.getSaldo();
 			elenco.add(temp);
 		}

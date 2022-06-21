@@ -3,51 +3,89 @@ import GUI.*;
 import java.util.*;
 
 public class DataB <T extends Anagrafica> {
-	public ArrayList<T> elenco=new ArrayList<T>();
-	String tip="";
+	static public ArrayList<Cliente> clienti=new ArrayList<Cliente>();
+	static public ArrayList<Fornitore> fornitori=new ArrayList<Fornitore>();
 	
-	public DataB(String s){
-		tip=s;
-	}
-	public String getTip(){
-		return tip;
-	}
-	public void agg(T t){
+	static public void agg(Cliente t){
 		if (eDuplicato(t)==false){
-			elenco.add(t);
+			clienti.add(t);
+		}
+		else {
+			System.out.println("Nominativo gia presente.");
+		}
+	}
+	static public void agg(Fornitore t){
+		if (eDuplicato(t)==false){
+			fornitori.add(t);
 		}
 		else {
 			System.out.println("Nominativo gia presente.");
 		}
 	}
 
-	public T get(int x) throws Exception{
-		if (x>=elenco.size())throw new Exception("Indice troppo grande");
-		else return elenco.get(x);
-		
+	static public Cliente get(int x, int y) throws Exception{
+		if (x>=clienti.size())throw new Exception("Indice troppo grande");
+		else return clienti.get(x);
 	}
-	public int trovaNome(String nome){
-		if (elenco.size()>0){
-			for (T t:elenco){
+	static public Fornitore get(int x ,String y) throws Exception{
+		if (x>=fornitori.size())throw new Exception("Indice troppo grande");
+		else return fornitori.get(x);
+	}
+	
+	static public int trovaNome(String nome, int y){
+		if (clienti.size()>0){
+			for (Cliente t:clienti){
 				if (t.getNome().equals(nome)){
-					return elenco.indexOf(t);
+					return clienti.indexOf(t);
+				}
+			}
+		}
+		return -1;
+	}
+	static public int trovaNome(String nome){
+		if (fornitori.size()>0){
+			for (Fornitore t:fornitori){
+				if (t.getNome().equals(nome)){
+					return fornitori.indexOf(t);
 				}
 			}
 		}
 		return -1;
 	}
 	
-	public int trovaCognome(String cognome){
-		if (elenco.size()>0){
-			for (T t:elenco){
+	static public int trovaCognome(String cognome, int y){
+		if (clienti.size()>0){
+			for (Cliente t:clienti){
 				if (t.getCognome().equals(cognome)){
-					return elenco.indexOf(t);
+					return clienti.indexOf(t);
 				}
 			}
 		}
 		return -1;
 	}
-	public boolean eDuplicato(String nominativo){
+	static public int trovaCognome(String cognome){
+		if (fornitori.size()>0){
+			for (Fornitore t:fornitori){
+				if (t.getCognome().equals(cognome)){
+					return fornitori.indexOf(t);
+				}
+			}
+		}
+		return -1;
+	}
+	
+	static public boolean eDuplicato(String nominativo, int cli){
+		String[] nom=nominativo.split(" ");
+		if (nom.length==2){
+			if (trovaCognome(nom[0], 5)!=-1||trovaCognome(nom[1], 5)!=-1){
+				if (trovaNome(nom[1], 5)!=-1||trovaNome(nom[0], 5)!=-1){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	static public boolean eDuplicato(String nominativo){
 		String[] nom=nominativo.split(" ");
 		if (nom.length==2){
 			if (trovaCognome(nom[0])!=-1||trovaCognome(nom[1])!=-1){
@@ -58,21 +96,45 @@ public class DataB <T extends Anagrafica> {
 		}
 		return false;
 	}
-	public int trovaPersona(String cogn, String nom){
+	
+	static public int trovaPersona(String cogn, String nom, int y){
 		ArrayList<Integer> indici=new ArrayList<Integer>();
-		for (int i=0;i<elenco.size();i++){
-			if (elenco.get(i).getCognome().equals(cogn)){
+		for (int i=0;i<clienti.size();i++){
+			if (clienti.get(i).getCognome().equals(cogn)){
 				indici.add(i);
 			}
 		}
 		for (int a:indici){
-			if (elenco.get(a).getNome().equals(nom)){
+			if (clienti.get(a).getNome().equals(nom)){
 				return a;
 			}
 		}
 		return -1;
 	}
-	public boolean eDuplicato(String co, String no){
+	static public int trovaPersona(String cogn, String nom){
+		ArrayList<Integer> indici=new ArrayList<Integer>();
+		for (int i=0;i<fornitori.size();i++){
+			if (fornitori.get(i).getCognome().equals(cogn)){
+				indici.add(i);
+			}
+		}
+		for (int a:indici){
+			if (fornitori.get(a).getNome().equals(nom)){
+				return a;
+			}
+		}
+		return -1;
+	}
+	
+	static public boolean eDuplicato(String co, String no,int cli){
+		if (trovaCognome(co, cli)!=-1||trovaCognome(no, cli)!=-1){
+			if (trovaNome(co, cli)!=-1||trovaNome(no, cli)!=-1){
+				return true;
+			}
+		}
+		return false;
+	}
+	static public boolean eDuplicato(String co, String no){
 		if (trovaCognome(co)!=-1||trovaCognome(no)!=-1){
 			if (trovaNome(co)!=-1||trovaNome(no)!=-1){
 				return true;
@@ -80,7 +142,16 @@ public class DataB <T extends Anagrafica> {
 		}
 		return false;
 	}
-	public boolean eDuplicato(T ogg){
+	static public boolean eDuplicato(Cliente ogg){
+		String[] nom={ogg.getNome(), ogg.getCognome()};
+		if (trovaCognome(nom[0], 5)!=-1){
+			if (trovaNome(nom[1], 5)!=-1){
+				return true;
+			}
+		}
+		return false;
+	}
+	static public boolean eDuplicato(Fornitore ogg){
 		String[] nom={ogg.getNome(), ogg.getCognome()};
 		if (trovaCognome(nom[0])!=-1){
 			if (trovaNome(nom[1])!=-1){
@@ -89,10 +160,11 @@ public class DataB <T extends Anagrafica> {
 		}
 		return false;
 	}
-	public int trovaIva(String iva){
-		if (elenco.size()>0){
-			for (int i=0;i<elenco.size();i++){
-				if (elenco.get(i).getIva().equals(iva)){
+	
+	static public int trovaIva(String iva, int y){
+		if (fornitori.size()>0){
+			for (int i=0;i<fornitori.size();i++){
+				if (fornitori.get(i).getIva().equals(iva)){
 					return i;
 				}
 			}
@@ -100,16 +172,41 @@ public class DataB <T extends Anagrafica> {
 		System.out.println("Identificativo non trovato.");
 		return -1;
 	}
-	public String toString(){
+	static public int trovaIva(String iva ,String y){
+		if (clienti.size()>0){
+			for (int i=0;i<clienti.size();i++){
+				if (clienti.get(i).getIva().equals(iva)){
+					return i;
+				}
+			}
+		}
+		System.out.println("Identificativo non trovato.");
+		return -1;
+	}
+	
+	static public String toString(int y){
 		String ss="";
-		if (elenco.size()>0){
-			for (T a:elenco){
+		if (clienti.size()>0){
+			for (Cliente a:clienti){
 				ss=ss+a.getCognome()+" "+a.getNome()+"\n";
 			}
 		}
 		return ss;
 	}
-	public String elenCogn(int a){
-		return elenco.get(a).getCognome();
+	static public String toString(String y){
+		String ss="";
+		if (fornitori.size()>0){
+			for (Fornitore a:fornitori){
+				ss=ss+a.getCognome()+" "+a.getNome()+"\n";
+			}
+		}
+		return ss;
+	}
+	
+	static public String elenCogn(int a, int y){
+		return clienti.get(a).getCognome();
+	}
+	static public String elenCogn(int a ,String y){
+		return fornitori.get(a).getCognome();
 	}
 }

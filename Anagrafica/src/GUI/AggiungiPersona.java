@@ -18,7 +18,7 @@ public class AggiungiPersona extends Finestra{
 	String iva="";
 	boolean sett;
 	Anagrafica mer=null;
-	public AggiungiPersona(DataB<Cliente> c,DataB<Fornitore> f){
+	public AggiungiPersona(){
 		super("Aggiungi persona");
 		
 		Panel contenuto=new Panel();
@@ -139,7 +139,7 @@ public class AggiungiPersona extends Finestra{
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
-		    	ConsultaPersone consultaP=new ConsultaPersone(c,f);
+		    	ConsultaPersone consultaP=new ConsultaPersone();
 		    	consultaP.setVisible(true);
 		    	dispose();
 			}
@@ -165,15 +165,15 @@ public class AggiungiPersona extends Finestra{
 		    	
 		    	if (tipo.contentEquals("cliente")){
 		    		Cliente inser=new Cliente(titolo, nome, cognome, telefono, email, iva, indirizzo, saldo);
-		    		c.agg(inser);
-		    		ConsultaPersone consultaP=new ConsultaPersone(c,f);
+		    		DataB.agg(inser);
+		    		ConsultaPersone consultaP=new ConsultaPersone();
 			    	consultaP.setVisible(true);
 			    	dispose();
 		    	}
 		    	else if (tipo.contentEquals("fornitore")){
 		    		Fornitore inser=new Fornitore(titolo, nome, cognome, telefono, email, iva, indirizzo, saldo);
-		    		f.agg(inser);
-		    		ConsultaPersone consultaP=new ConsultaPersone(c,f);
+		    		DataB.agg(inser);
+		    		ConsultaPersone consultaP=new ConsultaPersone();
 			    	consultaP.setVisible(true);
 			    	dispose();
 		    	}
@@ -185,31 +185,31 @@ public class AggiungiPersona extends Finestra{
 		pack();
 	}
 	
-	public AggiungiPersona(DataB<Cliente> c,DataB<Fornitore> f,int x,String tipo){
+	public AggiungiPersona(int x,String tipo){
 		super("Modifica persona");
 		
 		if (tipo.equals("fornitore")){
 			try {
-				mer=f.get(x);
+				mer=DataB.fornitori.get(x);
 			}
 			catch (Exception e){
 				ErrorMessage err=new ErrorMessage("Indice elenco errato...");
 				err.setVisible(true);
 				setVisible(false);
-			    ConsultaPersone consultaP=new ConsultaPersone(c,f);
+			    ConsultaPersone consultaP=new ConsultaPersone();
 			    consultaP.setVisible(true);
 			   	dispose();
 			}
 		}
 		else {
 			try {
-				mer=c.get(x);
+				mer=DataB.clienti.get(x);
 			}
 			catch (Exception e){
 				ErrorMessage err=new ErrorMessage("Indice elenco errato...");
 				err.setVisible(true);
 				setVisible(false);
-			   	ConsultaPersone consultaP=new ConsultaPersone(c,f);
+			   	ConsultaPersone consultaP=new ConsultaPersone();
 			   	consultaP.setVisible(true);
 			   	dispose();		
 			}
@@ -302,7 +302,7 @@ public class AggiungiPersona extends Finestra{
 			bex.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	setVisible(false);
-			    	ConsultaPersone consultaP=new ConsultaPersone(c,f);
+			    	ConsultaPersone consultaP=new ConsultaPersone();
 			    	consultaP.setVisible(true);
 			    	dispose();
 				}
@@ -328,13 +328,13 @@ public class AggiungiPersona extends Finestra{
 			    	if (tipo.contentEquals("cliente")){
 			    		try {
 			    		
-				    		c.get(x).setTitolo(titolo);
-				    		c.get(x).setIva(iva);
-				    		c.get(x).setTelefono(telefono);
-				    		c.get(x).setEmail(email);
-				    		c.get(x).setSaldo(saldo);
-				    		c.get(x).setIndirizzo(indirizzo);
-				    		ConsultaPersone consultaP=new ConsultaPersone(c,f);
+				    		DataB.clienti.get(x).setTitolo(titolo);
+				    		DataB.clienti.get(x).setIva(iva);
+				    		DataB.clienti.get(x).setTelefono(telefono);
+				    		DataB.clienti.get(x).setEmail(email);
+				    		DataB.clienti.get(x).setSaldo(saldo);
+				    		DataB.clienti.get(x).setIndirizzo(indirizzo);
+				    		ConsultaPersone consultaP=new ConsultaPersone();
 					    	consultaP.setVisible(true);
 					    	dispose();
 			    		}
@@ -342,20 +342,20 @@ public class AggiungiPersona extends Finestra{
 			    			ErrorMessage err=new ErrorMessage("Indice elenco errato...");
 			    			err.setVisible(true);
 							setVisible(false);
-						    ConsultaPersone consultaP=new ConsultaPersone(c,f);
+						    ConsultaPersone consultaP=new ConsultaPersone();
 						    consultaP.setVisible(true);
 						    dispose();			    			
 			    		}
 			    	}
 			    	else if (tipo.contentEquals("fornitore")){
 			    		try {
-				    		f.get(x).setTitolo(titolo);
-				    		f.get(x).setIva(iva);
-				    		f.get(x).setTelefono(telefono);
-				    		f.get(x).setEmail(email);
-				    		f.get(x).setSaldo(saldo);
-				    		f.get(x).setIndirizzo(indirizzo);
-				    		ConsultaPersone consultaP=new ConsultaPersone(c,f);
+			    			DataB.fornitori.get(x).setTitolo(titolo);
+			    			DataB.fornitori.get(x).setIva(iva);
+			    			DataB.fornitori.get(x).setTelefono(telefono);
+			    			DataB.fornitori.get(x).setEmail(email);
+			    			DataB.fornitori.get(x).setSaldo(saldo);
+			    			DataB.fornitori.get(x).setIndirizzo(indirizzo);
+				    		ConsultaPersone consultaP=new ConsultaPersone();
 					    	consultaP.setVisible(true);
 					    	dispose();
 			    		}
@@ -363,7 +363,7 @@ public class AggiungiPersona extends Finestra{
 			    			ErrorMessage err=new ErrorMessage("Indice elenco errato...");
 			    			err.setVisible(true);
 							setVisible(false);
-						    ConsultaPersone consultaP=new ConsultaPersone(c,f);
+						    ConsultaPersone consultaP=new ConsultaPersone();
 						    consultaP.setVisible(true);
 						    dispose();	
 			    		}

@@ -22,11 +22,9 @@ public class Program{
 			setBackground(Est.chiaro);
 			
 			// ISTANZIO TUTTI I FRAME SECONDARI
-			DataB<Cliente> clienti=new DataB<Cliente>("cliente");
-			DataB<Fornitore> fornitori=new DataB<Fornitore>("fornitore");
 			MyReadM.carica();
-			MyReadF.carica(fornitori);
-			MyReadC.carica(clienti);
+			MyReadF.carica();
+			MyReadC.carica();
 			
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(2,2));
@@ -37,7 +35,7 @@ public class Program{
 			Pulsante b1=new Pulsante("Consulta DataBase Persone");
 			b1.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
-			    	ConsultaPersone consultaP=new ConsultaPersone(clienti, fornitori);
+			    	ConsultaPersone consultaP=new ConsultaPersone();
 			    	consultaP.setVisible(true);
 				}
 			});
@@ -61,8 +59,8 @@ public class Program{
 			bex.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	            	MyReadM.scarica();
-	    			MyReadF.scarica(fornitori);
-	    			MyReadC.scarica(clienti);
+	    			MyReadF.scarica();
+	    			MyReadC.scarica();
 	            	setVisible(false);
 	            	dispose();
 	            	System.exit(0);

@@ -17,12 +17,12 @@ public class SchedaPersona extends Finestra{
 	Double saldo=0.00;
 	String indirizzo;
 	Anagrafica mer;
-		public SchedaPersona(DataB<Cliente> c,DataB<Fornitore> f, int x, String tipo){
+		public SchedaPersona(int x, String tipo){
 			super("Scheda "+tipo);
 			if (x>-1){
 				if (tipo.equals("fornitore")){
 					try {
-						mer=f.get(x);
+						mer=DataB.fornitori.get(x);
 					}
 					catch (Exception e){
 						
@@ -30,7 +30,7 @@ public class SchedaPersona extends Finestra{
 				}
 				else {
 					try {
-						mer=c.get(x);
+						mer=DataB.clienti.get(x);
 					}
 					catch (Exception e){
 						
@@ -79,7 +79,7 @@ public class SchedaPersona extends Finestra{
 			bex.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	setVisible(false);
-			    	ConsultaPersone consultaP=new ConsultaPersone(c,f);
+			    	ConsultaPersone consultaP=new ConsultaPersone();
 			    	consultaP.setVisible(true);
 			    	dispose();
 				}
@@ -91,7 +91,7 @@ public class SchedaPersona extends Finestra{
 			    public void actionPerformed(ActionEvent e) {
 			    	if (x!=-1){
 				    	setVisible(false);
-				    	AggiungiPersona modifP=new AggiungiPersona(c,f, x,tipo);
+				    	AggiungiPersona modifP=new AggiungiPersona(x,tipo);
 				    	modifP.setVisible(true);
 			    	
 				    	dispose();
