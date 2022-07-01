@@ -3,6 +3,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeListener;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 import javax.swing.Action;
 
@@ -16,5 +19,5 @@ public class Est {
 	public static Dimension piccolo=new Dimension(90,85);
 //	public static Dimension grosso=new Dimension(190,185);
 	public static Color chiarissimo=new Color(117,223,235);
-	
+	public static DecimalFormat deci = new DecimalFormat("0.00");
 }

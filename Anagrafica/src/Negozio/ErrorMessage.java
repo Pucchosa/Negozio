@@ -89,6 +89,45 @@ public class ErrorMessage extends Frame implements ActionListener{
 		pack();
 	}
 	
+	public ErrorMessage(Spesa x){
+		super("---ATTENZIONE---");
+		setLocation(300,300);
+		setBackground(new Color(217,243,248));
+		
+		JLabel tx=new JLabel();
+		tx.setText("<html>Se è sicuri divoler uscire? <br/> Il contenuto del carrello andra perso.");
+		tx.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+		tx.setFont(Est.font);
+		
+		Pulsante ok=new Pulsante("ANNULLA");
+		ok.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		    	setVisible(false);
+		    	x.setVisible(true);
+		    	dispose();
+			}
+		});
+		
+		Pulsante ty=new Pulsante("ELIMINA");
+		ty.setBackground(Est.rosso);
+		ty.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		    	
+		    	x.dispose();
+		    	setVisible(false);
+		    	ConsultaPersone consultaP=new ConsultaPersone();
+		    	consultaP.setVisible(true);
+		    	dispose();
+			}
+		});
+		
+		add("North",tx);
+		add("Center",ok);
+		add("South",ty);
+		setAlwaysOnTop(true);
+		pack();
+	}
+	
 	public void actionPerformed(ActionEvent e){
 		this.setVisible(false);
 	}

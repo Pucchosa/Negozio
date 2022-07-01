@@ -67,7 +67,7 @@ public class SchedaPersona extends Finestra{
 			
 	/*comp4*/  Etichetta ri=new Etichetta("Saldo: ");
 			contenuto.add(ri);
-			Etichetta rr=new Etichetta(saldo+" eu. ");
+			Etichetta rr=new Etichetta(Est.deci.format(saldo)+" eu. ");
 			contenuto.add(rr);
 			
 	/*comp5*/  Etichetta va=new Etichetta("Indirizzo: ");
@@ -100,7 +100,22 @@ public class SchedaPersona extends Finestra{
 			});
 			contenuto.add(bin);
 			
+			
+			if (tipo.equals("cliente")){
+				Pulsante eli=new Pulsante("-APRI ACQUISTO-");
+				eli.setPreferredSize(Est.piccolo);
+				eli.setBackground(Est.medio);
+				eli.addActionListener(new ActionListener() {
+				    public void actionPerformed(ActionEvent e) {
+				    	Spesa aggg=new Spesa(DataB.clienti.get(x));
+						aggg.setVisible(true);
+						dispose();
+					}
+				});
+				add("South", eli);
+			}
 			add(contenuto);
+			
 			pack();
 		}
 	}

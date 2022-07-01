@@ -95,4 +95,8 @@ public abstract class Anagrafica {
 		}
 		return stamp;
 	}
+	public String getIntestazione(){
+		String in=titolo+" "+cognome+" "+nome;
+		return in;
+	}
 }

@@ -46,17 +46,17 @@ public class SchedaMerce extends Finestra{
 		
 /*comp3*/  Etichetta ac=new Etichetta("Prezzo d acquisto: ");
 		contenuto.add(ac);
-		Etichetta aa=new Etichetta(prezzoA+"eu al "+unita);
+		Etichetta aa=new Etichetta(Est.deci.format(prezzoA)+"eu al "+unita);
 		contenuto.add(aa);
 		
 /*comp4*/  Etichetta ri=new Etichetta("Prezzo di vendita: ");
 		contenuto.add(ri);
-		Etichetta rr=new Etichetta(prezzoV+"eu (rincaro del "+rincaro+"%)");
+		Etichetta rr=new Etichetta(Est.deci.format(prezzoV)+"eu (rincaro del "+rincaro+"%)");
 		contenuto.add(rr);
 		
 /*comp5*/  Etichetta va=new Etichetta("Valore complessivo merce: ");
 		contenuto.add(va);
-		Etichetta vv=new Etichetta(valore+"eu");
+		Etichetta vv=new Etichetta(Est.deci.format(valore)+"eu");
 		contenuto.add(vv);
 		
 /*comp6*/Pulsante bex=new Pulsante("-ESCI-");
