@@ -10,6 +10,9 @@ import javax.swing.*;
 
 public class Program{
 	public static void main(String[] args) {
+		MyReadM.carica();
+		MyReadF.carica();
+		MyReadC.carica();
 		Home prova=new Home();
 		prova.setVisible(true);
 	}
@@ -22,9 +25,7 @@ public class Program{
 			setBackground(Est.chiaro);
 			
 			// ISTANZIO TUTTI I FRAME SECONDARI
-			MyReadM.carica();
-			MyReadF.carica();
-			MyReadC.carica();
+			
 			
 			Panel contenuto=new Panel();
 			contenuto.setLayout(new GridLayout(2,2));
@@ -37,6 +38,7 @@ public class Program{
 			    public void actionPerformed(ActionEvent e) {
 			    	ConsultaPersone consultaP=new ConsultaPersone();
 			    	consultaP.setVisible(true);
+			    	setVisible(false);
 				}
 			});
 	        contenuto.add(b1);
@@ -46,6 +48,8 @@ public class Program{
 			    public void actionPerformed(ActionEvent e) {
 			    	ConsultaMerci consultaM=new ConsultaMerci();
 			    	consultaM.setVisible(true);
+			    	setVisible(false);
+			    	dispose();
 				}
 			});
 	        contenuto.add(b2);

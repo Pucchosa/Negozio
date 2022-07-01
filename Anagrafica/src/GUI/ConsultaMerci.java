@@ -4,6 +4,9 @@ import Negozio.*;
 import java.awt.*;
 import Negozio.*;
 import javax.swing.*;
+
+import GUI.Program.Home;
+
 //import Negozio.Ogg;
 import java.awt.event.*;
 
@@ -62,6 +65,8 @@ public class ConsultaMerci extends Finestra {
 			bex.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	setVisible(false);
+			    	Home home=new Home();
+					home.setVisible(true);
 			    	dispose();
 				}
 			});
