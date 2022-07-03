@@ -31,7 +31,7 @@ public class ListaSpesa{
 	
 	public Double getSaldo(){
 		return saldo;
-		// prova
+		// prova 123
 	}
 	
 	public String toString(){
