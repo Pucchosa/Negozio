@@ -21,15 +21,23 @@ public class ListaSpesa{
 	public Date getData(){
 		return data;
 	}
-	public void compra(int merce,Double quantita){
+	public boolean compra(int merce,Double quantita){
 		Merce x=DataM.get(merce);
+		for (Merce m:elenco.values()){
+			if (m.getNome().equals(x.getNome())){
+				m.setQuantita(quantita+(m.getQuantita()));
+				calcolaSaldo();
+				return false;
+			}
+		}
 		x.setQuantita(quantita);
 		elenco.put(merce, x);
-		Double prezzo=x.getPrezzoV()*quantita;
-		saldo=saldo+prezzo;
+		calcolaSaldo();
+		return true;
 	}
 	
 	public Double getSaldo(){
+		calcolaSaldo();
 		return saldo;
 	}
 	
@@ -63,7 +71,9 @@ public class ListaSpesa{
 	}
 	public int trovaNome(String nome){
 		for (Entry<Integer,Merce> entry:elenco.entrySet()){
-			if(nome.equals(entry.getValue())){
+			String part=entry.getValue().toString();
+			String[] pez=part.split(" ");
+			if(nome.equals(pez[0])){
 				return entry.getKey();
 			}
 		}
@@ -107,6 +117,13 @@ public class ListaSpesa{
 
 	public void elimina(int x){
 		elenco.remove(x);
+		calcolaSaldo();
+	}
+	public void calcolaSaldo(){
+		saldo=0.0;
+		for (Merce m:elenco.values()){
+			saldo=saldo+(m.getQuantita()*m.getPrezzoV());
+		}
 	}
 }
 

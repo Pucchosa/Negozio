@@ -24,6 +24,7 @@ public class Spesa extends Finestra{
 	int index=-1;
 	public Spesa (Cliente c){
 		super("Lista spesa per "+c.getTitolo()+" "+c.getCognome()+" "+c.getNome());
+		setLocation(150,50);
 		ListaSpesa list=new ListaSpesa(c);
 		
 		Panel contenuto=new Panel();
@@ -77,20 +78,30 @@ public class Spesa extends Finestra{
 		pan2.setBackground(Est.chiaro);
 		contenuto.add(pan2);
 		
-		
-		Panel corpo=new Panel();
-		corpo.setLayout(new BorderLayout());
-		Tabella tab=new Tabella();
-		corpo.add("Center",tab.ta());
-		
 		Panel sal=new Panel();
 		sal.setLayout(new GridLayout(1,3));
 		Etichetta sal1=new Etichetta("Totale: .......");
 		sal.add(sal1);
 		Etichetta sal2=new Etichetta("..............");
 		sal.add(sal2);
-		Etichetta sal3=new Etichetta(list.getSaldo()+" eu.");
+		Etichetta sal3=new Etichetta(Est.deci.format(list.getSaldo())+" eu.");
 		sal.add(sal3);
+		
+		Panel corpo=new Panel();
+		corpo.setLayout(new BorderLayout());
+		Tabella tab=new Tabella();
+		tab.tavola.addFocusListener(new FocusListener() {
+				public void focusGained(FocusEvent e){
+					indice=tab.tavola.getSelectedRow();
+					indixex=list.trovaNome(tab.getNome(indice));
+					sal3.setText(Est.deci.format(list.getSaldo())+" eu.");
+					System.out.println("indice "+indice+" indexexe "+indixex);
+				}
+				public void focusLost(FocusEvent e){
+
+				}
+			});
+		corpo.add("Center",tab.ta());
 
 		corpo.add("South",sal);
 		
@@ -103,9 +114,18 @@ public class Spesa extends Finestra{
 		    	System.out.println(index);
 		    	if (index!=-1){
 		    		try {
-		    			list.compra(index, Double.parseDouble(tf2.ret));
-		    			tab.aggiungi(DataM.get(index),Double.parseDouble(tf2.ret));
-		    			sal3.setText(list.getSaldo()+" eu.");
+		    			boolean x=list.compra(index, Double.parseDouble(tf2.ret));
+		    			
+		    			if (x){
+		    				tab.aggiungi(DataM.get(index),Double.parseDouble(tf2.ret));
+		    			}
+		    			else {
+			    			tab.togli(tab.getInd(DataM.get(index).getNome()));
+		    				System.out.println("aggiunto");
+		    				tab.aggiungi(list.get(index),list.get(index).getQuantita());
+		    			}
+		    			
+		    			sal3.setText(Est.deci.format(list.getSaldo())+" eu.");
 		    			index=-1;
 
 			    	}
@@ -121,13 +141,14 @@ public class Spesa extends Finestra{
 		eli.setBackground(Est.rosso);
 		eli.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		    	System.out.println(index);
 		    	if (indice!=-1&&indixex!=-1){
 		    		try {
+		    			System.out.println("provo");
 		    			list.elimina(indixex);
 		    			tab.togli(indice);
 		    			indice=-1;
 		    			indixex=-1;
+		    			sal3.setText(Est.deci.format(list.getSaldo())+" eu.");
 
 			    	}
 			    	catch (Exception ex){
