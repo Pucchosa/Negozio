@@ -124,7 +124,8 @@ public class Spesa extends Finestra{
 		    				System.out.println("aggiunto");
 		    				tab.aggiungi(list.get(index),list.get(index).getQuantita());
 		    			}
-		    			
+		    			ele.select(0);
+		    			tf2.clear();
 		    			sal3.setText(Est.deci.format(list.getSaldo())+" eu.");
 		    			index=-1;
 

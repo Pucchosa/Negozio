@@ -8,9 +8,11 @@ import javax.swing.JTextField;
 
 public class FormVuoto extends JTextField{
 	String ret;
+	String tt="";
 	public FormVuoto(String tit){
 		super(tit, 15);
 		ret=tit;
+		tt=tit;
 		setForeground(Est.chiarissimo);
 		addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e){
@@ -29,6 +31,10 @@ public class FormVuoto extends JTextField{
 		});
 		setFont(Est.font);
 		
+	}
+	public void clear(){
+		setText(tt);
+		setForeground(Est.chiarissimo);
 	}
 
 }
