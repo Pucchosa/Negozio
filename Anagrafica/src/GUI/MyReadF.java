@@ -45,7 +45,7 @@ public class MyReadF{
 	public static void scarica(){
 		ArrayList<String> elenco=new ArrayList<String>();
 		for (Fornitore f:DataB.fornitori){
-			String temp=f.getTitolo()+","+f.getNome()+","+f.getCognome()+","+f.getTelefono()+","+f.getEmail()+","+f.getIva()+","+f.getIndirizzo()+","+f.getSaldo();
+			String temp=f.getTitolo()+","+f.getNome()+","+f.getCognome()+","+f.getTelefono()+","+f.getEmail()+","+f.getIva()+","+f.getIndirizzo()+","+Est.deci.format(f.getSaldo());
 			elenco.add(temp);
 		}
 		try{

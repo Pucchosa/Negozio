@@ -8,10 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
-
 import Negozio.Cliente;
 import Negozio.DataM;
 import Negozio.ErrorMessage;
@@ -178,10 +176,9 @@ public class Spesa extends Finestra{
 /*comp11*/Pulsante fin=new Pulsante("-ACQUISTA-");
 		fin.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		    	MyReadL.scarica(list);
-		    	System.out.println("stampo");
-//	ESEGUI ACQUIST0!!!!
+		    	list.concludi();
 		    	tab.clear();
+		    	MyReadL.scarica(list);
 		    	setVisible(false);
 		    	ConsultaPersone consultaP=new ConsultaPersone();
 		    	consultaP.setVisible(true);

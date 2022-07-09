@@ -1,6 +1,7 @@
 package Negozio;
 import java.util.HashMap;
 import java.util.Map.Entry;
+import GUI.Spesa;
 
 public class DataM {
 	static public HashMap<Integer,Merce> elenco=new HashMap<Integer,Merce>();
@@ -26,11 +27,27 @@ public class DataM {
 	}
 	static public int trovaNome(String nome){
 		for (Entry<Integer,Merce> entry:elenco.entrySet()){
-			if(nome.equals(entry.getValue())){
+			if(nome.equals(entry.getValue().getNome())){
 				return entry.getKey();
 			}
 		}
 		return -1;
+	}
+	
+	public static void acquista(Merce m) throws AoOexception{
+		int index=trovaNome(m.getNome());
+		System.out.println("ind "+index);
+		Double qt=(elenco.get(index).getQuantita())-(m.getQuantita());
+		System.out.println("qt 1: "+(elenco.get(index).getQuantita())+" qt2: "+(m.getQuantita()));
+		if (qt<0){
+			System.out.println("lancio");
+			throw new AoOexception("out Of Order",index);
+			
+		}
+		else {
+			elenco.get(index).setQuantita(qt);
+			return;
+		}
 	}
 
 	static public boolean eDuplicato(Merce m){

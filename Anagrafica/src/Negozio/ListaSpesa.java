@@ -22,7 +22,7 @@ public class ListaSpesa{
 		return data;
 	}
 	public boolean compra(int merce,Double quantita){
-		Merce x=DataM.get(merce);
+		Merce x=new Merce(DataM.get(merce));
 		for (Merce m:elenco.values()){
 			if (m.getNome().equals(x.getNome())){
 				m.setQuantita(quantita+(m.getQuantita()));
@@ -124,6 +124,22 @@ public class ListaSpesa{
 		for (Merce m:elenco.values()){
 			saldo=saldo+(m.getQuantita()*m.getPrezzoV());
 		}
+	}
+	public void concludi(){
+		for (Merce m:elenco.values()){
+			try{
+				DataM.acquista(m);
+				
+			}
+			catch (AoOexception e){
+				m.setQuantita(0.0);
+				
+				continue;
+			}
+		}
+		calcolaSaldo();
+		System.out.println("saldo: "+saldo);
+		cliente.setSaldo(cliente.getSaldo()-saldo);
 	}
 }
 

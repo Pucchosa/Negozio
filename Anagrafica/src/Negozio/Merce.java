@@ -31,6 +31,17 @@ public class Merce {
 		valore=quantita*prezzoA;
 		codice=DataM.nextIndice();
 	}
+	public Merce(Merce m){
+		this.nome=m.getNome();
+		this.quantita=m.getQuantita();
+		this.rincaro=m.getRincaro();
+		this.prezzoA=m.getPrezzoA();
+		this.unita=m.getUnit();
+		this.prezzoV=(prezzoA/100*rincaro)+prezzoA;
+		this.prezzoF=prezzoV*quantita;
+		this.valore=prezzoA*quantita;
+		this.codice=m.getCod();
+	}
 	public Merce(String nome, Double quantita, int rincaro, Double prezzoA, String unita){
 		this.nome=nome;
 		this.quantita=quantita;
@@ -95,6 +106,7 @@ public class Merce {
 		return (x*prezzoV);
 	}
 	public void setQuantita(Double x){
+		
 		quantita=x;
 		valore=quantita*prezzoA;
 		prezzoF=quantita*prezzoV;
@@ -107,6 +119,10 @@ public class Merce {
 	}
 	public String toString(){
 		String stampa=nome+" qt. "+quantita+" prezzo: "+prezzoF;
+		return stampa;
+	}
+	public String toStri(){
+		String stampa=nome+" qt. "+quantita+" TOT "+valore;
 		return stampa;
 	}
 }

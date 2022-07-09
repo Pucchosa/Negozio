@@ -131,4 +131,5 @@ public class ErrorMessage extends Frame implements ActionListener{
 	public void actionPerformed(ActionEvent e){
 		this.setVisible(false);
 	}
+	
 }		
