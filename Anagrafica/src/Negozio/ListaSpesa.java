@@ -1,4 +1,5 @@
 package Negozio;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -6,19 +7,19 @@ import java.util.Map.Entry;
 public class ListaSpesa{
 	Cliente cliente;
 	Double saldo;
-	Date data;
+	LocalDate data;
 	public HashMap<Integer,Merce> elenco=new HashMap<Integer,Merce>();
 	
 	public ListaSpesa(Cliente c){
 		cliente=c;
-		data=new Date();
+		data=LocalDate.now();
 		saldo=0.0;
 	}
 	
 	public Cliente getCliente(){
 		return cliente;
 	}
-	public Date getData(){
+	public LocalDate getData(){
 		return data;
 	}
 	public boolean compra(int merce,Double quantita){
@@ -124,6 +125,13 @@ public class ListaSpesa{
 		for (Merce m:elenco.values()){
 			saldo=saldo+(m.getQuantita()*m.getPrezzoV());
 		}
+	}
+	public Double qtTot(){
+		Double tot=0.0;
+		for (Merce m:elenco.values()){
+			tot=tot+(m.getQuantita());
+		}
+		return tot;
 	}
 	public void concludi(){
 		for (Merce m:elenco.values()){

@@ -6,6 +6,7 @@ import java.beans.PropertyChangeListener;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.time.format.DateTimeFormatter;
 
 import javax.swing.Action;
 
@@ -20,4 +21,5 @@ public class Est {
 //	public static Dimension grosso=new Dimension(190,185);
 	public static Color chiarissimo=new Color(117,223,235);
 	public static DecimalFormat deci = new DecimalFormat("0.00");
+	public static DateTimeFormatter dateForm= DateTimeFormatter.ofPattern("yyyy-MM-dd");
 }
