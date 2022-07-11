@@ -6,20 +6,34 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import Negozio.*;
 
 public class MyReadL {
-	public static ArrayList<String> carica(){
+	
+	public static HashMap<LocalDate,String[]> carica(){
 		BufferedReader reader;
-		ArrayList<String> elenco=new ArrayList<String>();
+		HashMap<LocalDate,String[]> elenco=new HashMap<LocalDate,String[]>();
+		ArrayList<String> ele=new ArrayList<String>();
 		try{
 			File file = new File("trans");
 			FileReader fReader = new FileReader(file);
 			reader = new BufferedReader(fReader);
 			String line;
 			while ((line = reader.readLine()) != null){
-				elenco.add(line);
+				ele.add(line);
+			}
+			System.out.println("tot "+ele.size());
+			for (String s:ele){
+				String[] temp=s.split(" , ");
+				String dat=temp[0];
+				String[] rest={temp[1],temp[2],temp[3]};
+				LocalDate data=LocalDate.parse(dat,Est.dateForm);
+				elenco.put(data, rest);
+				
 			}
 		}
 		catch (IOException e){
@@ -28,19 +42,21 @@ public class MyReadL {
 		return elenco;
 	}
 	public static void scarica(ListaSpesa l){
-		String riga="DATA: "+l.getData()+" CLIENTE: "+l.getCliente().getIntestazione()+" SALDO: "+Est.deci.format(l.getSaldo())+"eu. " ;
-		
-		try{
-			FileWriter fWriter = new FileWriter("trans", true);
-			BufferedWriter writer = new BufferedWriter(fWriter);
+		if (l.qtTot()>0){
+			String riga=l.getData().format(Est.dateForm)+" , "+l.getCliente().getIntestazione()+" , "+Est.deci.format(l.getSaldo());
 			
-			writer.write(riga+System.lineSeparator());
-			writer.close();
-
-		}
-		catch (Exception e){
-			System.out.print("Errore");
-			
+			try{
+				FileWriter fWriter = new FileWriter("trans", true);
+				BufferedWriter writer = new BufferedWriter(fWriter);
+				
+				writer.write(riga+System.lineSeparator());
+				writer.close();
+	
+			}
+			catch (Exception e){
+				System.out.print("Errore");
+				
+			}
 		}
 	}
 }

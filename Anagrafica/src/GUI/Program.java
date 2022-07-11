@@ -58,6 +58,11 @@ public class Program{
 			
 			add("Center",contenuto);
 			
+			
+			Panel bott=new Panel();
+			bott.setLayout(new GridLayout(1,2));
+			
+			
 			Pulsante bex=new Pulsante("-ESCI-");
 			bex.setBackground(Est.rosso);
 			bex.addActionListener(new ActionListener() {
@@ -70,7 +75,21 @@ public class Program{
 	            	System.exit(0);
 	        	}
 			});
-	        add("South",bex);
+			bott.add(bex);
+			
+			Pulsante bes=new Pulsante("-STORICO-");
+			bes.setBackground(Est.medio);
+			bes.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	            	Storico stor=new Storico();
+	            	stor.setVisible(true);
+			    	setVisible(false);
+			    	dispose();
+	        	}
+			});
+			bott.add(bes);
+			
+	        add("South",bott);
 	        
 			pack();
 		}
