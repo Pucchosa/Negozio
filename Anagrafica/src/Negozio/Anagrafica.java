@@ -3,9 +3,9 @@ import GUI.*;
 import java.util.Scanner;
 
 public abstract class Anagrafica {
-	private String titolo;
-	private String cognome;
-	private String nome;
+	private final String titolo;
+	private final String cognome;
+	private final String nome;
 	private String iva="";
 	private String telefono;
 	private String email;
@@ -30,13 +30,13 @@ public abstract class Anagrafica {
 	public String getTitolo(){
 		return titolo;
 	}
-	public void setTitolo(String tit){
+	/*public void setTitolo(String tit){
 		titolo=tit;
 	}
 	public Anagrafica(String unCognome, String unNome){
 		cognome=unCognome;
 		nome=unNome;
-	}
+	}*/
 
 	public String getNome(){
 		return nome;
@@ -44,12 +44,12 @@ public abstract class Anagrafica {
 	public String getCognome(){
 		return cognome;
 	}
-	public void setNome(String nome){
+	/*public void setNome(String nome){
 		this.nome=nome;
 	}
 	public void setCognome(String cognome){
 		this.cognome=cognome;
-	}
+	}*/
 	public void setIva(String iva){
 		this.iva=iva;
 	}
@@ -96,7 +96,7 @@ public abstract class Anagrafica {
 		return stamp;
 	}
 	public String getIntestazione(){
-		String in=titolo+" "+cognome+" "+nome;
+		String in=cognome+" , "+nome;
 		return in;
 	}
 }

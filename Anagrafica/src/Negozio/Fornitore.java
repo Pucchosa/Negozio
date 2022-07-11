@@ -6,10 +6,10 @@ import GUI.*;
 public class Fornitore extends Anagrafica {
 	private ArrayList<Integer> catalogo;
 	
-	public Fornitore(String unCognome, String unNome){
+	/*public Fornitore(String unCognome, String unNome){
 		super(unCognome, unNome);
 		setTipo("fornitore");
-	}
+	}*/
 	public Fornitore(String titolo,String nome,String cognome,String telefono,String email,String iva,String indirizzo,Double saldo){
 		super(titolo, nome, cognome, telefono, email, iva, indirizzo, saldo);
 		setTipo("fornitore");

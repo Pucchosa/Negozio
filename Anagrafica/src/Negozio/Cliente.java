@@ -3,10 +3,10 @@ import GUI.*;
 
 public class Cliente extends Anagrafica {
 	
-	public Cliente(String unCognome, String unNome){
+	/*public Cliente(String unCognome, String unNome){
 		super(unCognome, unNome);
 		setTipo("cliente");
-	}
+	}*/
 	public Cliente(String titolo,String nome,String cognome,String telefono,String email,String iva,String indirizzo,Double saldo){
 		super(titolo, nome, cognome, telefono, email, iva, indirizzo, saldo);
 		setTipo("cliente");

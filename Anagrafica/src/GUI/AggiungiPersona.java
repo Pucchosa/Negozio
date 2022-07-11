@@ -328,7 +328,7 @@ public class AggiungiPersona extends Finestra{
 			    	if (tipo.contentEquals("cliente")){
 			    		try {
 			    		
-				    		DataB.clienti.get(x).setTitolo(titolo);
+		//		    		DataB.clienti.get(x).setTitolo(titolo);
 				    		DataB.clienti.get(x).setIva(iva);
 				    		DataB.clienti.get(x).setTelefono(telefono);
 				    		DataB.clienti.get(x).setEmail(email);
@@ -349,7 +349,7 @@ public class AggiungiPersona extends Finestra{
 			    	}
 			    	else if (tipo.contentEquals("fornitore")){
 			    		try {
-			    			DataB.fornitori.get(x).setTitolo(titolo);
+	//		    			DataB.fornitori.get(x).setTitolo(titolo);
 			    			DataB.fornitori.get(x).setIva(iva);
 			    			DataB.fornitori.get(x).setTelefono(telefono);
 			    			DataB.fornitori.get(x).setEmail(email);
