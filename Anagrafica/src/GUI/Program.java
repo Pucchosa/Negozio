@@ -28,7 +28,7 @@ public class Program{
 			
 			
 			Panel contenuto=new Panel();
-			contenuto.setLayout(new GridLayout(2,2));
+			contenuto.setLayout(new GridLayout(3,2));
 			
 			Etichetta tx=new Etichetta("<html>Benvenuti nel database, cosa si desidera fare? ");
 			add("North",tx);
@@ -54,7 +54,17 @@ public class Program{
 			});
 	        contenuto.add(b2);
 			
-
+	        Pulsante b3=new Pulsante("--ACQUISTO RAPIDO--");
+	        b3.setBackground(Est.medio);
+			b3.addActionListener(new ActionListener() {
+			    public void actionPerformed(ActionEvent e) {
+			    	Spesa aggg=new Spesa(new Guest());
+					aggg.setVisible(true);
+			    	setVisible(false);
+			    	dispose();
+				}
+			});
+	        contenuto.add(b3);
 			
 			add("Center",contenuto);
 			
