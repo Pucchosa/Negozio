@@ -1,6 +1,7 @@
 package GUI;
 import java.awt.Frame;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -10,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 import Negozio.Merce;
 
 public class StorTab extends Frame{
-	public HashMap<LocalDate,String[]> elenco=new HashMap<LocalDate,String[]>();
+	public HashMap<LocalDateTime,String[]> elenco=new HashMap<LocalDateTime,String[]>();
 	JTable tavola;
 	DefaultTableModel model = new DefaultTableModel() {
 	    public boolean isCellEditable(int row, int column) {
@@ -34,7 +35,7 @@ public class StorTab extends Frame{
 		model.addColumn("NOME:");
 		model.addColumn("TOT:");
 		
-		for (Entry<LocalDate,String[]> entry:elenco.entrySet()){
+		for (Entry<LocalDateTime,String[]> entry:elenco.entrySet()){
 			
 			String[] riga={entry.getKey().format(Est.dateForm),entry.getValue()[0],entry.getValue()[1],entry.getValue()[2]};
 			model.addRow(riga);

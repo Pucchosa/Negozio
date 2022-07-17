@@ -1,25 +1,24 @@
 package Negozio;
-import java.time.LocalDate;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class ListaSpesa{
 	Cliente cliente;
 	Double saldo;
-	LocalDate data;
+	LocalDateTime data;
 	public HashMap<Integer,Merce> elenco=new HashMap<Integer,Merce>();
 	
 	public ListaSpesa(Cliente c){
 		cliente=c;
-		data=LocalDate.now();
+		data=LocalDateTime.now();
 		saldo=0.0;
 	}
 	
 	public Cliente getCliente(){
 		return cliente;
 	}
-	public LocalDate getData(){
+	public LocalDateTime getData(){
 		return data;
 	}
 	public boolean compra(int merce,Double quantita){

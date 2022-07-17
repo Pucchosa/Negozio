@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -14,9 +15,9 @@ import Negozio.*;
 
 public class MyReadL {
 	
-	public static HashMap<LocalDate,String[]> carica(){
+	public static HashMap<LocalDateTime,String[]> carica(){
 		BufferedReader reader;
-		HashMap<LocalDate,String[]> elenco=new HashMap<LocalDate,String[]>();
+		HashMap<LocalDateTime,String[]> elenco=new HashMap<LocalDateTime,String[]>();
 		ArrayList<String> ele=new ArrayList<String>();
 		try{
 			File file = new File("trans");
@@ -31,7 +32,7 @@ public class MyReadL {
 				String[] temp=s.split(" , ");
 				String dat=temp[0];
 				String[] rest={temp[1],temp[2],temp[3]};
-				LocalDate data=LocalDate.parse(dat,Est.dateForm);
+				LocalDateTime data=LocalDateTime.parse(dat,Est.dateForm);
 				elenco.put(data, rest);
 				
 			}
