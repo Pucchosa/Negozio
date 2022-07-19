@@ -28,7 +28,7 @@ public class Program{
 			
 			
 			Panel contenuto=new Panel();
-			contenuto.setLayout(new GridLayout(3,2));
+			contenuto.setLayout(new GridLayout(4,1));
 			
 			Etichetta tx=new Etichetta("<html>Benvenuti nel database, cosa si desidera fare? ");
 			add("North",tx);
@@ -55,7 +55,7 @@ public class Program{
 	        contenuto.add(b2);
 			
 	        Pulsante b3=new Pulsante("--ACQUISTO RAPIDO--");
-	        b3.setBackground(Est.medio);
+	        b3.setBackground(Est.oran);
 			b3.addActionListener(new ActionListener() {
 			    public void actionPerformed(ActionEvent e) {
 			    	Spesa aggg=new Spesa(new Guest());
@@ -85,8 +85,7 @@ public class Program{
 	            	System.exit(0);
 	        	}
 			});
-			bott.add(bex);
-			
+						
 			Pulsante bes=new Pulsante("-STORICO-");
 			bes.setBackground(Est.medio);
 			bes.addActionListener(new ActionListener() {
@@ -99,7 +98,20 @@ public class Program{
 			});
 			bott.add(bes);
 			
-	        add("South",bott);
+			Pulsante bal=new Pulsante("-BALANCE-");
+			bal.setBackground(Est.medio);
+			bal.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	            	Balance bl=new Balance();
+	            	bl.setVisible(true);
+			    	setVisible(false);
+			    	dispose();
+	        	}
+			});
+			bott.add(bal);
+			
+			contenuto.add(bott);
+	        add("South",bex);
 	        
 			pack();
 		}

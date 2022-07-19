@@ -5,26 +5,20 @@ import java.awt.GridLayout;
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+import java.util.HashMap;
 
 import GUI.Program.Home;
 import Negozio.Anagrafica;
 import Negozio.DataB;
 
 public class Storico extends Finestra{
-
-	String titolo;
-	String cognome;
-	String nome;
-	String iva="";
-	String telefono;
-	String email;
-	Double saldo=0.00;
-	String indirizzo;
-	Anagrafica mer;
 	
 		public Storico(){
 			super("Storico Vendite: ");
-					
+			
+			
+			
 			Etichetta non=new Etichetta("Storico Vendite: ");
 			add("North",non);
 			
