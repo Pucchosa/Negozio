@@ -42,7 +42,6 @@ public class MyReadM {
 		}
 	}
 	public static void scarica(){
-		System.out.print(DataM.elenco.size());
 		ArrayList<String> elenco=new ArrayList<String>();
 		for (Merce f:DataM.elenco.values()){
 			String temp=f.getNome()+","+f.getQuantita()+","+f.getRincaro()+","+f.getPrezzoA()+","+f.getUnit();

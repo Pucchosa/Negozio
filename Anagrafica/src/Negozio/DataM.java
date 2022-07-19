@@ -11,7 +11,6 @@ public class DataM {
 			elenco.put(t.getCod(),t);
 		}
 		else {
-			System.out.println("Nominativo gia presente.");
 		}
 	}
 	static public Merce get(int x){
@@ -36,11 +35,8 @@ public class DataM {
 	
 	public static void acquista(Merce m) throws AoOexception{
 		int index=trovaNome(m.getNome());
-		System.out.println("ind "+index);
 		Double qt=(elenco.get(index).getQuantita())-(m.getQuantita());
-		System.out.println("qt 1: "+(elenco.get(index).getQuantita())+" qt2: "+(m.getQuantita()));
 		if (qt<0){
-			System.out.println("lancio");
 			throw new AoOexception("out Of Order",index);
 			
 		}
@@ -73,7 +69,6 @@ public class DataM {
 				return i;
 			}
 		}
-		System.out.println("Identificativo non trovato.");
 		return -1;
 	}
 	static public boolean controllaKey(int k){

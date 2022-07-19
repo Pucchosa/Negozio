@@ -93,7 +93,6 @@ public class Spesa extends Finestra{
 					indice=tab.tavola.getSelectedRow();
 					indixex=list.trovaNome(tab.getNome(indice));
 					sal3.setText(Est.deci.format(list.getSaldo())+" eu.");
-					System.out.println("indice "+indice+" indexexe "+indixex);
 				}
 				public void focusLost(FocusEvent e){
 
@@ -104,12 +103,10 @@ public class Spesa extends Finestra{
 		corpo.add("South",sal);
 		
 		add("Center", corpo);
-		System.out.println("ok");
 
 /*comp5*/Pulsante bent=new Pulsante("-AGGIUNGI-");
 		bent.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		    	System.out.println(index);
 		    	if (index!=-1){
 		    		try {
 		    			boolean x=list.compra(index, Double.parseDouble(tf2.ret));
@@ -119,7 +116,6 @@ public class Spesa extends Finestra{
 		    			}
 		    			else {
 			    			tab.togli(tab.getInd(DataM.get(index).getNome()));
-		    				System.out.println("aggiunto");
 		    				tab.aggiungi(list.get(index),list.get(index).getQuantita());
 		    			}
 		    			ele.select(0);
@@ -129,7 +125,6 @@ public class Spesa extends Finestra{
 
 			    	}
 			    	catch (Exception ex){
-			    		System.out.println("nope");
 			    	}
 		    	}
 			}
@@ -142,7 +137,6 @@ public class Spesa extends Finestra{
 		    public void actionPerformed(ActionEvent e) {
 		    	if (indice!=-1&&indixex!=-1){
 		    		try {
-		    			System.out.println("provo");
 		    			list.elimina(indixex);
 		    			tab.togli(indice);
 		    			indice=-1;
@@ -151,7 +145,6 @@ public class Spesa extends Finestra{
 
 			    	}
 			    	catch (Exception ex){
-			    		System.out.println("nope");
 			    	}
 		    	}
 			}

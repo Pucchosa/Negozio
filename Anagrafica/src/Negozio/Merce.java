@@ -14,10 +14,10 @@ public class Merce {
 	private Double prezzoF;
 	private Double valore;
 	private String unita;
-	private Scanner sc = new Scanner(System.in);
+//	private Scanner sc = new Scanner(System.in);
 	
 	
-	public Merce(){
+/*	public Merce(){
 		System.out.println("Inserire nome prodotto: ");
 		nome=sc.nextLine();
 		System.out.println("Inserire lúnita di misura del prodotto: ");
@@ -30,7 +30,7 @@ public class Merce {
 		prezzoF=prezzoV*quantita;
 		valore=quantita*prezzoA;
 		codice=DataM.nextIndice();
-	}
+	}*/
 	public Merce(Merce m){
 		this.nome=m.getNome();
 		this.quantita=m.getQuantita();

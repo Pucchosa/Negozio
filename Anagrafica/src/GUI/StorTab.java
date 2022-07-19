@@ -59,9 +59,7 @@ public class StorTab extends Frame{
 		model.addRow(riga);
 	}
 	public void togli(int x){
-		System.out.println("tolgo "+x);
 		model.removeRow(x);
-		System.out.println("tolta");
 	}
 	public void clear(){
 		model.setRowCount(0);

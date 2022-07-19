@@ -17,9 +17,7 @@ public class Cliente extends Anagrafica {
 	}
 	public void consegnaMerci(Double costo){
 		setSaldo(getSaldo()+costo);
-		System.out.println("merce inviata al sign. "+getNome()+" all indirizzo: "+getIndirizzo());
 		if (!getIva().equals("")){
-			System.out.println(" e fattura emessa a P.IVA: "+getIva()+" dell importo di euro"+costo);
 		}
 	}
 }

@@ -103,7 +103,6 @@ public class ListaSpesa{
 				return i;
 			}
 		}
-		System.out.println("Identificativo non trovato.");
 		return -1;
 	}
 	public boolean controllaKey(int k){
@@ -145,7 +144,6 @@ public class ListaSpesa{
 			}
 		}
 		calcolaSaldo();
-		System.out.println("saldo: "+saldo);
 		cliente.setSaldo(cliente.getSaldo()-saldo);
 	}
 }

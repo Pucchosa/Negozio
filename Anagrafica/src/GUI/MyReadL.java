@@ -27,7 +27,6 @@ public class MyReadL {
 			while ((line = reader.readLine()) != null){
 				ele.add(line);
 			}
-			System.out.println("tot "+ele.size());
 			for (String s:ele){
 				String[] temp=s.split(" , ");
 				String dat=temp[0];

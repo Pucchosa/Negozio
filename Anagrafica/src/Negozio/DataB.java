@@ -11,7 +11,6 @@ public class DataB <T extends Anagrafica> {
 			clienti.add(t);
 		}
 		else {
-			System.out.println("Nominativo gia presente.");
 		}
 	}
 	static public void agg(Fornitore t){
@@ -19,7 +18,6 @@ public class DataB <T extends Anagrafica> {
 			fornitori.add(t);
 		}
 		else {
-			System.out.println("Nominativo gia presente.");
 		}
 	}
 
@@ -169,7 +167,6 @@ public class DataB <T extends Anagrafica> {
 				}
 			}
 		}
-		System.out.println("Identificativo non trovato.");
 		return -1;
 	}
 	static public int trovaIva(String iva ,String y){
@@ -180,7 +177,6 @@ public class DataB <T extends Anagrafica> {
 				}
 			}
 		}
-		System.out.println("Identificativo non trovato.");
 		return -1;
 	}
 	
