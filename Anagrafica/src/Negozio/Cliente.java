@@ -1,4 +1,6 @@
 package Negozio;
+import java.util.HashMap;
+
 import GUI.*;
 
 public class Cliente extends Anagrafica {
@@ -19,5 +21,9 @@ public class Cliente extends Anagrafica {
 		setSaldo(getSaldo()+costo);
 		if (!getIva().equals("")){
 		}
+	}
+	public HashMap<Integer,Merce> getMerc(){
+		HashMap<Integer,Merce> vod=new HashMap<Integer,Merce>();
+		return vod;
 	}
 }

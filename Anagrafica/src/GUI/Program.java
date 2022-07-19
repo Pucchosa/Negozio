@@ -1,12 +1,8 @@
 package GUI;
 import Negozio.*;
-//import java.util.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.*;
-//import java.awt.event.*;
 
 public class Program{
 	public static void main(String[] args) {

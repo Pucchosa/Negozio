@@ -14,23 +14,9 @@ public class Merce {
 	private Double prezzoF;
 	private Double valore;
 	private String unita;
-//	private Scanner sc = new Scanner(System.in);
-	
-	
-/*	public Merce(){
-		System.out.println("Inserire nome prodotto: ");
-		nome=sc.nextLine();
-		System.out.println("Inserire lúnita di misura del prodotto: ");
-		unita=sc.nextLine();
-		System.out.println("Inserire prezzo acquisto all unita: ");
-		prezzoA=sc.nextDouble();
-		System.out.println("Inserire percentuale rincaro alla vendita: ");
-		rincaro=sc.nextInt();
-		prezzoV=(prezzoA/100*rincaro)+prezzoA;
-		prezzoF=prezzoV*quantita;
-		valore=quantita*prezzoA;
-		codice=DataM.nextIndice();
-	}*/
+	public ArrayList<Fornitore> elenco=new ArrayList<Fornitore>();
+
+
 	public Merce(Merce m){
 		this.nome=m.getNome();
 		this.quantita=m.getQuantita();
@@ -41,6 +27,7 @@ public class Merce {
 		this.prezzoF=prezzoV*quantita;
 		this.valore=prezzoA*quantita;
 		this.codice=m.getCod();
+		this.elenco=m.getForn();
 	}
 	public Merce(String nome, Double quantita, int rincaro, Double prezzoA, String unita){
 		this.nome=nome;
@@ -124,5 +111,30 @@ public class Merce {
 	public String toStri(){
 		String stampa=nome+" qt. "+quantita+" TOT "+valore;
 		return stampa;
+	}
+	public void addForn(Fornitore f){
+		elenco.add(f);
+	}
+	public void addForn(String name){
+		elenco.add(DataB.fornitori.get(DataB.trovaNome(name)));
+	}
+	public ArrayList<Fornitore> getForn(){
+		return elenco;
+	}
+	public void removeForn(String name){
+		int index=getIndex(name);
+		elenco.remove(index);
+	}
+	public void removeForn(Fornitore f){
+		elenco.remove(f);
+	}
+	public int getIndex(String name){
+		int index=-1;
+		for (int i=0;i<elenco.size();i++){
+			if (elenco.get(i).getNome().equals(name)){
+				index=i;
+			}
+		}
+		return index;
 	}
 }

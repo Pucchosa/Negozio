@@ -16,11 +16,13 @@ public class SchedaMerce extends Finestra{
 	Double prezzoV;
 	Double valore;
 	String unita;
+	Merce mer;
+	int indexF=-1;
 	public SchedaMerce(int x){
 		super("Scheda prodotto");
 		
 		if (x!=-1&&DataM.elenco.containsKey(x)){
-			Merce mer=DataM.elenco.get(x);
+			mer=DataM.elenco.get(x);
 			this.nome=mer.getNome();
 			this.quantita=mer.getQuantita();
 			this.rincaro=mer.getRincaro();
@@ -32,7 +34,7 @@ public class SchedaMerce extends Finestra{
 		}
 		
 		Panel contenuto=new Panel();
-		contenuto.setLayout(new GridLayout(6,2));
+		contenuto.setLayout(new GridLayout(7,2));
 		
 /*comp1*/  Etichetta non=new Etichetta("Merce: ");
 		contenuto.add(non);	
@@ -59,7 +61,34 @@ public class SchedaMerce extends Finestra{
 		Etichetta vv=new Etichetta(Est.deci.format(valore)+"eu");
 		contenuto.add(vv);
 		
-/*comp6*/Pulsante bex=new Pulsante("-ESCI-");
+/*comp6*/  Etichetta forn=new Etichetta("Fornitori: ");
+		contenuto.add(forn);	
+		Choice ele1=new Choice();
+		ele1.add("Scegli");
+		try{
+			for (Fornitore a:mer.getForn()){
+				ele1.add(a.getCognome()+", "+a.getNome());
+			}
+		}
+		catch (Exception e){
+			ele1.add("Lista vuota");
+		}
+		ele1.setFont(Est.font);
+		ele1.addFocusListener(new FocusListener() {
+			public void focusGained(FocusEvent e){
+			}
+			public void focusLost(FocusEvent e){
+				if (ele1.getSelectedItem().equals("Scegli")||ele1.getSelectedItem().equals("Lista vuota")){
+				}
+				else {
+					String[] temp=ele1.getSelectedItem().split(", ");
+					indexF=DataB.trovaPersona(temp[0], temp[1]);
+				}
+			}
+		});
+		contenuto.add(ele1);	
+		
+/*comp7*/Pulsante bex=new Pulsante("-ESCI-");
 		bex.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	setVisible(false);
@@ -69,7 +98,6 @@ public class SchedaMerce extends Finestra{
 			}
 		});
 		contenuto.add(bex);
-		
 		Pulsante bin=new Pulsante("-MODIFICA-");
 		bin.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
@@ -84,6 +112,8 @@ public class SchedaMerce extends Finestra{
 		});
 		contenuto.add(bin);
 		
+/*OUT*/		Panel sud=new Panel();
+		sud.setLayout(new GridLayout(1,2));
 		Pulsante eli=new Pulsante("-ELIMINA-");
 		eli.setPreferredSize(Est.piccolo);
 		eli.setBackground(Est.rosso);
@@ -97,8 +127,25 @@ public class SchedaMerce extends Finestra{
 		    	}
 			}
 		});
+		sud.add(eli);
+		Pulsante ord=new Pulsante("-ORDINA-");
+		ord.setPreferredSize(Est.piccolo);
+		ord.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		    	if (x!=-1){
+		    		
+		    		// ORDINA mer  DA indexF
+			    	setVisible(false);
+			    	ErrorMessage del=new ErrorMessage(x);
+			    	del.setVisible(true);
+			    	dispose();
+		    	}
+			}
+		});
+		sud.add(ord);
+		
 		add(contenuto);
-		add("South", eli);
+		add("South", sud);
 		pack();
 	}
 	

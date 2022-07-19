@@ -17,6 +17,7 @@ public class SchedaPersona extends Finestra{
 	Double saldo=0.00;
 	String indirizzo;
 	Anagrafica mer;
+	int index;
 		public SchedaPersona(int x, String tipo){
 			super("Scheda "+tipo);
 			if (x>-1){
@@ -100,7 +101,68 @@ public class SchedaPersona extends Finestra{
 			});
 			contenuto.add(bin);
 			
-			
+/*comp 7*/
+			if (tipo.equals("fornitore")){
+				contenuto.setLayout(new GridLayout(7,2));
+	
+				Etichetta forn=new Etichetta("Merci: ");
+				contenuto.add(forn);	
+				
+				Choice ele1=new Choice();
+				ele1.add("Scegli");
+				try{
+					for (Merce a: mer.getMerc().values()){
+						ele1.add(a.getNome()+" "+a.getCod());
+					}
+				}
+				catch (Exception e){
+					ele1.add("Lista vuota");
+				}
+				ele1.setFont(Est.font);
+				ele1.addFocusListener(new FocusListener() {
+					public void focusGained(FocusEvent e){
+					}
+					public void focusLost(FocusEvent e){
+						if (ele1.getSelectedItem().equals("Scegli")||ele1.getSelectedItem().equals("Lista vuota")){
+						}
+						else {
+							String temp=ele1.getSelectedItem();
+							String[] temAr=temp.split(" ");
+							index=Integer.parseInt(temAr[temAr.length-1]);
+						}
+					}
+				});
+				contenuto.add(ele1);
+	
+	/*OUT*/		Panel sud=new Panel();
+				sud.setLayout(new GridLayout(1,2));
+				
+				Pulsante agg=new Pulsante("-Aggiungi Merce-");
+				agg.addActionListener(new ActionListener() {
+				    public void actionPerformed(ActionEvent e) {
+				    	setVisible(false);
+				    	/* AGGIUNGI MERCE A FORNITORE mer*/
+				    	dispose();
+					}
+				});
+				sud.add(agg);
+				
+				Pulsante ord=new Pulsante("-Ordina Merce-");
+				ord.addActionListener(new ActionListener() {
+				    public void actionPerformed(ActionEvent e) {
+				    	if (x!=-1){
+					    	setVisible(false);
+					    	/*FAI ACQUISTO DI MERCE index*/
+				    	
+					    	dispose();
+				    	}
+					}
+				});
+				sud.add(ord);
+				add("South",sud);
+			}			
+				
+/*comp OUT cli*/
 			if (tipo.equals("cliente")){
 				Pulsante eli=new Pulsante("-APRI ACQUISTO-");
 				eli.setPreferredSize(Est.piccolo);

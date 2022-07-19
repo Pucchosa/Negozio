@@ -1,5 +1,7 @@
 package Negozio;
 import GUI.*;
+
+import java.util.HashMap;
 import java.util.Scanner;
 
 public abstract class Anagrafica {
@@ -99,4 +101,5 @@ public abstract class Anagrafica {
 		String in=cognome+" , "+nome;
 		return in;
 	}
+	public abstract HashMap<Integer,Merce> getMerc();
 }
