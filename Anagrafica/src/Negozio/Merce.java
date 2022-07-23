@@ -113,10 +113,15 @@ public class Merce {
 		return stampa;
 	}
 	public void addForn(Fornitore f){
+		if (!doppioForn(f)){
 		elenco.add(f);
+		}
 	}
 	public void addForn(String name){
-		elenco.add(DataB.fornitori.get(DataB.trovaNome(name)));
+		Fornitore f=DataB.fornitori.get(DataB.trovaNome(name));
+		if (!doppioForn(f)){
+			elenco.add(f);
+		}
 	}
 	public ArrayList<Fornitore> getForn(){
 		return elenco;
@@ -136,5 +141,13 @@ public class Merce {
 			}
 		}
 		return index;
+	}
+	public boolean doppioForn(Fornitore f){
+		for (Fornitore g:elenco){
+			if (g.equals(f)){
+				return true;
+			}
+		}
+		return false;
 	}
 }

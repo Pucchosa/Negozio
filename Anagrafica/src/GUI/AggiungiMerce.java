@@ -126,8 +126,6 @@ public class AggiungiMerce extends Finestra{
 		    	dispose();
 			}
 		});
-		
-
 		contenuto.add(bent);
 		
 		add(contenuto);
@@ -149,7 +147,7 @@ public class AggiungiMerce extends Finestra{
 		setBackground(Est.chiaro);
 		
 		Panel contenuto=new Panel();
-		contenuto.setLayout(new GridLayout(6,2));
+		contenuto.setLayout(new GridLayout(7,2));
 
 /*comp1*/  Etichetta non=new Etichetta("Merce: ");
 		contenuto.add(non);
@@ -250,10 +248,26 @@ public class AggiungiMerce extends Finestra{
 		    	dispose();
 			}
 		});
-		
-
 		contenuto.add(bent);
+/*comp 13*/Etichetta vot=new Etichetta("        ");
+		contenuto.add(vot);
 		
+/*comp14*/Pulsante agg=new Pulsante("-Assegna a Fornitore-");
+		agg.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		    	setVisible(false);
+		    	try{
+			    	AssegnaMerc ass=new AssegnaMerc(DataM.get(x));
+			    	ass.setVisible(true);
+			    	dispose();
+		    	}
+		    	catch (Exception pp){
+		    		// ERRORE
+		    	}
+			}
+		});
+		contenuto.add(agg);
+				
 		add(contenuto);
 		pack();
 	}

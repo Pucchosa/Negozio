@@ -205,4 +205,12 @@ public class DataB <T extends Anagrafica> {
 	static public String elenCogn(int a ,String y){
 		return fornitori.get(a).getCognome();
 	}
+	static public Fornitore trovaForn(Anagrafica x)throws Exception{
+		int index=trovaPersona(x.getCognome(), x.getNome());
+		return get(index ,"Fornitore");
+	}
+	static public Cliente trovaClie(Anagrafica x)throws Exception{
+		int index=trovaPersona(x.getCognome(), x.getNome());
+		return get(index,0);
+	}
 }

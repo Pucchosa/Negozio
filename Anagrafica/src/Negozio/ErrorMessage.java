@@ -128,8 +128,90 @@ public class ErrorMessage extends Frame implements ActionListener{
 		pack();
 	}
 	
+	public ErrorMessage(Merce m,int index){
+		super("---ATTENZIONE---");
+		setLocation(300,300);
+		setBackground(new Color(217,243,248));
+		
+		Fornitore f=DataB.fornitori.get(index);
+		JLabel tx=new JLabel();
+		tx.setText("<html>Se è sicuri divoler eliminare il fornitore? <br/> "+f.getIntestazione()+"per la Merce: "+m.getNome()+"?");
+		tx.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+		tx.setFont(Est.font);
+		
+		Pulsante ok=new Pulsante("ANNULLA");
+		ok.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		    	setVisible(false);
+		    	AssegnaMerc ass=new AssegnaMerc(m);
+		    	ass.setVisible(true);
+		    	dispose();
+			}
+		});
+		
+		Pulsante ty=new Pulsante("ELIMINA");
+		ty.setBackground(Est.rosso);
+		ty.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		    	m.removeForn(f);
+		    	f.removeMerc(m.getCod());
+		    	setVisible(false);
+		    	AssegnaMerc ass=new AssegnaMerc(m);
+		    	ass.setVisible(true);
+		    	dispose();
+			}
+		});
+		
+		add("North",tx);
+		add("Center",ok);
+		add("South",ty);
+		setAlwaysOnTop(true);
+		pack();
+	}
+	
+	public ErrorMessage(Fornitore f,int index){
+		super("---ATTENZIONE---");
+		setLocation(300,300);
+		setBackground(new Color(217,243,248));
+		
+		Merce m=DataM.get(index);
+		JLabel tx=new JLabel();
+		tx.setText("<html>Se è sicuri divoler eliminare il fornitore? <br/> "+f.getIntestazione()+"per la Merce: "+m.getNome()+"?");
+		tx.setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 70));
+		tx.setFont(Est.font);
+		
+		Pulsante ok=new Pulsante("ANNULLA");
+		ok.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		    	setVisible(false);
+		    	AssegnaMerc ass=new AssegnaMerc(m);
+		    	ass.setVisible(true);
+		    	dispose();
+			}
+		});
+		
+		Pulsante ty=new Pulsante("ELIMINA");
+		ty.setBackground(Est.rosso);
+		ty.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		    	m.removeForn(f);
+		    	f.removeMerc(m.getCod());
+		    	setVisible(false);
+		    	AssegnaMerc ass=new AssegnaMerc(m);
+		    	ass.setVisible(true);
+		    	dispose();
+			}
+		});
+		
+		add("North",tx);
+		add("Center",ok);
+		add("South",ty);
+		setAlwaysOnTop(true);
+		pack();
+	}
 	public void actionPerformed(ActionEvent e){
 		this.setVisible(false);
+		this.dispose();
 	}
 	
 }		

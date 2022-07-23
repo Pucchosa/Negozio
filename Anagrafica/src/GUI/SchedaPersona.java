@@ -141,8 +141,15 @@ public class SchedaPersona extends Finestra{
 				agg.addActionListener(new ActionListener() {
 				    public void actionPerformed(ActionEvent e) {
 				    	setVisible(false);
-				    	/* AGGIUNGI MERCE A FORNITORE mer*/
-				    	dispose();
+				    	try{
+					    	Fornitore f=DataB.trovaForn(mer);
+					    	AssegnaMerc ass=new AssegnaMerc(f);
+					    	ass.setVisible(true);
+					    	dispose();
+				    	}
+				    	catch (Exception pp){
+				    		// ERRORE
+				    	}
 					}
 				});
 				sud.add(agg);
@@ -152,7 +159,7 @@ public class SchedaPersona extends Finestra{
 				    public void actionPerformed(ActionEvent e) {
 				    	if (x!=-1){
 					    	setVisible(false);
-					    	/*FAI ACQUISTO DI MERCE index*/
+					    	/*FAI ACQUISTO DI MERCE index DA mer */
 				    	
 					    	dispose();
 				    	}
