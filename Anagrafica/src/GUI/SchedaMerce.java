@@ -46,6 +46,10 @@ public class SchedaMerce extends Finestra{
 		Etichetta uu=new Etichetta(quantita+" "+unita);
 		if (quantita<=5.0){
 			uu.setForeground(Est.rosso);
+			uu.setOpaque(true);
+			uu.setBackground(Est.chiarissimo);
+			uni.setOpaque(true);
+			uni.setBackground(Est.chiarissimo);
 		}
 		contenuto.add(uu);
 		
