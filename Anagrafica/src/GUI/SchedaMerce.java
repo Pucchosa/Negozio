@@ -44,6 +44,9 @@ public class SchedaMerce extends Finestra{
 /*comp2*/  Etichetta uni=new Etichetta("In magazzino: ");
 		contenuto.add(uni);
 		Etichetta uu=new Etichetta(quantita+" "+unita);
+		if (quantita<=5.0){
+			uu.setForeground(Est.rosso);
+		}
 		contenuto.add(uu);
 		
 /*comp3*/  Etichetta ac=new Etichetta("Prezzo d acquisto: ");
